@@ -1,0 +1,97 @@
+# Тевтонский и Ливонский ордена
+alliance = {
+	first = TEU
+	second = LIV
+	start_date = 1309.1.1
+	end_date = 1450.1.1
+}
+
+# Ливонская конфедерация
+dependency = {
+	subject_type = "livonian_vassal"
+	first = LIV
+	second = RIG
+	start_date = 1186.1.1
+	end_date = 1561.8.2
+}
+dependency = {
+	subject_type = "livonian_vassal"
+	first = LIV
+	second = DOR
+	start_date = 1186.1.1
+	end_date = 1561.8.2
+}
+dependency = {
+	subject_type = "livonian_vassal"
+	first = LIV
+	second = OSE
+	start_date = 1186.1.1
+	end_date = 1561.8.2
+}
+dependency = {
+	subject_type = "livonian_vassal"
+	first = LIV
+	second = KUR
+	start_date = 1186.1.1
+	end_date = 1561.8.2
+}
+
+# Литва и соседи
+vassal = { #Полоцк
+	first = LIT
+	second = PLT
+	start_date = 1307.1.1
+	end_date = 1392.1.1
+}
+vassal = { #Брянск
+	first = LIT
+	second = BRY
+	start_date = 1356.1.1
+	end_date = 1401.1.1
+}
+union = { #Тракаи
+	first = LIT
+	second = LT0
+	start_date = 1337.1.1
+	end_date = 1413.1.1
+}
+
+# Волынь
+vassal = { 
+	first = LIT
+	second = VOL
+	start_date = 1341.1.1
+	end_date = 1365.1.1
+}
+vassal = { 
+	first = POL
+	second = VOL
+	start_date = 1365.1.1
+	end_date = 1376.1.1
+}
+
+# Белз
+vassal = { 
+	first = LIT
+	second = BLZ
+	start_date = 1341.1.1
+	end_date = 1366.1.1
+}
+vassal = { 
+	first = POL
+	second = BLZ
+	start_date = 1366.1.1
+	end_date = 1377.1.1
+}
+vassal = { 
+	first = HUN
+	second = BLZ
+	start_date = 1377.1.1
+	end_date = 1387.1.1
+}
+union = { 
+	first = MAZ
+	second = BLZ
+	start_date = 1387.1.1
+	end_date = 1462.1.1
+}

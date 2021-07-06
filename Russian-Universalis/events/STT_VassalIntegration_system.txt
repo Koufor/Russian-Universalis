@@ -1,0 +1,4321 @@
+# New Integration System - v.1 
+namespace = vassal_integration 
+
+country_event = { # Hidden event to start system
+	id = vassal_integration.101
+	title = vassal_integration.101.t
+	desc = vassal_integration.101.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	
+	option = { # Give flag to vassals
+		name = vassal_integration.101.1
+		random_subject_country = { # Vassal 1
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_1
+			overlord = { set_country_flag = vassal_1 }
+			save_event_target_as = targetvassal1
+		}
+		random_subject_country = { # Vassal 2
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_2
+			overlord = { set_country_flag = vassal_2 }
+			save_event_target_as = targetvassal2
+		}
+		random_subject_country = { # Vassal 3
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_3
+			overlord = { set_country_flag = vassal_3 }
+			save_event_target_as = targetvassal3
+		}
+		random_subject_country = { # Vassal 4
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_4
+			overlord = { set_country_flag = vassal_4 }
+			save_event_target_as = targetvassal4
+		}
+		random_subject_country = { # Vassal 5
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_5
+			overlord = { set_country_flag = vassal_5 }
+			save_event_target_as = targetvassal5
+		}
+		random_subject_country = { # Vassal 6
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_6
+			overlord = { set_country_flag = vassal_6 }
+			save_event_target_as = targetvassal6
+		}
+		random_subject_country = { # Vassal 7
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_7
+			overlord = { set_country_flag = vassal_7 }
+			save_event_target_as = targetvassal7
+		}
+		random_subject_country = { # Vassal 8
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_8
+			overlord = { set_country_flag = vassal_8 }
+			save_event_target_as = targetvassal8
+		}
+		random_subject_country = { # Vassal 9
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_9
+			overlord = { set_country_flag = vassal_9 }
+			save_event_target_as = targetvassal9
+		}
+		random_subject_country = { # Vassal 10
+			limit = {
+				is_subject_of_type = vassal
+				NOT = { has_country_flag = vassal_1 }
+				NOT = { has_country_flag = vassal_2 }
+				NOT = { has_country_flag = vassal_3 }
+				NOT = { has_country_flag = vassal_4 }
+				NOT = { has_country_flag = vassal_5 }
+				NOT = { has_country_flag = vassal_6 }
+				NOT = { has_country_flag = vassal_7 }
+				NOT = { has_country_flag = vassal_8 }
+				NOT = { has_country_flag = vassal_9 }
+				NOT = { has_country_flag = vassal_10 }
+			}
+			set_country_flag = vassal_10
+			overlord = { set_country_flag = vassal_10 }
+			save_event_target_as = targetvassal10
+		}
+		country_event = { id = vassal_integration.1 }
+	}
+}
+
+country_event = { # Event - Main Menu
+	id = vassal_integration.1
+	title = vassal_integration.1.t
+	desc = vassal_integration.1.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	immediate = {
+		if = { # Цель - вассал 1
+			limit = { has_country_flag = vassal_1 }
+			custom_tooltip = vassal_1_t
+		}
+		if = { # Цель - вассал 2
+			limit = { has_country_flag = vassal_2 }
+			custom_tooltip = vassal_2_t
+		}
+		if = { # Цель - вассал 3
+			limit = { has_country_flag = vassal_3 }
+			custom_tooltip = vassal_3_t
+		}
+		if = { # Цель - вассал 4
+			limit = { has_country_flag = vassal_4 }
+			custom_tooltip = vassal_4_t
+		}
+		if = { # Цель - вассал 5
+			limit = { has_country_flag = vassal_5 }
+			custom_tooltip = vassal_5_t
+		}
+		if = { # Цель - вассал 6
+			limit = { has_country_flag = vassal_6 }
+			custom_tooltip = vassal_6_t
+		}
+		if = { # Цель - вассал 7
+			limit = { has_country_flag = vassal_7 }
+			custom_tooltip = vassal_7_t
+		}
+		if = { # Цель - вассал 8
+			limit = { has_country_flag = vassal_8 }
+			custom_tooltip = vassal_8_t
+		}
+		if = { # Цель - вассал 9
+			limit = { has_country_flag = vassal_9 }
+			custom_tooltip = vassal_9_t
+		}
+		if = { # Цель - вассал 10
+			limit = { has_country_flag = vassal_10 }
+			custom_tooltip = vassal_10_t
+		}
+	}
+	
+	option = { # Вассал - 1
+		name = vassal_integration.1.1
+		trigger = {
+			has_country_flag = vassal_1
+			any_subject_country = {
+				has_country_flag = vassal_1
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 2
+		name = vassal_integration.1.2
+		trigger = {
+			has_country_flag = vassal_2
+			any_subject_country = {
+				has_country_flag = vassal_2
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 3
+		name = vassal_integration.1.3
+		trigger = {
+			has_country_flag = vassal_3
+			any_subject_country = {
+				has_country_flag = vassal_3
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 4
+		name = vassal_integration.1.4
+		trigger = {
+			has_country_flag = vassal_4
+			any_subject_country = {
+				has_country_flag = vassal_4
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 5
+		name = vassal_integration.1.5
+		trigger = {
+			has_country_flag = vassal_5
+			any_subject_country = {
+				has_country_flag = vassal_5
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 6
+		name = vassal_integration.1.6
+		trigger = {
+			has_country_flag = vassal_6
+			any_subject_country = {
+				has_country_flag = vassal_6
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 7
+		name = vassal_integration.1.7
+		trigger = {
+			has_country_flag = vassal_7
+			any_subject_country = {
+				has_country_flag = vassal_7
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 8
+		name = vassal_integration.1.8
+		trigger = {
+			has_country_flag = vassal_8
+			any_subject_country = {
+				has_country_flag = vassal_8
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_9
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_9
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 9
+		name = vassal_integration.1.9
+		trigger = {
+			has_country_flag = vassal_9
+			any_subject_country = {
+				has_country_flag = vassal_9
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_10
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_10
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Вассал - 10
+		name = vassal_integration.1.10
+		trigger = {
+			has_country_flag = vassal_10
+			any_subject_country = {
+				has_country_flag = vassal_10
+			}
+		}
+		hidden_effect = { 
+			every_subject_country = {
+				clr_country_flag = vassal_1
+				clr_country_flag = vassal_2
+				clr_country_flag = vassal_3
+				clr_country_flag = vassal_4
+				clr_country_flag = vassal_5
+				clr_country_flag = vassal_6
+				clr_country_flag = vassal_7
+				clr_country_flag = vassal_8
+				clr_country_flag = vassal_9
+			}
+			clr_country_flag = vassal_1
+			clr_country_flag = vassal_2
+			clr_country_flag = vassal_3
+			clr_country_flag = vassal_4
+			clr_country_flag = vassal_5
+			clr_country_flag = vassal_6
+			clr_country_flag = vassal_7
+			clr_country_flag = vassal_8
+			clr_country_flag = vassal_9
+			country_event = { id = vassal_integration.2 } 
+		}
+	}
+	option = { # Выход
+		name = vassal_integration.1.11
+		highlight = yes
+	}
+}
+
+country_event = { # Взимодействие с конкретным вассалом
+	id = vassal_integration.2
+	title = vassal_integration.2.t
+	desc = vassal_integration.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	immediate = {
+		if = { # Цель - вассал 1
+			limit = { has_country_flag = vassal_1 }
+			custom_tooltip = vassal_1_overview
+			custom_tooltip = vassal_1_overview_adm
+			custom_tooltip = vassal_1_overview_dip
+			custom_tooltip = vassal_1_overview_mil
+		}
+		if = { # Цель - вассал 2
+			limit = { has_country_flag = vassal_2 }
+			custom_tooltip = vassal_2_overview
+			custom_tooltip = vassal_2_overview_adm
+			custom_tooltip = vassal_2_overview_dip
+			custom_tooltip = vassal_2_overview_mil
+		}
+		if = { # Цель - вассал 3
+			limit = { has_country_flag = vassal_3 }
+			custom_tooltip = vassal_3_overview
+			custom_tooltip = vassal_3_overview_adm
+			custom_tooltip = vassal_3_overview_dip
+			custom_tooltip = vassal_3_overview_mil
+		}
+		if = { # Цель - вассал 4
+			limit = { has_country_flag = vassal_4 }
+			custom_tooltip = vassal_4_overview
+			custom_tooltip = vassal_4_overview_adm
+			custom_tooltip = vassal_4_overview_dip
+			custom_tooltip = vassal_4_overview_mil
+		}
+		if = { # Цель - вассал 5
+			limit = { has_country_flag = vassal_5 }
+			custom_tooltip = vassal_5_overview
+			custom_tooltip = vassal_5_overview_adm
+			custom_tooltip = vassal_5_overview_dip
+			custom_tooltip = vassal_5_overview_mil
+		}
+		if = { # Цель - вассал 6
+			limit = { has_country_flag = vassal_6 }
+			custom_tooltip = vassal_6_overview
+			custom_tooltip = vassal_6_overview_adm
+			custom_tooltip = vassal_6_overview_dip
+			custom_tooltip = vassal_6_overview_mil
+		}
+		if = { # Цель - вассал 7
+			limit = { has_country_flag = vassal_7 }
+			custom_tooltip = vassal_7_overview
+			custom_tooltip = vassal_7_overview_adm
+			custom_tooltip = vassal_7_overview_dip
+			custom_tooltip = vassal_7_overview_mil
+		}
+		if = { # Цель - вассал 8
+			limit = { has_country_flag = vassal_8 }
+			custom_tooltip = vassal_8_overview
+			custom_tooltip = vassal_8_overview_adm
+			custom_tooltip = vassal_8_overview_dip
+			custom_tooltip = vassal_8_overview_mil
+		}
+		if = { # Цель - вассал 9
+			limit = { has_country_flag = vassal_9 }
+			custom_tooltip = vassal_9_overview
+			custom_tooltip = vassal_9_overview_adm
+			custom_tooltip = vassal_9_overview_dip
+			custom_tooltip = vassal_9_overview_mil
+		}
+		if = { # Цель - вассал 10
+			limit = { has_country_flag = vassal_10 }
+			custom_tooltip = vassal_10_overview
+			custom_tooltip = vassal_10_overview_adm
+			custom_tooltip = vassal_10_overview_dip
+			custom_tooltip = vassal_10_overview_mil
+		}
+	}
+	
+	option = { # Административная интеграция
+		name = vassal_integration.2.1
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+			}
+			event_target:targetvassal1 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+			}
+			event_target:targetvassal2 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+			}
+			event_target:targetvassal3 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+			}
+			event_target:targetvassal4 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+			}
+			event_target:targetvassal5 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+			}
+			event_target:targetvassal6 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+			}
+			event_target:targetvassal7 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+			}
+			event_target:targetvassal8 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+			}
+			event_target:targetvassal9 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+			}
+			event_target:targetvassal10 = {
+				hidden_effect = { country_event = { id = vassal_integration.10 } }
+			}
+		}
+	}
+	option = { # Дипломатическая интеграция
+		name = vassal_integration.2.2
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+			}
+			event_target:targetvassal1 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+			}
+			event_target:targetvassal2 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+			}
+			event_target:targetvassal3 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+			}
+			event_target:targetvassal4 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+			}
+			event_target:targetvassal5 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+			}
+			event_target:targetvassal6 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+			}
+			event_target:targetvassal7 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+			}
+			event_target:targetvassal8 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+			}
+			event_target:targetvassal9 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+			}
+			event_target:targetvassal10 = {
+				hidden_effect = { country_event = { id = vassal_integration.11 } }
+			}
+		}
+	}
+	option = { # Военная интеграция
+		name = vassal_integration.2.3
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+				}
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+			}
+			event_target:targetvassal1 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+			}
+			event_target:targetvassal2 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+			}
+			event_target:targetvassal3 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+			}
+			event_target:targetvassal4 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+			}
+			event_target:targetvassal5 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+			}
+			event_target:targetvassal6 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+			}
+			event_target:targetvassal7 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+			}
+			event_target:targetvassal8 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 } 
+			}
+			event_target:targetvassal9 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+			}
+			event_target:targetvassal10 = {
+				hidden_effect = { country_event = { id = vassal_integration.12 } }
+			}
+		}
+	}
+	#option = { # Назад
+	#	name = vassal_integration.2.4
+	#	hidden_effect = {
+	#		every_subject_country = {
+	#			clr_country_flag = vassal_1
+	#			clr_country_flag = vassal_2
+	#			clr_country_flag = vassal_3
+	#			clr_country_flag = vassal_4
+	#			clr_country_flag = vassal_5
+	#			clr_country_flag = vassal_6
+	#			clr_country_flag = vassal_7
+	#			clr_country_flag = vassal_8
+	#			clr_country_flag = vassal_9
+	#			clr_country_flag = vassal_10
+	#		}
+	#		clr_country_flag = vassal_1
+	#		clr_country_flag = vassal_2
+	#		clr_country_flag = vassal_3
+	#		clr_country_flag = vassal_4
+	#		clr_country_flag = vassal_5
+	#		clr_country_flag = vassal_6
+	#		clr_country_flag = vassal_7
+	#		clr_country_flag = vassal_8
+	#		clr_country_flag = vassal_9
+	#		clr_country_flag = vassal_10
+	#		country_event = { id = vassal_integration.101 days = 1 }
+	#	}
+	#}
+	option = { # Выход
+		name = vassal_integration.2.5
+		highlight = yes
+	}
+}
+
+#Переращет variables
+country_event = {
+	id = vassal_integration.3
+	title = vassal_integration.3.t
+	desc = vassal_integration.3.d
+	picture = DIPLOMACY_eventPicture
+	
+	hidden = yes
+	trigger = {
+		is_month = 6
+	}
+	
+	option = {
+		name = vassal_integration.3.1
+		every_subject_country = {
+			limit = {
+				NOT = { check_variable = { which = Years_as_Vassal value = 1 } }
+				NOT = { is_colonial_nation = yes }
+			}
+			set_variable = { which = Years_as_Vassal value = 1 }
+		}
+		if = {
+			limit = {
+				is_free_or_tributary_trigger = yes
+				check_variable = { which = PreSent_integration_ADM value = 1 }
+			}
+			set_variable = { which = ADM_integration_process value = 0 }
+			set_variable = { which = PreSent_integration_ADM value = 0 }
+			set_variable = { which = Remaining_Years_ADM value = 0 }
+			set_variable = { which = Years_as_Vassal value = 0 }
+		}
+		if = {
+			limit = {
+				is_free_or_tributary_trigger = yes
+				check_variable = { which = PreSent_integration_DIP value = 1 }
+			}
+			set_variable = { which = DIP_integration_process value = 0 }
+			set_variable = { which = PreSent_integration_DIP value = 0 }
+			set_variable = { which = Remaining_Years_DIP value = 0 }
+			set_variable = { which = Years_as_Vassal value = 0 }
+		}
+		if = {
+			limit = {
+				is_free_or_tributary_trigger = yes
+				check_variable = { which = PreSent_integration_MIL value = 1 }
+			}
+			set_variable = { which = MIL_integration_process value = 0 }
+			set_variable = { which = PreSent_integration_MIL value = 0 }
+			set_variable = { which = Remaining_Years_MIL value = 0 }
+			set_variable = { which = Years_as_Vassal value = 0 }
+		}
+		every_subject_country = {
+			limit = {
+				NOT = { years_in_vassalage_under = { who = PREV years = 5 } }
+				check_variable = { which = Years_as_Vassal value = 5 }
+			}
+			set_variable = { which = Years_as_Vassal value = 2 }
+		}
+		every_subject_country = {
+			limit = {
+				check_variable = { which = Years_as_Vassal value = 1 }
+			}
+			change_variable = { which = Years_as_Vassal value = 2 }
+		}
+		vassals_adm_integration_effect = yes
+		vassals_dip_integration_effect = yes
+		vassals_mil_integration_effect = yes
+	}
+}
+
+#Раздача конечных флагов - ADM
+country_event = {
+	id = vassal_integration.4
+	title = vassal_integration.4.t
+	desc = vassal_integration.4.d
+	picture = DIPLOMACY_eventPicture
+	
+	#is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		is_vassal = yes
+		check_variable = { which = PreSent_integration_ADM value = 100 }
+	}
+	
+	option = {
+		name = vassal_integration.4.1
+		clr_country_flag = vassal_integration_adm_start
+		clr_country_flag = vassal_integration_adm_unity_burecracy
+		clr_country_flag = vassal_integration_adm_estates
+		clr_country_flag = vassal_integration_adm_taxes_system 
+		clr_country_flag = vassal_integration_adm_new_governors
+		#set_country_flag = vassal_integration_adm_end
+	}
+}
+
+#Раздача конечных флагов - DIP
+country_event = {
+	id = vassal_integration.4
+	title = vassal_integration.4.t
+	desc = vassal_integration.4.d
+	picture = DIPLOMACY_eventPicture
+	
+	#is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		is_vassal = yes
+		check_variable = { which = PreSent_integration_DIP value = 100 }
+	}
+	
+	option = {
+		name = vassal_integration.4.1
+		clr_country_flag = vassal_integration_dip_start
+		#set_country_flag = vassal_integration_dip_end
+	}
+}
+
+#Раздача конечных флагов - MIL
+country_event = {
+	id = vassal_integration.4
+	title = vassal_integration.4.t
+	desc = vassal_integration.4.d
+	picture = DIPLOMACY_eventPicture
+	
+	#is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		is_vassal = yes
+		check_variable = { which = PreSent_integration_MIL value = 100 }
+	}
+	
+	option = {
+		name = vassal_integration.4.1
+		clr_country_flag = vassal_integration_mil_start
+		#set_country_flag = vassal_integration_mil_end
+	}
+}
+
+# Административная интеграция (взаимодействия)
+country_event = {
+	id = vassal_integration.5
+	title = vassal_integration.5.t
+	desc = vassal_integration.5.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		custom_tooltip = adm_factors
+		#Фактор общего развития
+		if = {
+			limit = { FROM = { total_development = 201 } }
+			custom_tooltip = adm_factor_development_201
+		}
+		if = {
+			limit = { FROM = { total_development = 751 } }
+			custom_tooltip = adm_factor_development_751
+		}
+		# Наличие модификатора "Низкая организация"
+		if = {
+			limit = { has_country_modifier = hhh_dark_times }
+			custom_tooltip = adm_factor_low_organizations_1
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_light }
+			custom_tooltip = adm_factor_low_organizations_2
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_s }
+			custom_tooltip = adm_factor_low_organizations_3
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_s_light  }
+			custom_tooltip = adm_factor_low_organizations_4
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_t }
+			custom_tooltip = adm_factor_low_organizations_5
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_t_light  }
+			custom_tooltip = adm_factor_low_organizations_6
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_l }
+			custom_tooltip = adm_factor_low_organizations_7
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_l_light }
+			custom_tooltip = adm_factor_low_organizations_8
+		}
+		# Культура и религия
+		if = {
+			limit = { primary_culture = FROM }
+			custom_tooltip = adm_factor_culture
+		}
+		else_if = {
+			limit = { culture_group = FROM }
+			custom_tooltip = adm_factor_culture_group
+		}
+		if = {
+			limit = { NOT = { religion = FROM } }
+			custom_tooltip = adm_factor_religion
+		}
+		else_if = {
+			limit = { NOT = { religion_group = FROM } }
+			custom_tooltip = adm_factor_religion_group
+		}
+		# Уровень технологий
+		if = {
+			limit = { adm_tech = 1 }
+			custom_tooltip = adm_factor_tech_1
+		}
+		if = {
+			limit = { adm_tech = 5 }
+			custom_tooltip = adm_factor_tech_5
+		}
+		if = {
+			limit = { adm_tech = 15 }
+			custom_tooltip = adm_factor_tech_15
+		}
+		if = {
+			limit = { adm_tech = 30 }
+			custom_tooltip = adm_factor_tech_30
+		}
+		if = {
+			limit = { adm_tech = 45 }
+			custom_tooltip = adm_factor_tech_45
+		}
+		if = {
+			limit = { adm_tech = 50 }
+			custom_tooltip = adm_factor_tech_50
+		}
+		# Другое
+		if = {
+			limit = { has_advisor = philosopher }
+			custom_tooltip = adm_factor_advisor
+		}
+		if = {
+			limit = { FROM = { has_institution = hhh_dt_l } }
+			custom_tooltip = institution_factor_1
+		}
+		if = {
+			limit = { FROM = { has_institution = nationalism_institution } }
+			custom_tooltip = institution_factor_2
+		}
+		if = {
+			limit = { has_institution = imperialism }
+			custom_tooltip = institution_factor_3
+		}
+		# Политики (решения на интеграцию)
+		if = {
+			limit = { 
+				FROM = { 
+					OR = { 
+						has_country_flag = vassal_integration_adm_unity_burecracy 
+						has_country_flag = vassal_integration_adm_estates 
+						has_country_flag = vassal_integration_adm_taxes_system 
+						has_country_flag = vassal_integration_adm_new_governors
+						has_country_flag = vassal_integration_adm_garanted_privileges						
+					} 
+				} 
+			}
+			custom_tooltip = adm_policies_for_integration 
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_adm_unity_burecracy } }
+			custom_tooltip = adm_policies_1
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_adm_estates } }
+			custom_tooltip = adm_policies_2
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_adm_taxes_system } }
+			custom_tooltip = adm_policies_3
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_adm_new_governors } }
+			custom_tooltip = adm_policies_4 
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_adm_garanted_privileges } }
+			custom_tooltip = adm_policies_5 
+		}
+	}
+
+	option = { # Единый бюрократический аппарат
+		name = vassal_integration.5.1
+		trigger = {
+			OR = {
+				AND = { 
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = cannot_accept_new_policy } NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+			}
+		}
+		custom_tooltip = unity_burecracy_for_vassal
+		
+		hidden_effect = {
+		add_adm_power = -50
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_unity_burecracy } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_adm_unity_burecracy
+				add_liberty_desire = 15
+			}
+		}
+		}
+	}
+	option = { # Уравнивание сословий
+		name = vassal_integration.5.2
+		trigger = {
+			OR = {
+				AND = { 
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_estates } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+			}
+		}
+		custom_tooltip = estates_for_vassal
+		
+		hidden_effect = {
+			add_adm_power = -30
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_estates } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_adm_estates
+				add_liberty_desire = 7.5
+			}
+		}
+		
+		}
+	}
+	option = { # Введение единой налоговой системы
+		name = vassal_integration.5.3
+		trigger = {
+			OR = {
+				AND = { 
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+			}
+		}
+		custom_tooltip = taxes_system_for_vassal
+		
+		hidden_effect = {
+			add_adm_power = -40
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_taxes_system } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_adm_taxes_system
+				add_liberty_desire = 10
+			}
+		}
+		
+		}
+	}
+	option = { # Новые наместники
+		name = vassal_integration.5.4
+		trigger = {
+			OR = {
+				AND = { 
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+				AND = { 
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } NOT = { has_country_flag = cannot_accept_new_policy } } 
+				}
+			}
+		}
+		custom_tooltip = new_governors_for_vassal
+		
+		hidden_effect = {
+			add_adm_power = -25
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_new_governors } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_adm_new_governors
+				add_liberty_desire = 5
+			}
+		}
+		
+		}
+	}
+	option = { # Гарантировать привилегии
+		name = vassal_integration.5.5
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+				}
+			}
+		}
+		
+		custom_tooltip = garanted_privileges_for_vassal
+		
+		hidden_effect = {
+			add_adm_power = -80
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_adm_garanted_privileges } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_adm_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_adm_unity_burecracy clr_country_flag = vassal_integration_adm_estates clr_country_flag = vassal_integration_adm_taxes_system clr_country_flag = vassal_integration_adm_new_governors
+				set_country_flag = cannot_accept_new_policy
+			}
+		}
+		
+		}
+		
+	}
+	
+	option = { # Назад
+		name = vassal_integration.5.6
+		hidden_effect = { country_event = { id = vassal_integration.2 } }
+	}
+	option = { # Выход
+		name = vassal_integration.5.7
+		highlight = yes
+	}
+}
+
+# Дипломатическая интеграция (взаимодействие)
+country_event = {
+	id = vassal_integration.6
+	title = vassal_integration.6.t
+	desc = vassal_integration.6.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		custom_tooltip = dip_factors
+		#Фактор общего развития
+		if = {
+			limit = { FROM = { total_development = 501 } }
+			custom_tooltip = dip_factor_development_501
+		}
+		# Культура и религия
+		if = {
+			limit = { primary_culture = FROM }
+			custom_tooltip = dip_factor_culture
+		}
+		else_if = {
+			limit = { culture_group = FROM }
+			custom_tooltip = dip_factor_culture_group
+		}
+		if = {
+			limit = { NOT = { religion = FROM } }
+			custom_tooltip = dip_factor_religion
+		}
+		else_if = {
+			limit = { NOT = { religion_group = FROM } }
+			custom_tooltip = dip_factor_religion_group
+		}
+		# Уровень технологий
+		if = {
+			limit = { adm_tech = 1 }
+			custom_tooltip = dip_factor_tech_1
+		}
+		if = {
+			limit = { adm_tech = 5 }
+			custom_tooltip = dip_factor_tech_5
+		}
+		if = {
+			limit = { adm_tech = 15 }
+			custom_tooltip = dip_factor_tech_15
+		}
+		if = {
+			limit = { adm_tech = 30 }
+			custom_tooltip = dip_factor_tech_30
+		}
+		if = {
+			limit = { adm_tech = 45 }
+			custom_tooltip = dip_factor_tech_45
+		}
+		if = {
+			limit = { adm_tech = 50 }
+			custom_tooltip = dip_factor_tech_50
+		}
+		# Другое
+		if = {
+			limit = { has_advisor = diplomat }
+			custom_tooltip = dip_factor_advisor
+		}
+		if = {
+			limit = { always = yes }
+			custom_tooltip = dip_factor_reputation_1
+		}
+		if = {
+			limit = { FROM = { marriage_with = overlord } }
+			custom_tooltip = dip_factor_marriage
+		}
+		if = {
+			limit = { FROM = { has_institution = hhh_dt_l } }
+			custom_tooltip = institution_factor_1
+		}
+		if = {
+			limit = { FROM = { has_institution = nationalism_institution } }
+			custom_tooltip = institution_factor_2
+		}
+		if = {
+			limit = { has_institution = imperialism }
+			custom_tooltip = institution_factor_3
+		}
+		# Политики (решения на интеграцию)
+		if = {
+			limit = { 
+				FROM = { 
+					OR = { 
+						has_country_flag = vassal_integration_dip_religious_rights 
+						has_country_flag = vassal_integration_dip_cultural_minorites 
+						has_country_flag = vassal_integration_dip_dinasty_alliance
+						has_country_flag = vassal_integration_dip_garanted_privileges						
+					} 
+				} 
+			}
+			custom_tooltip = dip_policies_for_integration 
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_dip_religious_rights } }
+			custom_tooltip = dip_policies_1
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_dip_cultural_minorites } }
+			custom_tooltip = dip_policies_2
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_dip_dinasty_alliance } }
+			custom_tooltip = dip_policies_3
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_dip_garanted_privileges } }
+			custom_tooltip = dip_policies_4 
+		}
+	}
+	
+	option = { # Обеспечить права религиозного лидера
+		name = vassal_integration.6.1
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+			}
+		}
+		
+		custom_tooltip = religious_rights_for_vassal
+		hidden_effect = {
+			add_dip_power = -30
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_religious_rights } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_dip_religious_rights
+				add_liberty_desire = 7.5
+			}
+		}
+		
+		}
+	}
+	option = { # Культурные меньшинства
+		name = vassal_integration.6.2
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+			}
+		}
+		
+		custom_tooltip = cultural_minorites_for_vassal
+		
+		hidden_effect = {
+			add_dip_power = -40
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_cultural_minorites } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 15
+			}
+		}
+		
+		}
+	}
+	option = { # Династические союзы
+		name = vassal_integration.6.3
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } NOT = { has_country_flag = cannot_accept_new_policy_2 } } 
+				}
+			}
+		}
+		
+		custom_tooltip = dinasty_alliance_for_vassal
+		hidden_effect = {
+			add_dip_power = -50
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_dip_cultural_minorites
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_dip_dinasty_alliance
+				add_liberty_desire = 20
+			}
+		}
+		
+		
+		}
+		
+	}
+	
+	option = { # Гарантировать привилегии
+		name = vassal_integration.6.4
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+				}
+			}
+		}
+		
+		custom_tooltip = garanted_privileges_for_vassal_2
+		hidden_effect = {
+			add_dip_power = -80
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_dip_garanted_privileges } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_dip_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_dip_religious_rights clr_country_flag = vassal_integration_dip_cultural_minorites clr_country_flag = vassal_integration_dip_dinasty_alliance
+				set_country_flag = cannot_accept_new_policy_2
+			}
+		}
+		
+		}
+	}
+	option = { # Назад
+		name = vassal_integration.6.5
+		hidden_effect = { country_event = { id = vassal_integration.2 } }
+	}
+	option = { # Выход
+		name = vassal_integration.6.6
+		highlight = yes
+	}
+}
+
+# Военная интеграция (взаимодействие)
+country_event = {
+	id = vassal_integration.7
+	title = vassal_integration.7.t
+	desc = vassal_integration.7.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		custom_tooltip = mil_factors
+		#Фактор общего развития
+		if = {
+			limit = { FROM = { total_development = 251 } }
+			custom_tooltip = mil_factor_development_251
+		}
+		# Наличие модификатора "Низкая организация"
+		if = {
+			limit = { has_country_modifier = hhh_dark_times }
+			custom_tooltip = mil_factor_low_organizations_1
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_light }
+			custom_tooltip = mil_factor_low_organizations_2
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_s }
+			custom_tooltip = mil_factor_low_organizations_3
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_s_light  }
+			custom_tooltip = mil_factor_low_organizations_4
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_t }
+			custom_tooltip = mil_factor_low_organizations_5
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_t_light  }
+			custom_tooltip = mil_factor_low_organizations_6
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_l }
+			custom_tooltip = mil_factor_low_organizations_7
+		}
+		if = {
+			limit = { has_country_modifier = hhh_dark_times_l_light }
+			custom_tooltip = mil_factor_low_organizations_8
+		}
+		# Культура и религия
+		if = {
+			limit = { primary_culture = FROM }
+			custom_tooltip = mil_factor_culture
+		}
+		else_if = {
+			limit = { culture_group = FROM }
+			custom_tooltip = mil_factor_culture_group
+		}
+		if = {
+			limit = { NOT = { religion = FROM } }
+			custom_tooltip = mil_factor_religion
+		}
+		else_if = {
+			limit = { NOT = { religion_group = FROM } }
+			custom_tooltip = mil_factor_religion_group
+		}
+		# Уровень технологий
+		if = {
+			limit = { adm_tech = 1 }
+			custom_tooltip = mil_factor_tech_1
+		}
+		if = {
+			limit = { adm_tech = 5 }
+			custom_tooltip = mil_factor_tech_5
+		}
+		if = {
+			limit = { adm_tech = 15 }
+			custom_tooltip = mil_factor_tech_15
+		}
+		if = {
+			limit = { adm_tech = 30 }
+			custom_tooltip = mil_factor_tech_30
+		}
+		if = {
+			limit = { adm_tech = 45 }
+			custom_tooltip = mil_factor_tech_45
+		}
+		if = {
+			limit = { adm_tech = 50 }
+			custom_tooltip = mil_factor_tech_50
+		}
+		# Другое
+		if = {
+			limit = { has_advisor = army_organizer }
+			custom_tooltip = mil_factor_advisor
+		}
+		if = {
+			limit = { FROM = { has_institution = hhh_dt_l } }
+			custom_tooltip = institution_factor_1
+		}
+		if = {
+			limit = { FROM = { has_institution = nationalism_institution } }
+			custom_tooltip = institution_factor_2
+		}
+		if = {
+			limit = { has_institution = imperialism }
+			custom_tooltip = institution_factor_3
+		}
+		# Политики (решения на интеграцию)
+		if = {
+			limit = { 
+				FROM = { 
+					OR = { 
+						has_country_flag = vassal_integration_mil_loyalty_officers 
+						has_country_flag = vassal_integration_mil_army_under_control 
+						has_country_flag = vassal_integration_mil_garanted_privileges						
+					} 
+				} 
+			}
+			custom_tooltip = mil_policies_for_integration 
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_mil_loyalty_officers } }
+			custom_tooltip = mil_policies_1
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_mil_army_under_control } }
+			custom_tooltip = mil_policies_2
+		}
+		if = {
+			limit = { FROM = { has_country_flag = vassal_integration_mil_garanted_privileges } }
+			custom_tooltip = mil_policies_3 
+		}
+	}
+	
+	option = { # Лояльные офицеры (+0.25)
+		name = vassal_integration.7.1
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+			}
+		}
+		
+		custom_tooltip = loyalty_officers_for_vassal
+		hidden_effect = {
+			add_mil_power = -25
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers} } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_loyalty_officers } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_mil_loyalty_officers
+				add_liberty_desire = 10
+			}
+		}
+		
+		}
+	}
+	option = { # Упрочить контроль над армией (+0.5)
+		name = vassal_integration.7.2
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+			}
+		}
+		
+		custom_tooltip = army_under_control_for_vassal
+		hidden_effect = {
+			add_mil_power = -40
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_army_under_control } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_mil_army_under_control
+				add_liberty_desire = 20
+			}
+		}
+		
+		}
+	}
+	option = { # Подкуп дворянства (+10)
+		name = vassal_integration.7.3
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } NOT = { has_country_flag = cannot_accept_new_policy_3 } } 
+				}
+			}
+		}
+		
+		custom_tooltip = nobles_payoff_for_vassal
+		hidden_effect = {
+			add_mil_power = -80
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_nobles_payoff } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_mil_nobles_payoff
+				add_liberty_desire = 5
+				change_variable = { which = MIL_integration_process value = 10 }
+			}
+		}
+		
+		}
+	}
+	option = { # Гарантировать привилегии
+		name = vassal_integration.7.4
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = vassal_1
+					any_subject_country = { has_country_flag = vassal_1 }
+					event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_2
+					any_subject_country = { has_country_flag = vassal_2 }
+					event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_3
+					any_subject_country = { has_country_flag = vassal_3 }
+					event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_4
+					any_subject_country = { has_country_flag = vassal_4 }
+					event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_5
+					any_subject_country = { has_country_flag = vassal_5 }
+					event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_6
+					any_subject_country = { has_country_flag = vassal_6 }
+					event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_7
+					any_subject_country = { has_country_flag = vassal_7 }
+					event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_8
+					any_subject_country = { has_country_flag = vassal_8 }
+					event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_9
+					any_subject_country = { has_country_flag = vassal_9 }
+					event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+				AND = {
+					has_country_flag = vassal_10
+					any_subject_country = { has_country_flag = vassal_10 }
+					event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+				}
+			}
+		}
+		
+		custom_tooltip = garanted_privileges_for_vassal_3
+		hidden_effect = {
+			add_mil_power = -60
+		if = {
+			limit = { 
+				has_country_flag = vassal_1
+				any_subject_country = { has_country_flag = vassal_1 }
+				event_target:targetvassal1 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal1 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_2
+				any_subject_country = { has_country_flag = vassal_2 }
+				event_target:targetvassal2 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal2 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_3
+				any_subject_country = { has_country_flag = vassal_3 }
+				event_target:targetvassal3 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal3 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_4
+				any_subject_country = { has_country_flag = vassal_4 }
+				event_target:targetvassal4 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal4 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_5
+				any_subject_country = { has_country_flag = vassal_5 }
+				event_target:targetvassal5 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal5 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_6
+				any_subject_country = { has_country_flag = vassal_6 }
+				event_target:targetvassal6 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal6 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_7
+				any_subject_country = { has_country_flag = vassal_7 }
+				event_target:targetvassal7 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal7 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_8
+				any_subject_country = { has_country_flag = vassal_8 }
+				event_target:targetvassal8 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal8 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_9
+				any_subject_country = { has_country_flag = vassal_9 }
+				event_target:targetvassal9 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal9 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		if = {
+			limit = { 
+				has_country_flag = vassal_10
+				any_subject_country = { has_country_flag = vassal_10 }
+				event_target:targetvassal10 = { NOT = { has_country_flag = vassal_integration_mil_garanted_privileges } } 
+			}
+			event_target:targetvassal10 = {
+				set_country_flag = vassal_integration_mil_garanted_privileges
+				add_liberty_desire = -25
+				# Выключить остальные политики
+				clr_country_flag = vassal_integration_mil_loyalty_officers clr_country_flag = vassal_integration_mil_army_under_control
+				set_country_flag = cannot_accept_new_policy_3
+			}
+		}
+		
+		}
+	}
+	
+	option = { # Назад
+		name = vassal_integration.7.5
+		hidden_effect = { country_event = { id = vassal_integration.2 } }
+	}
+	option = { # Выход
+		name = vassal_integration.7.6
+		highlight = yes
+	}
+}
+
+# Флаг Господина-Оверлорда (выдать)
+country_event = {
+	id = vassal_integration.8
+	title = vassal_integration.8.t
+	desc = vassal_integration.8.d
+	picture = REFORM_eventPicture
+	
+	hidden = yes
+	trigger = {
+		ai = no
+		any_subject_country = { is_subject_of_type = vassal }
+		NOT = { has_country_flag = overlord_country }
+	}
+	
+	option = { # Хорошо
+		name = vassal_integration.8.1
+		set_country_flag = overlord_country
+	}
+}
+
+# Флаг Господина-Оверлорда (забрать)
+country_event = {
+	id = vassal_integration.9
+	title = vassal_integration.8.t
+	desc = vassal_integration.8.d
+	picture = REFORM_eventPicture
+	
+	hidden = yes
+	trigger = {
+		ai = no
+		NOT = { any_subject_country = { is_subject_of_type = vassal } }
+		has_country_flag = overlord_country
+	}
+	
+	option = { # Хорошо
+		name = vassal_integration.8.1
+		clr_country_flag = overlord_country
+	}
+}
+
+# Вспомогательный ивент (для запоминания tag-a вассала) - ADM
+country_event = {
+	id = vassal_integration.10
+	title = vassal_integration.10.t
+	desc = vassal_integration.10.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+	}
+	
+	option = { # Хорошо
+		name = vassal_integration.10.1
+		FROM = { country_event = { id = vassal_integration.5 } }
+	}
+}
+
+# Вспомогательный ивент (для запоминания tag-a вассала) - DIP
+country_event = {
+	id = vassal_integration.11
+	title = vassal_integration.10.t
+	desc = vassal_integration.10.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+	}
+	
+	option = { # Хорошо
+		name = vassal_integration.10.1
+		FROM = { country_event = { id = vassal_integration.6 } }
+	}
+}
+
+# Вспомогательный ивент (для запоминания tag-a вассала) - MIL
+country_event = {
+	id = vassal_integration.12
+	title = vassal_integration.10.t
+	desc = vassal_integration.10.d
+	picture = REFORM_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+	}
+	
+	option = { # Хорошо
+		name = vassal_integration.10.1
+		FROM = { country_event = { id = vassal_integration.7 } }
+	}
+}
+
+# Забрать флаг "Гарантировать привилегии" (ADM)
+country_event = {
+	id = vassal_integration.13
+	title = vassal_integration.11.t
+	desc = vassal_integration.11.d
+	picture = REFORM_eventPicture
+	
+	#is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		any_subject_country = { has_country_flag = vassal_integration_adm_garanted_privileges }
+	}
+	mean_time_to_happen = {
+		days = 3650
+	}
+	
+	option = { # 
+		name = vassal_integration.11.1
+		clr_country_flag = vassal_integration_adm_garanted_privileges
+	}
+}
+# Забрать флаг "Гарантировать привилегии" (ADM)
+country_event = {
+	id = vassal_integration.14
+	title = vassal_integration.11.t
+	desc = vassal_integration.11.d
+	picture = REFORM_eventPicture
+	
+	#is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		any_subject_country = { has_country_flag = vassal_integration_dip_garanted_privileges }
+	}
+	mean_time_to_happen = {
+		days = 3650
+	}
+	
+	option = { # 
+		name = vassal_integration.11.1
+		clr_country_flag = vassal_integration_dip_garanted_privileges
+	}
+}
+
+# Выдать модификатор на увеличение желания свободы, если прожаты все 4 решения
+country_event = {
+	id = vassal_integration.14
+	title = vassal_integration.11.t
+	desc = vassal_integration.11.d
+	picture = REFORM_eventPicture
+	
+	#is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		any_subject_country = { 
+			OR = {
+				AND = {
+					has_country_flag = vassal_integration_adm_unity_burecracy 
+					has_country_flag = vassal_integration_adm_estates 
+					has_country_flag = vassal_integration_adm_taxes_system 
+					has_country_flag = vassal_integration_adm_new_governors
+				}
+				AND = { 
+					has_country_flag = vassal_integration_dip_religious_rights 
+					has_country_flag = vassal_integration_dip_cultural_minorites 
+					has_country_flag = vassal_integration_dip_dinasty_alliance					
+				} 
+				AND = {
+					has_country_flag = vassal_integration_mil_loyalty_officers
+					has_country_flag = vassal_integration_mil_army_under_control
+					has_country_flag = vassal_integration_mil_nobles_payoff
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # 
+		name = vassal_integration.11.1
+		add_country_modifier = {
+			name = strong_integration
+			duration = -1
+		}
+	}
+}
+# Забрать модификатор на увеличение желания свободы
+country_event = {
+	id = vassal_integration.15
+	title = vassal_integration.12.t
+	desc = vassal_integration.12.d
+	picture = REFORM_eventPicture
+	
+	hidden = yes
+	trigger = {
+		any_subject_country = { 
+			has_country_modifier = strong_integration
+			OR = {
+				OR = {
+					NOT = { has_country_flag = vassal_integration_adm_unity_burecracy }
+					NOT = { has_country_flag = vassal_integration_adm_estates }
+					NOT = { has_country_flag = vassal_integration_adm_taxes_system }
+					NOT = { has_country_flag = vassal_integration_adm_new_governors }
+				}
+				OR = { 
+					NOT = { has_country_flag = vassal_integration_dip_religious_rights } 
+					NOT = { has_country_flag = vassal_integration_dip_cultural_minorites }
+					NOT = { has_country_flag = vassal_integration_dip_dinasty_alliance }				
+				} 
+				OR = {
+					NOT = { has_country_flag = vassal_integration_mil_loyalty_officers }
+					NOT = { has_country_flag = vassal_integration_mil_army_under_control }
+					NOT = { has_country_flag = vassal_integration_mil_nobles_payoff }
+				}
+			}
+		}
+	}
+	
+	option = { # Хорошо
+		name = vassal_integration.12.1
+		remove_country_modifier = strong_integration
+	}
+}
+
+# Убрать флаг "Подкуп дворянства" у вассала
+country_event = {
+	id = vassal_integration.16
+	title = vassal_integration.16.t
+	desc = vassal_integration.16.d
+	picture = REFORM_eventPicture
+	
+	hidden = yes
+	trigger = {
+		has_country_flag = vassal_integration_mil_nobles_payoff
+	}
+	
+	mean_time_to_happen = { days = 7300 }
+	
+	option = {
+		name = vassal_integration.16.1
+		clr_country_flag = vassal_integration_mil_nobles_payoff
+	}
+}
+
+# Восстание сословий (у вассала) 
+country_event = {
+	id = vassal_integration.17
+	title = vassal_integration.17.t
+	desc = vassal_integration.17.d
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		any_subject_country = {
+			has_country_flag = vassal_integration_adm_estates
+			NOT = { liberty_desire = 50 }
+			liberty_desire = 10
+			NOT = { legitimacy = 90 }
+			NOT = { stability = 2 }
+		}
+	}
+	
+	mean_time_to_happen = { 
+		days = 365 
+		
+		modifier = {
+			factor = 0.5
+			liberty_desire = 25
+		}
+		modifier = {
+			factor = 0.5
+			liberty_desire = 45
+		}
+		
+		modifier = {
+			factor = 1.5
+			liberty_desire = 10
+		}
+		modifier = {
+			factor = 1.5
+			legitimacy = 85
+		}
+	}
+	
+	option = {
+		name = vassal_integration.17.1
+		random_subject_country = {
+			limit = { has_country_flag = vassal_integration_adm_estates }
+			
+			random_owned_province = {
+				spawn_rebels = {
+					type = particularist_rebels
+					size = 1				
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = leadered_peasant_rebels
+					size = 1				
+				}
+			}
+			random_owned_province = {
+				spawn_rebels = {
+					type = noble_rebels
+					size = 1				
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,1000 @@
+namespace = stt_ostsiedlung
+############### Ostsiedlung's culture conversion #################
+# Главный ивент (просчитывание процента ассимиляции)
+country_event = {
+	id = stt_ostsiedlung.101
+	title = stt_ostsiedlung.1.t
+	desc = stt_ostsiedlung.1.d
+	picture = plato_book_event_picture
+	
+	is_triggered_only = yes 
+	hidden = yes
+
+	trigger = {
+		
+	}
+	immediate = {
+		promote_to_ostsiedlung_effect = yes
+		#every_owned_province = {
+		#	limit = {
+		#		OR = {
+		#			has_province_modifier = pomerellia_resist
+		#			has_province_modifier = resistance_lithuanians
+		#			has_province_modifier = resistance_lithuanians_2
+		#			has_province_modifier = resistance_lithuanians_3
+		#		}
+		#		has_province_modifier = promote_ostsiedlung_1
+		#	}
+		#	remove_province_modifier = promote_ostsiedlung_1
+		#	clr_province_flag = ostsiedlung
+		#}
+	}
+	option = {
+		name = stt_ostsiedlung.1.1
+		country_event = { id = stt_ostsiedlung.1 days = 1825 }
+	}
+}
+# Главный ивент 2 (цикличность и продолжение конверсии в других провах)
+country_event = {
+	id = stt_ostsiedlung.1
+	title = stt_ostsiedlung.1.t
+	desc = stt_ostsiedlung.1.d
+	picture = plato_book_event_picture
+	
+	is_triggered_only = yes 
+	hidden = yes
+
+	trigger = {
+		
+	}
+	option = {
+		name = stt_ostsiedlung.101.1
+		country_event = { id = stt_ostsiedlung.101 }
+		
+		# Дальнейшее распространение культуры
+		every_province = {
+			limit = { 
+				#owner = { 
+				#	OR = {
+				#		culture = silesian
+				#		culture_group = germanic
+				#	}
+				#}
+				has_province_flag = can_to_ostsiedlung 
+			}
+			
+			clr_province_flag = can_to_ostsiedlung 
+			add_province_modifier = {
+				name = promote_ostsiedlung_1
+				duration = -1
+			}
+			set_province_flag = province_of_ostsiedlung
+			change_variable = { which = conversion_var value = 0.01 }
+		}
+		
+	}
+}	
+
+# Изменение культуры
+country_event = {
+	id = stt_ostsiedlung.2
+	title = stt_ostsiedlung.2.t
+	desc = stt_ostsiedlung.2.d
+	picture = CITY_VIEW_eventPicture
+	
+	#is_triggered_only = yes 
+	#hidden = yes
+	
+	trigger = {
+		any_owned_province = {
+			check_variable = { which = conversion_var value = 100 }
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		
+	}
+	option = {
+		name = stt_ostsiedlung.2.1
+		every_owned_province = {
+			limit = { check_variable = { which = conversion_var value = 100 } }
+			# Смена культуры в зависимости от области
+			if = {
+				limit = { 
+					owner = { culture_group = germanic }
+					OR = {
+						area = vorpommern_area
+						area = hinter_pommern_area
+					}
+				}
+				change_culture = pommeranian
+			}
+			if = {
+				limit = { 
+					owner = { culture_group = germanic }
+					OR = {
+						area = mittelmark_area
+						area = neumark_area
+						area = south_saxony_area
+						area = erzgebirge_area
+					}
+				}
+				change_culture = saxon
+			}
+			if = {
+				limit = { 
+					owner = { culture_group = germanic }
+					OR = {
+						area = livonia_area
+						area = east_livonia_area
+						area = estonia_ingria_area
+						area = east_estonia_area 
+						area = curonia_area
+						area = ingria_area
+					}
+				}
+				change_culture = ostzian
+			}
+			if = {
+				limit = { 
+					owner = { culture_group = germanic }
+					OR = {
+						area = west_prussia_area
+						area = east_prussia_area
+						area = covno_area
+					}
+				}
+				change_culture = prussian
+			}
+			if = {
+				limit = { 
+					OR = {
+						area = silesia_area
+						area = upper_silesia_area
+						province_id = 3732 # Освенцим
+						province_id = 3244 # Цешин
+					}
+				}
+				change_culture = german_silesian
+			}
+			if = {
+				limit = { 
+					owner = { culture_group = germanic }
+					OR = { 
+						area = wielkopolska_area
+						area = lithuania_area
+						area = ingria_area
+						area = pskov_area 
+						area = kalish_area
+						area = mazovia_area
+						area = novgorod_area
+					}
+				}
+				change_culture = owner
+			}
+			
+			# Чистка флагов, модификаторов и переменных
+			hidden_effect = { 
+				clr_province_flag = province_of_ostsiedlung
+				remove_province_modifier = promote_ostsiedlung_1
+				set_variable = { which = conversion_var value = 0 }
+				add_province_modifier = {
+					name = promote_ostsiedlung_2
+					duration = 3650
+				}
+			}
+			
+			# Вопрос смены религии (рандом)
+			if = {
+				limit = { NOT = { religion = owner } }
+				random_list = {
+					90 = { add_unrest = 10 }
+					5 = { change_religion = owner add_unrest = 5 }
+					4 = { }
+					1 = { change_religion = owner }
+				}
+			}
+			
+			# Соседние провинции получат флаг для продолжения распространения миграции
+			every_neighbor_province = {
+				limit = { 
+					OR = {
+						owner = { culture = silesian }
+						owner = { culture = czech }
+						owner = { culture_group = germanic }
+					}
+					NOT = { has_province_modifier = promote_ostsiedlung_1 }
+					NOT = { has_province_modifier = promote_ostsiedlung_2 }
+					province_group = german_ostsiedlung_group
+				}
+				set_province_flag = can_to_ostsiedlung 
+			}
+		}
+		#hidden_effect = { clr_country_flag = promote_ostsiedlung }
+	}	
+}
+
+# Вспомогательный ивент (вновь открывает доступ к решению)
+country_event = {
+	id = stt_ostsiedlung.3
+	title = stt_ostsiedlung.3.t
+	desc = stt_ostsiedlung.3.d
+	picture = CITY_VIEW_eventPicture
+	
+	#is_triggered_only = yes 
+	hidden = yes
+	
+	trigger = {
+		has_country_flag = promote_ostsiedlung
+		all_owned_province = { 
+			NOT = { has_province_flag = ostsiedlung } 
+			NOT = { has_province_modifier = promote_ostsiedlung_1 } 
+		}
+	}
+	
+	option = {
+		name = stt_ostsiedlung.3.1
+		
+		hidden_effect = { clr_country_flag = promote_ostsiedlung }
+	}	
+}
+# Вспомогательный ивент (убирает ограничение на ассимиляцию культур)
+country_event = {
+	id = stt_ostsiedlung.4
+	title = stt_ostsiedlung.4.t
+	desc = stt_ostsiedlung.4.d
+	picture = CITY_VIEW_eventPicture
+	
+	#is_triggered_only = yes 
+	hidden = yes
+	
+	trigger = {
+		OR = {
+			any_country = {
+				has_country_flag = country_of_ostsiedlung
+				NOT = { culture_group = germanic }
+			}
+			AND = {
+				any_country = { has_country_flag = country_of_ostsiedlung }
+				is_year = 1800
+			}
+			AND = {
+				any_country = { has_country_flag = country_of_ostsiedlung }
+				all_owned_province = { culture_group = germanic }
+			}
+		}
+	}
+	
+	option = {
+		name = stt_ostsiedlung.4.1
+		
+		hidden_effect = { clr_country_flag = country_of_ostsiedlung }
+	}	
+}
+
+# Вспомогательный ивент (подсчет кол-ва провинций)
+country_event = {
+	id = stt_ostsiedlung.5
+	title = stt_ostsiedlung.5.t
+	desc = stt_ostsiedlung.5.d
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes 
+	hidden = yes
+	
+	trigger = {
+		
+	}
+	immediate = {
+		every_country = {
+			set_variable = { which = Provinces_of_EastEurope_owns_German value = 0 }
+		}
+		
+		trigger_switch = {
+			on_trigger = region
+			
+			baltic_region = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+		}
+		
+		trigger_switch = {
+			on_trigger = area 
+			
+			vorpommern_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			hinter_pommern_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			mittelmark_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			neumark_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			ingria_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			south_saxony_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			silesia_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			upper_silesia_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			wielkopolska_area = {
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+		}
+		
+		trigger_switch = {
+			on_trigger = province_id
+				
+			3732 = {  # Освенцим
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+			3244 = { # Цешин
+				limit = { owner = { culture_group = germanic } }
+				owner = { change_variable = { which = Provinces_of_EastEurope_owns_German value = 1 } }
+			}
+		}
+	}
+	option = {
+		name = stt_ostsiedlung.5.1
+		
+		
+	}	
+}
+
+# Вспомогательный ивент (выдача провинциям оригинальных названий)
+country_event = {
+	id = stt_ostsiedlung.6
+	title = stt_ostsiedlung.6.t
+	desc = stt_ostsiedlung.6.d
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes 
+	hidden = yes
+	
+	trigger = {
+	}
+	immediate = {
+		
+		# Западная Пруссия
+			42 = { # Вармия
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Вармия" 
+					rename_capital = "Бранево"
+					set_province_flag = origin_name
+				}
+			}
+			43 = { # Данциг
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Гданьск" 
+					rename_capital = "Гданьск"
+					set_province_flag = origin_name
+				}
+			} 
+			1841 = { # Мариенбург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Эльблонг" 
+					rename_capital = "Мальборк"
+					set_province_flag = origin_name
+				}
+			} 
+			1859 = { # Хелмно
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Хелмно" 
+					rename_capital = "Торунь"
+					set_province_flag = origin_name
+				}
+			} 
+			2997 = { # Пуцк
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Пуцк" 
+					rename_capital = "Пуцк"
+					set_province_flag = origin_name
+				}
+			} 
+			3734 = { # Тухель
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Поморье" 
+					rename_capital = "Тухель"
+					set_province_flag = origin_name
+				}
+			} 
+			4213 = { # Хойнице
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Хойнице" 
+					rename_capital = "Хойнице"
+					set_province_flag = origin_name
+				}
+			} 
+		
+		# Восточная Пруссия
+			40 = { # Мемель
+				if = {
+					limit = { 
+						NOT = { culture_group = germanic } 
+						owner = { NOT = { culture_group = germanic } }
+					}
+					change_province_name = "Клайпеда" 
+					rename_capital = "Клайпеда"
+					set_province_flag = origin_name
+				}
+			} 
+			41 = { # Кенигсберг
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Самбия" 
+					rename_capital = "Кёнигсберг"
+					set_province_flag = origin_name
+				}
+			} 
+			767 = { # Ортельсбург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Галиндия" 
+					rename_capital = "Ортельсбург"
+					set_province_flag = origin_name
+				}
+			} 
+			2958 = { # Остроде
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Помезания" 
+					rename_capital = "Оструда"
+					set_province_flag = origin_name
+				}
+			} 
+			3231 = { # Инстербург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Скаловия" 
+					rename_capital = "Унзетрапис"
+					set_province_flag = origin_name
+				}
+			} 
+			4223 = { # Лек
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Лукс" 
+					rename_capital = "Лукс"
+					set_province_flag = origin_name
+				}
+			} 
+			4224 = { # Тапиау
+				limit = { NOT = { culture_group = germanic } }
+				if = {
+					change_province_name = "Натангия" 
+					rename_capital = "Тапиов"
+					set_province_flag = origin_name
+				}
+			} 
+			4444 = { # Рагнит
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Малая Литва" 
+					rename_capital = "Рагнит"
+					set_province_flag = origin_name
+				}
+			} 
+		# Курляндия
+			39 = { # Пилтене
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Пилтене" 
+					rename_capital = "Пилтене"
+					set_province_flag = origin_name
+				}
+			} 
+			1935 = { # Митау
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Земгале" 
+					rename_capital = "Митау"
+					set_province_flag = origin_name
+				}
+			}  
+			3212 = { # Кулдига
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Курземе" 
+					rename_capital = "Кулдига"
+					set_province_flag = origin_name
+				}
+			} 
+			4439 = { # Дурбен
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Дурбе" 
+					rename_capital = "Дурбе"
+					set_province_flag = origin_name
+				}
+			} 
+			4440 = { # Скрунда
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Скрунда" 
+					rename_capital = "Скрунда"
+					set_province_flag = origin_name
+				}
+			} 
+			4441 = { # Фрауэнбург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Салдус" 
+					rename_capital = "Салдус"
+					set_province_flag = origin_name
+				}
+			} 
+		
+		# Ливония
+			37 = { # Феллин
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Сакала" 
+					rename_capital = "Феллин"
+					set_province_flag = origin_name
+				}
+			} 
+			273 = { # Латгале
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Латгале" 
+					rename_capital = "Кройцбург"
+					set_province_flag = origin_name
+				}
+			} 
+			1834 = { # Дерпт
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Йогентагана" 
+					rename_capital = "Дерпт"
+					set_province_flag = origin_name
+				}
+			} 
+			3211 = { # Зонебург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Видземе" 
+					rename_capital = "Зонебург"
+					set_province_flag = origin_name
+				}
+			}
+			3213 = { # Резенке
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Резенке" 
+					rename_capital = "Резенке"
+					set_province_flag = origin_name
+				}
+			} 
+			4281 = { # Даугпилис
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Даугпилис" 
+					rename_capital = "Даугпилис"
+					set_province_flag = origin_name
+				}
+			} 
+			4282 = { # Салис
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Салетса" 
+					rename_capital = "Салетса"
+					set_province_flag = origin_name
+				}
+			} 
+			4283 = { # Пернау
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Пярнумаа" 
+					rename_capital = "Пярну"
+					set_province_flag = origin_name
+				}
+			} 
+			4284 = { # Оденпе
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Уганди" 
+					rename_capital = "Оденпе"
+					set_province_flag = origin_name
+				}
+			}  
+			4437 = { # Шваненбург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Гулбене" 
+					rename_capital = "Гулбене"
+					set_province_flag = origin_name
+				}
+			} 
+			4438 = { # Мариенбург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Алыстъ" 
+					rename_capital = "Алыстъ"
+					set_province_flag = origin_name
+				}
+			}
+				
+		# Эстония-Ингрия
+			35 = { # о. Эзель
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Сааремаа" 
+					rename_capital = "Аренсбург"
+					set_province_flag = origin_name
+				}
+			} 
+			36 = { # Ревель
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Ревала" 
+					rename_capital = "Ревель"
+					set_province_flag = origin_name
+				}
+			} 
+			1842 = { # Нарва
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Ида-Вирумаа" 
+					rename_capital = "Нарва"
+					set_province_flag = origin_name
+				}
+			} 
+			3210 = { # Хаапсалу
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Ляэнемаа" 
+					rename_capital = "Хаапсалу"
+					set_province_flag = origin_name
+				}
+			}  
+			3728 = { # о. Даго
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Хииумаа" 
+					rename_capital = "Хииумаа"
+					set_province_flag = origin_name
+				}
+			} 
+			3729 = { # Везенберг
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Вирумаа" 
+					rename_capital = "Тарбапеа"
+					set_province_flag = origin_name
+				}
+			} 
+			4435 = { # Леаль
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Пярнумаа" 
+					rename_capital = "Лихула"
+					set_province_flag = origin_name
+				}
+			} 
+			4436 = { # Виттенштейн
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Ярвамаа" 
+					rename_capital = "Пайде"
+					set_province_flag = origin_name
+				}
+			} 
+			
+		# Жемайтия 
+			271 = { # Жмудь
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Палонга" 
+					rename_capital = "Палонга"
+					set_province_flag = origin_name
+				}
+			} 
+			1936 = { # Каунас
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Каунас" 
+					rename_capital = "Каунас"
+					set_province_flag = origin_name
+				}
+			} 
+			3695 = { # Юрборк
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Юрборк" 
+					rename_capital = "Юрборк"
+					set_province_flag = origin_name
+				}
+			} 
+			3697 = { # Шауляй
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Шауляй" 
+					rename_capital = "Шауляй"
+					set_province_flag = origin_name
+				}
+			} 
+			3698 = { # Таураге
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Таураге" 
+					rename_capital = "Таураге"
+					set_province_flag = origin_name
+				}
+			} 
+			4280 = { # Пасвалис
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Пасвалис" 
+					rename_capital = "Пасвалис"
+					set_province_flag = origin_name
+				}
+			} 	
+			4442 = { # Расейняй
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Расейняй" 
+					rename_capital = "Расейняй"
+					set_province_flag = origin_name
+				}
+			} 
+				
+		# Аукштайтия
+			270 = { # Тракаи
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Тракай" 
+					rename_capital = "Тракай"
+					set_province_flag = origin_name
+				}
+			} 
+			272 = { # Вильнус
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Вильниа" 
+					rename_capital = "Вильниа"
+					set_province_flag = origin_name
+				}
+			} 
+			3229 = { # Сувалкия
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Сувалкия" 
+					rename_capital = "Науместис"
+					set_province_flag = origin_name
+				}
+			}
+			3696 = { # Утена
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Утена" 
+					rename_capital = "Утена"
+					set_province_flag = origin_name
+				}
+			} 
+			4279 = { # Укмерге
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Вилкмерге" 
+					rename_capital = "Вилкмерге"
+					set_province_flag = origin_name
+				}
+			} 
+				
+		# Померания
+			48 = { # Кольберг
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Колобжег" 
+					rename_capital = "Колобжег"
+					set_province_flag = origin_name
+				}
+			} 
+			2995 = { # Штольп
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Слупск" 
+					rename_capital = "Слупск"
+					set_province_flag = origin_name
+				}
+			} 
+			4126 = { # Кеслин
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Кошалин" 
+					rename_capital = "Кошалин"
+					set_province_flag = origin_name
+				}
+			}
+			4128 = { # Дойч-Кроне
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Валч" 
+					rename_capital = "Валч"
+					set_province_flag = origin_name
+				}
+			} 
+			4445 = { # Бутов
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Лемборк" 
+					rename_capital = "Лемборк"
+					set_province_flag = origin_name
+				}
+			}
+			4446 = { # Барвальде
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Барвиц" 
+					rename_capital = "Барвиц"
+					set_province_flag = origin_name
+				}
+			}
+			4447 = { # Драмбург
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Дравско" 
+					rename_capital = "Дравско"
+					set_province_flag = origin_name
+				}
+			} 
+			
+		# Лузатия
+			60 = { # Баутцен (Верхняя Лужица)
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Верхняя Лужица" 
+					rename_capital = "Будышин"
+					set_province_flag = origin_name
+				}
+			} 
+			1763 = { # Бесков (Нижняя Лужица)
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Нижняя Лужица" 
+					rename_capital = "Безков"
+					set_province_flag = origin_name
+				}
+			} 
+			4161 = { # Котбус
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Котзебус" 
+					rename_capital = "Котзебус"
+					set_province_flag = origin_name
+				}
+			} 
+			
+		# Великая Польша (не нужно, как напоминание)
+			#254 # Познань
+			#2963 # Быдгощь
+			#3248 # Гнезно
+			#3249 # Пила
+			#4210 # Свебодзин
+			#4211 # Накло
+			#4212 # Яроцин
+		
+		# Силезия (не нужно, как напоминание)
+			263 = { # Ратибор
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Рацибуж" 
+					rename_capital = "Рацибуж"
+					set_province_flag = origin_name
+				}
+			} 
+			#264 # Вроцлав
+			#2966 # Глогув
+			#3244 # Цешин
+			#3257 # Лехнице
+			#3258 # Бжег
+			#3732 # Освенцим
+			#4158 # Свидница
+			#4159 # Бытом
+			#4164 # Опава
+			#4165 # Жагань
+			4166 = { # Ныса
+				if = {
+					limit = { NOT = { culture_group = germanic } }
+					change_province_name = "Ныса" 
+					rename_capital = "Ныса"
+					set_province_flag = origin_name
+				}
+			} 
+			#4167 # Ополе
+			#4451 # Сцинава
+			#4452 # Тшебница
+			#4453 # Явор
+			#4454 # Клодзко
+	}
+	option = {
+		name = stt_ostsiedlung.6.1
+		
+	}	
+}
+
+# Выдача флага Country_of_Ostsiedlung
+country_event = {
+	id = stt_ostsiedlung.7
+	title = stt_ostsiedlung.7.t
+	desc = stt_ostsiedlung.7.d
+	picture = plato_book_event_picture
+	
+	hidden = yes
+
+	trigger = {
+		any_country = {
+			culture_group = germanic
+			any_owned_province = { 
+				NOT = { culture_group = owner } 
+				province_group = german_ostsiedlung_group
+			}
+		}
+	}
+	option = {
+		name = stt_ostsiedlung.7.1
+		every_country = {
+			limit = {
+				culture_group = germanic
+				any_owned_province = { 
+					NOT = { culture_group = owner } 
+					province_group = german_ostsiedlung_group
+				}
+			}
+			set_country_flag = country_of_ostsiedlung
+			add_country_modifier = {
+				name = is_ostsiedlung
+				duration = -1
+			}
+		}
+	}
+}
+
+# Смена государственной культуры для государств Силезии
+country_event = {
+	id = stt_ostsiedlung.8
+	title = stt_ostsiedlung.8.t
+	desc = stt_ostsiedlung.8.d
+	picture = plato_book_event_picture
+	
+	hidden = yes
+
+	trigger = {
+		any_country = {
+			primary_culture = silesian
+			any_owned_province = { culture_group = germanic }
+		}
+	}
+	option = {
+		name = stt_ostsiedlung.8.1
+		
+		change_primary_culture = german_silesian
+	}
+}

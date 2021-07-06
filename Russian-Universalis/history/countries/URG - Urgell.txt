@@ -1,0 +1,50 @@
+government = monarchy
+add_government_reform = feudalism_reform
+religion = catholic
+primary_culture = catalan
+technology_group = western
+capital = 2987	# Urgell
+
+1309.3.9 = {
+	monarch = {
+		name = "Эрменгол X"
+		dynasty = "Де Кабарера"
+		birth_date = 1250.5.8
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}
+
+1328.1.8 = {
+	monarch = {
+		name = "Хайме I"
+		dynasty = "Де Кабарера"
+		birth_date = 1275.1.1
+		adm = 4
+		dip = 2
+		mil = 3
+	}
+}
+
+1347.1.8 = {
+	monarch = {
+		name = "Педро II"
+		dynasty = "Де Кабарера"
+		birth_date = 1330.1.1
+		adm = 4
+		dip = 2
+		mil = 3
+	}
+}
+
+1408.7.9 = {
+	monarch = {
+		name = "Хайме II Несчастливый"
+		dynasty = "Де Кабарера"
+		birth_date = 1380.1.1
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}  

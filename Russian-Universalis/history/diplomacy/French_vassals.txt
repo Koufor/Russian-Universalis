@@ -1,0 +1,90 @@
+vassal = {
+	first = FRA
+	second = FOI
+	start_date = 1399.1.1
+	end_date = 1589.8.2
+}
+
+vassal = {
+	first = FRA
+	second = AMG
+	start_date = 1399.1.1
+	end_date = 1589.8.2
+}
+
+vassal = {
+	first = FRA
+	second = ANG
+	start_date = 1309.1.1
+	end_date = 1515.1.1
+}
+
+vassal = {
+	first = FRA
+	second = ABT
+	start_date = 1399.1.1
+	end_date = 1572.1.1
+}
+
+vassal = {
+	first = FRA
+	second = AUV
+	start_date = 1399.1.1
+	end_date = 1589.8.2
+}
+
+vassal = {
+	first = FRA
+	second = BOU
+	start_date = 1399.1.1
+	end_date = 1537.1.1
+}
+
+vassal = {
+	first = FRA
+	second = ORL
+	start_date = 1399.1.1
+	end_date = 1563.3.19
+}
+
+vassal = {
+	first = FRA
+	second = ALE
+	start_date = 1399.1.1
+	end_date = 1549.1.1
+}
+
+union = {
+	first = FRA
+	second = NAV
+	start_date = 1284.1.1
+	end_date = 1328.4.1
+}
+
+union = {
+	first = FRA
+	second = CHP
+	start_date = 1285.6.6
+	end_date = 1334.4.1
+}
+
+vassal = {
+	first = FRA
+	second = CLR
+	start_date = 1331.1.1
+	end_date = 1527.5.6
+}
+
+vassal = {
+	first = FRA
+	second = TRN
+	start_date = 1309.1.1
+	end_date = 1584.1.1
+}
+
+union = {
+	first = PRO
+	second = MNN
+	start_date = 1284.1.1
+	end_date = 1382.1.1
+}

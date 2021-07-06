@@ -1,0 +1,359 @@
+namespace = stt_diplo_ex
+############### Diplomatic Expences #################
+# Вспомогательный ивент
+country_event = {
+	id = stt_diplo_ex.101
+	title = stt_diplo_ex.1.t
+	desc = stt_diplo_ex.1.d
+	picture = plato_book_event_picture
+	
+	is_triggered_only = yes 
+	hidden = yes
+
+	trigger = {
+		
+	}
+	immediate = {
+		calc_dip_variable_effect = yes
+	}
+	option = {
+		name = stt_diplo_ex.1.1
+		country_event = { id = stt_diplo_ex.1 }
+	}
+}
+# Расчет выплат для союзов, дин. браков и дипломатов
+country_event = {
+	id = stt_diplo_ex.1
+	title = stt_diplo_ex.101.t
+	desc = stt_diplo_ex.101.d
+	picture = plato_book_event_picture
+	
+	is_triggered_only = yes 
+	hidden = yes
+
+	trigger = {
+		
+	}
+	option = {
+		name = stt_diplo_ex.101.1
+		# Союзы и дин. браки
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 1 } }
+			add_country_modifier = {
+				name = dipcost_1
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 2 } }
+			add_country_modifier = {
+				name = dipcost_2
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 3 } }
+			add_country_modifier = {
+				name = dipcost_3
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 4 } }
+			add_country_modifier = {
+				name = dipcost_4
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 5 } }
+			add_country_modifier = {
+				name = dipcost_5
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 6 } }
+			add_country_modifier = {
+				name = dipcost_6
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 7 } }
+			add_country_modifier = {
+				name = dipcost_7
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 8 } }
+			add_country_modifier = {
+				name = dipcost_8
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 9 } }
+			add_country_modifier = {
+				name = dipcost_9
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 10 } }
+			add_country_modifier = {
+				name = dipcost_10
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 11 } }
+			add_country_modifier = {
+				name = dipcost_11
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 12 } }
+			add_country_modifier = {
+				name = dipcost_12
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 13 } }
+			add_country_modifier = {
+				name = dipcost_13
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_14 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_14 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 14 } }
+			add_country_modifier = {
+				name = dipcost_14
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_15 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_15
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 15 } }
+			add_country_modifier = {
+				name = dipcost_15
+				duration = -1
+			}
+			If = {
+				limit = { OR = { has_country_modifier = dipcost_1 has_country_modifier = dipcost_2 has_country_modifier = dipcost_3 has_country_modifier = dipcost_4 has_country_modifier = dipcost_5 has_country_modifier = dipcost_6 has_country_modifier = dipcost_7 has_country_modifier = dipcost_8 has_country_modifier = dipcost_9 has_country_modifier = dipcost_10 has_country_modifier = dipcost_11 has_country_modifier = dipcost_12 has_country_modifier = dipcost_13 has_country_modifier = dipcost_14 } }
+				remove_country_modifier = dipcost_1 remove_country_modifier = dipcost_2 remove_country_modifier = dipcost_3 remove_country_modifier = dipcost_4 remove_country_modifier = dipcost_5 remove_country_modifier = dipcost_6 remove_country_modifier = dipcost_7 remove_country_modifier = dipcost_8 remove_country_modifier = dipcost_9 remove_country_modifier = dipcost_10 remove_country_modifier = dipcost_11 remove_country_modifier = dipcost_12 remove_country_modifier = dipcost_13 remove_country_modifier = dipcost_14
+			}
+		}
+		
+		# Дипломаты
+		if = {
+			limit = { num_of_diplomats = 1 }
+			#limit = { check_variable = { which = diplomat_var value = 1 } }
+			add_country_modifier = {
+				name = dipcost_d_1
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_2 has_country_modifier = dipcost_d_3 has_country_modifier = dipcost_d_4 has_country_modifier = dipcost_d_5 has_country_modifier = dipcost_d_6 has_country_modifier = dipcost_d_7 has_country_modifier = dipcost_d_8 } }
+				remove_country_modifier = dipcost_d_2 remove_country_modifier = dipcost_d_3 remove_country_modifier = dipcost_d_4 remove_country_modifier = dipcost_d_5 remove_country_modifier = dipcost_d_6 remove_country_modifier = dipcost_d_7 remove_country_modifier = dipcost_d_8
+			}
+		}
+		if = {
+			limit = { num_of_diplomats = 2 }
+			#limit = { check_variable = { which = diplomat_var value = 2 } }
+			add_country_modifier = {
+				name = dipcost_d_2
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_1 has_country_modifier = dipcost_d_3 has_country_modifier = dipcost_d_4 has_country_modifier = dipcost_d_5 has_country_modifier = dipcost_d_6 has_country_modifier = dipcost_d_7 has_country_modifier = dipcost_d_8 } }
+				remove_country_modifier = dipcost_d_1 remove_country_modifier = dipcost_d_3 remove_country_modifier = dipcost_d_4 remove_country_modifier = dipcost_d_5 remove_country_modifier = dipcost_d_6 remove_country_modifier = dipcost_d_7 remove_country_modifier = dipcost_d_8
+			}
+		}
+		if = {
+			limit = { num_of_diplomats = 3 }
+			#limit = { check_variable = { which = diplomat_var value = 3 } }
+			add_country_modifier = {
+				name = dipcost_d_3
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_1 has_country_modifier = dipcost_d_2 has_country_modifier = dipcost_d_4 has_country_modifier = dipcost_d_5 has_country_modifier = dipcost_d_6 has_country_modifier = dipcost_d_7 has_country_modifier = dipcost_d_8 } }
+				remove_country_modifier = dipcost_d_1 remove_country_modifier = dipcost_d_2 remove_country_modifier = dipcost_d_4 remove_country_modifier = dipcost_d_5 remove_country_modifier = dipcost_d_6 remove_country_modifier = dipcost_d_7 remove_country_modifier = dipcost_d_8
+			}
+		}
+		if = {
+			limit = { num_of_diplomats = 4 }
+			#limit = { check_variable = { which = diplomat_var value = 4 } }
+			add_country_modifier = {
+				name = dipcost_d_4
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_1 has_country_modifier = dipcost_d_2 has_country_modifier = dipcost_d_3 has_country_modifier = dipcost_d_5 has_country_modifier = dipcost_d_6 has_country_modifier = dipcost_d_7 has_country_modifier = dipcost_d_8 } }
+				remove_country_modifier = dipcost_d_1 remove_country_modifier = dipcost_d_2 remove_country_modifier = dipcost_d_3 remove_country_modifier = dipcost_d_5 remove_country_modifier = dipcost_d_6 remove_country_modifier = dipcost_d_7 remove_country_modifier = dipcost_d_8
+			}
+		}
+		if = {
+			limit = { num_of_diplomats = 5 }
+			#limit = { check_variable = { which = diplomat_var value = 5 } }
+			add_country_modifier = {
+				name = dipcost_d_5
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_1 has_country_modifier = dipcost_d_2 has_country_modifier = dipcost_d_3 has_country_modifier = dipcost_d_4 has_country_modifier = dipcost_d_6 has_country_modifier = dipcost_d_7 has_country_modifier = dipcost_d_8 } }
+				remove_country_modifier = dipcost_d_1 remove_country_modifier = dipcost_d_2 remove_country_modifier = dipcost_d_3 remove_country_modifier = dipcost_d_4 remove_country_modifier = dipcost_d_6 remove_country_modifier = dipcost_d_7 remove_country_modifier = dipcost_d_8
+			}
+		}
+		if = {
+			limit = { num_of_diplomats = 6 }
+			#limit = { check_variable = { which = diplomat_var value = 6 } }
+			add_country_modifier = {
+				name = dipcost_d_6
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_1 has_country_modifier = dipcost_d_2 has_country_modifier = dipcost_d_3 has_country_modifier = dipcost_d_4 has_country_modifier = dipcost_d_5 has_country_modifier = dipcost_d_7 has_country_modifier = dipcost_d_8 } }
+				remove_country_modifier = dipcost_d_1 remove_country_modifier = dipcost_d_2 remove_country_modifier = dipcost_d_3 remove_country_modifier = dipcost_d_4 remove_country_modifier = dipcost_d_5 remove_country_modifier = dipcost_d_7 remove_country_modifier = dipcost_d_8
+			}
+		}
+		if = {
+			limit = { num_of_diplomats = 7 }
+			#limit = {  check_variable = { which = diplomat_var value = 7 } }
+			add_country_modifier = {
+				name = dipcost_d_7
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_1 has_country_modifier = dipcost_d_2 has_country_modifier = dipcost_d_3 has_country_modifier = dipcost_d_4 has_country_modifier = dipcost_d_5 has_country_modifier = dipcost_d_6 has_country_modifier = dipcost_d_8 } }
+				remove_country_modifier = dipcost_d_1 remove_country_modifier = dipcost_d_2 remove_country_modifier = dipcost_d_3 remove_country_modifier = dipcost_d_4 remove_country_modifier = dipcost_d_5 remove_country_modifier = dipcost_d_6 remove_country_modifier = dipcost_d_8
+			}
+		}
+		if = {
+			limit = { num_of_diplomats = 8 }
+			#limit = { check_variable = { which = diplomat_var value = 8 } }
+			add_country_modifier = {
+				name = dipcost_d_8
+				duration = -1
+			}
+			if = {
+				limit = { OR = { has_country_modifier = dipcost_d_1 has_country_modifier = dipcost_d_2 has_country_modifier = dipcost_d_3 has_country_modifier = dipcost_d_4 has_country_modifier = dipcost_d_5 has_country_modifier = dipcost_d_6 has_country_modifier = dipcost_d_7 } }
+				remove_country_modifier = dipcost_d_1 remove_country_modifier = dipcost_d_2 remove_country_modifier = dipcost_d_3 remove_country_modifier = dipcost_d_4 remove_country_modifier = dipcost_d_5 remove_country_modifier = dipcost_d_6 remove_country_modifier = dipcost_d_7
+			}
+		}
+		
+		# Инфляция
+		if = {
+			limit = { 
+				OR = {
+					monthly_income = 100.1
+					total_development = 1001 
+				}
+			}
+			add_country_modifier = {
+				name = dipcost_inflation
+				duration = -1
+			}
+		}
+		if = {
+			limit = { 
+				has_country_modifier = dipcost_inflation
+				AND = {
+					NOT = { monthly_income = 150.1 }
+					NOT = { total_development = 751 }
+				}
+			}
+			remove_country_modifier = dipcost_inflation
+		}
+		
+		# Цикл
+		country_event = { id = stt_diplo_ex.2 days = 180 }
+	}
+}	
+# Вспомогательный ивент 2
+country_event = {
+	id = stt_diplo_ex.2
+	title = stt_diplo_ex.2.t
+	desc = stt_diplo_ex.2.d
+	picture = plato_book_event_picture
+	
+	is_triggered_only = yes 
+	hidden = yes
+	
+	trigger = {
+		
+	}
+	immediate = {
+		every_country = {
+			limit = { exists = yes NOT = { has_country_modifier = dip_expences_tooltip } }
+			add_country_modifier = {
+				name = dip_expences_tooltip
+				duration = -1
+			}
+		}
+		calc_dip_variable_effect = yes
+	}
+	option = {
+		name = stt_diplo_ex.2.1
+		country_event = { id = stt_diplo_ex.101 days = 1 }
+	}	
+}

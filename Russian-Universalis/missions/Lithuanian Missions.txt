@@ -1,0 +1,850 @@
+STT_lithuanian_missions_01 = {
+	slot = 1
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIT
+	}
+	STT_update_lithborder_mission = { # Укрепить границы
+		icon = NDL_teutons_vs_pagans
+		position = 1 		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1937
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			is_at_war = no
+			1937 = {
+				owned_by = ROOT
+				has_building = fort_14th
+			}
+			army_size_percentage = 0.8
+		}
+		effect = {
+			add_mil_power = 25
+			add_yearly_manpower = 0.25
+		}
+	}
+	STT_old_lithcities_mission = { # Старые города
+		icon = NDL_teutons_vs_pagans
+		position = 2 
+		required_missions = { STT_update_lithborder_mission }	
+		provinces_to_highlight = {
+			OR = {
+				province_id = 270
+				province_id = 1936
+				province_id = 4279
+			}
+			owned_by = ROOT
+		}		
+		trigger = {
+			270 = {
+				development = 12
+				has_building = marketplace
+			}
+			1936 = {
+				development = 16
+				has_building = marketplace
+			}
+			4279 = {
+				development = 10
+				has_building = marketplace
+			}
+		}
+		effect = {
+			add_adm_power = 25
+			add_prestige = 5
+		}
+	}
+	STT_new_roads_mission = { # Проложить новые дороги
+		icon = NDL_teutons_vs_pagans
+		position = 3 
+		required_missions = { STT_old_lithcities_mission }			
+		trigger = {
+			road_network = 5
+			marketplace = 5
+			advisor = trader 
+		}
+		effect = {
+			add_adm_power = 35
+		}
+	}
+	STT_lithuanian_trade_mission = { # Литовская торговля
+		icon = NDL_teutons_vs_pagans
+		position = 4 
+		required_missions = { STT_new_roads_mission }			
+		trigger = {
+			marketplace = 7
+			workshop = 5
+			dock = 3
+		}
+		effect = {
+			add_years_of_income = 1.5
+		}
+	}
+}
+STT_lithuanian_missions_02 = {
+	slot = 2
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIT
+	}
+	STT_crush_teutons_mission = { # Отбросить крестоносцев
+		icon = NDL_teutons_vs_pagans
+		position = 2 
+		required_missions = { STT_update_lithborder_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3695
+				province_id = 4281
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			3695 = { 
+				owned_by = ROOT 
+				religion = romuva 
+			}
+			4281 = { 
+				owned_by = ROOT 
+				religion = romuva 
+			}
+		}
+		effect = {
+			add_prestige = 5
+			40 = { add_permanent_claim = ROOT }
+			3231 = { add_permanent_claim = ROOT }
+			4444 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_small_lithuinia_mission = { # Малая Литва
+		icon = NDL_teutons_vs_pagans
+		position = 3 
+		required_missions = { STT_crush_teutons_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 40
+				province_id = 3231
+				province_id = 4444
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			40 = { owned_by = ROOT }
+			3231 = { owned_by = ROOT }
+			4444 = { owned_by = ROOT }
+		}
+		effect = {
+			41 = { add_permanent_claim = ROOT }
+			767 = { add_permanent_claim = ROOT }
+			4223 = { add_permanent_claim = ROOT }
+			4224 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_crush_teutons_2_mission = { # Сокрушить Тевтона
+		icon = NDL_teutons_vs_pagans
+		position = 4 
+		required_missions = { STT_small_lithuinia_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 41
+				province_id = 4224
+				province_id = 4223
+				province_id = 767
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			TEU = { NOT = { num_of_cities = 5 } }
+			41 = { owned_by = ROOT }
+			767 = { owned_by = ROOT }
+			4223 = { owned_by = ROOT }
+			4224 = { owned_by = ROOT }
+		}
+		effect = {
+			add_prestige = 10
+		}
+	}
+	STT_reborn_old_cultures_mission = { # Возродить старые культуры
+		icon = NDL_teutons_vs_pagans
+		position = 5
+		required_missions = { STT_crush_teutons_2_mission STT_crush_livonian_mission }
+		provinces_to_highlight = {
+			
+		}
+		trigger = {
+			curonia_area = {
+				type = all
+				culture_group = baltic
+			}
+			livonia_area = {
+				type = all
+				culture_group = baltic
+			}
+			east_livonia_area = {
+				type = all
+				culture_group = baltic
+			}
+			east_prussia_area = {
+				type = all
+				culture_group = baltic
+			}
+			temple = 3
+			advisor = philosopher
+		}
+		effect = {
+			add_adm_power = 35
+			add_dip_power = 35
+			add_yearly_manpower = 0.5
+		}
+	}
+	STT_religion_unity_and_territory_mission = { # Единство веры и земли
+		icon = NDL_teutons_vs_pagans
+		position = 6
+		required_missions = { STT_reborn_old_cultures_mission }
+		trigger = {
+			religious_unity = 1
+			temple = 5
+			capital_scope = {
+				region_for_scope_province = {
+					type = all
+					owned_by = ROOT 
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+			add_prestige = 10
+		}
+	}
+}
+STT_lithuanian_missions_03 = {
+	slot = 3
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIT
+	}
+	STT_lith_village_mission = { # Литовская деревня
+		icon = NDL_teutons_vs_pagans
+		position = 1 
+		trigger = {
+			is_at_war = no 
+			carpenter = 2
+			tavern = 2
+		}
+		effect = {
+			add_adm_power = 20
+			random_owned_province = {
+				limit = { NOT = { development = 10 } }
+				add_base_tax = 1
+			}
+			random_owned_province = {
+				limit = { NOT = { development = 10 } }
+				add_base_tax = 1
+			}
+		}
+	}
+	STT_upproduction_mission = { # Развитие производства
+		icon = NDL_teutons_vs_pagans
+		position = 2
+		required_missions = { STT_lith_village_mission }
+		trigger = {
+			is_at_war = no 
+			blacksmith = 2
+			workshop = 3
+		}
+		effect = {
+			add_dip_power = 20
+			random_owned_province = {
+				limit = { NOT = { development = 10 } }
+				add_base_production = 1
+			}
+			random_owned_province = {
+				limit = { NOT = { development = 10 } }
+				add_base_production = 1
+			}
+		}
+	}
+	STT_kurland_mission = { # Земля куров
+		icon = NDL_teutons_vs_pagans
+		position = 3 
+		required_missions = { STT_crush_teutons_mission }
+		provinces_to_highlight = {
+			OR = {
+				area = curonia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			curonia_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			38 = { add_permanent_claim = ROOT }
+			273 = { add_permanent_claim = ROOT }
+			3211 = { add_permanent_claim = ROOT }
+			3213 = { add_permanent_claim = ROOT }
+			4281 = { add_permanent_claim = ROOT }
+			4282 = { add_permanent_claim = ROOT }
+			4437 = { add_permanent_claim = ROOT }
+			4438 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_crush_livonian_mission = { # Сокрушить Ливонию
+		icon = NDL_teutons_vs_pagans
+		position = 4 
+		required_missions = { STT_kurland_mission }
+		provinces_to_highlight = {
+			OR = {
+				area = livonia_area
+				area = east_livonia_area
+			}
+			owned_by = LIV
+		}
+		trigger = {
+			LIV = { NOT = { num_of_cities = 4 } }
+			38 = { owned_by = ROOT }
+			273 = { owned_by = ROOT }
+			3211 = { owned_by = ROOT }
+			3213 = { owned_by = ROOT }
+			4281 = { owned_by = ROOT }
+			4282 = { owned_by = ROOT }
+			4437 = { owned_by = ROOT }
+			4438 = { owned_by = ROOT }
+		}
+		effect = {
+			add_prestige = 5
+			livonia_area = {
+				limit = { type = all NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+			east_livonia_area = {
+				limit = { type = all NOT = { owned_by = ROOT } }
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	STT_lith_allies_mission = { # Внешние союзники
+		icon = NDL_teutons_vs_pagans
+		position = 6 
+		trigger = {
+			num_of_allies = 4
+			diplomatic_reputation = 2
+		}
+		effect = {
+			add_prestige = 10
+			add_dip_power = 20
+		}
+	}
+}
+STT_lithuanian_missions_04 = {
+	slot = 4
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIT
+	}
+	STT_blackrus_subjects_mission = { # Княжества Черной Руси
+		icon = NDL_teutons_vs_pagans
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 278
+				province_id = 3689
+				province_id = 3690
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			NOT = { exists = KLL }
+			NOT = { exists = PIN }
+			NOT = { exists = SLU }
+			278 = { owned_by = ROOT }
+			3689 = { owned_by = ROOT }
+			3690 = { owned_by = ROOT }
+		}
+		effect = {
+			pripyat_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			3694 = { add_permanent_claim = ROOT }
+			4275 = { add_permanent_claim = ROOT }
+			4276 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_blackrus_conquest_mission = { # Подчинить Черную Русь
+		icon = NDL_teutons_vs_pagans
+		position = 2 	
+		provinces_to_highlight = {
+			OR = {
+				area = pripyat_area
+				province_id = 3694
+				province_id = 4275
+				province_id = 4276
+			}
+			NOT = { owned_by = ROOT }
+		}
+		required_missions = { STT_blackrus_subjects_mission }	
+		trigger = {
+			NOT = { exists = DUB }
+			NOT = { exists = PTV }
+			NOT = { exists = SVI }
+			NOT = { exists = DRU }
+			pripyat_area = {
+				type = all
+				owned_by = ROOT
+			}
+			3694 = { owned_by = ROOT }
+			4275 = { owned_by = ROOT }
+			4276 = { owned_by = ROOT }
+		}
+		effect = {
+			podlyhia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			volyn_area  = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	STT_volynia_conquest_mission = { # Завоевать Волынь
+		icon = NDL_teutons_vs_pagans
+		position = 3	
+		provinces_to_highlight = {
+			OR = {
+				area = podlyhia_area
+				area = volyn_area
+				province_id = 4231
+				province_id = 3230
+			}
+			NOT = { owned_by = ROOT }
+		}
+		required_missions = { STT_blackrus_conquest_mission }	
+		trigger = {
+			#NOT = { exists = VVL }
+			podlyhia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			volyn_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			} 
+			4231 = { country_or_non_sovereign_subject_holds = ROOT }
+			3230 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = 300
+				target = VOL
+			}
+		}
+	}
+	STT_subdue_halych_mission = { # Подчинить Галицию
+		icon = NDL_teutons_vs_pagans
+		position = 4	
+		provinces_to_highlight = {
+			OR = {
+				area = galitsya_area
+				area = red_ruthenia_area
+				province_id = 281
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		required_missions = { STT_volynia_conquest_mission }	
+		trigger = {
+			OR = {
+				VOL = { is_subject_of = ROOT }
+				AND = {
+					galitsya_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					red_ruthenia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+					281 = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_prestige = 5
+			west_dniepr_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+STT_lithuanian_missions_05 = {
+	slot = 5
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIT
+	}
+	STT_conquest_smolensk_mission = { # Смоленская Земля
+		icon = NDL_teutons_vs_pagans
+		position = 3 	
+		required_missions = { STT_whiterus_conquest_mission }	
+		provinces_to_highlight = {
+			OR = {
+				province_id = 293
+				province_id = 297
+				province_id = 3188
+				province_id = 3190
+				province_id = 3194
+				province_id = 4306
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			293 = { country_or_non_sovereign_subject_holds = ROOT }
+			297 = { country_or_non_sovereign_subject_holds = ROOT }
+			3188 = { country_or_non_sovereign_subject_holds = ROOT }
+			3190 = { country_or_non_sovereign_subject_holds = ROOT }
+			3194 = { country_or_non_sovereign_subject_holds = ROOT }
+			4306 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			1752 = { add_permanent_claim = ROOT }
+			3191 = { add_permanent_claim = ROOT }
+			3196 = { add_permanent_claim = ROOT }
+			4310 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_east_border_mission = { # Продвижение на восток!
+		icon = NDL_teutons_vs_pagans
+		position = 4 	
+		required_missions = { STT_conquest_smolensk_mission }	
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1752
+				province_id = 3191
+				province_id = 3196
+				province_id = 4310
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			1752 = { country_or_non_sovereign_subject_holds = ROOT }
+			3191 = { country_or_non_sovereign_subject_holds = ROOT }
+			3196 = { country_or_non_sovereign_subject_holds = ROOT }
+			4310 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			tver_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mojaisk_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	STT_conquest_kiev_mission = { # Захватить Киевскую Русь
+		icon = NDL_teutons_vs_pagans
+		position = 5	
+		provinces_to_highlight = {
+			OR = {
+				area = east_dniepr_area
+				area = west_dniepr_area
+				area = podolia_volhynia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		required_missions = { STT_subdue_halych_mission STT_conquest_severchina_mission }	
+		trigger = {
+			NOT = { exists = KIE }
+			east_dniepr_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			west_dniepr_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			podolia_volhynia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			zaporizhia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			yedisan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			2411 = { add_permanent_claim = ROOT }
+			4268 = { add_permanent_claim = ROOT }
+			4332 = { add_permanent_claim = ROOT }
+		}
+	}
+}
+STT_lithuanian_missions_06 = {
+	slot = 6
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIT
+	}
+	STT_whiterus_subjects_mission = { # Княжества Белой Руси
+		icon = NDL_teutons_vs_pagans
+		position = 1 	
+		provinces_to_highlight = {
+			OR = {
+				province_id = 275
+				province_id = 4277
+				area = minsk_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			NOT = { exists = PLT }
+			NOT = { exists = MSK }
+			minsk_area = {
+				type = all
+				owned_by = ROOT
+			}
+			275 = { owned_by = ROOT }
+			4277 = { owned_by = ROOT }
+		}
+		effect = {
+			white_ruthenia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			3189 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_whiterus_conquest_mission = { # Княжество Витебск
+		icon = NDL_teutons_vs_pagans
+		position = 2 	
+		provinces_to_highlight = {
+			OR = {
+				area = white_ruthenia_area
+				province_id = 3189
+			}
+			NOT = { owned_by = ROOT }
+		}
+		required_missions = { STT_whiterus_subjects_mission }	
+		trigger = {
+			NOT = { exists = VIT }
+			NOT = { exists = MSK }
+			white_ruthenia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			3189 = { owned_by = ROOT }
+		}
+		effect = {
+			middle_dnepr_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			293 = { add_permanent_claim = ROOT }
+			297 = { add_permanent_claim = ROOT }
+			3188 = { add_permanent_claim = ROOT }
+			3190 = { add_permanent_claim = ROOT }
+			3194 = { add_permanent_claim = ROOT }
+			4306 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_mstislay_conquest_mission = { # Княжество Мстиславль 
+		icon = NDL_teutons_vs_pagans
+		position = 3 	
+		provinces_to_highlight = {
+			OR = {
+				area = middle_dnepr_area
+				province_id = 3223
+			}
+			NOT = { owned_by = ROOT }
+		}
+		required_missions = { STT_whiterus_conquest_mission }	
+		trigger = {
+			NOT = { exists = MST }
+			middle_dnepr_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			3223 = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		effect = {
+			severchina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	STT_conquest_severchina_mission = { # Завоевать Северщину
+		icon = NDL_teutons_vs_pagans
+		position = 4 	
+		provinces_to_highlight = {
+			OR = {
+				area = severchina_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		required_missions = { STT_mstislay_conquest_mission }	
+		trigger = {
+			NOT = { exists = GLU }
+			severchina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			east_dniepr_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			sloboda_ukraine_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	STT_verhovsky_duches_mission = { # Верховские князья
+		icon = NDL_teutons_vs_pagans
+		position = 5 	
+		provinces_to_highlight = {
+			OR = {
+				area = sloboda_ukraine_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		required_missions = { STT_conquest_severchina_mission }	
+		trigger = {
+			NOT = { exists = RIL }
+			NOT = { exists = NSI }
+			sloboda_ukraine_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 5
+			if = {
+				limit = { exists = RYA }
+				add_casus_belli = {
+					type = cb_vassalize_mission
+					months = 300
+					target = RYA
+				}
+			}
+		}
+	}
+}
+STT_lithuanian_missions_07 = {
+	slot = 7
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIT
+	}
+	STT_loyalty_novgorod_mission = { # Лояльность Новгорода
+		icon = NDL_teutons_vs_pagans
+		position = 3 	
+		required_missions = { STT_whiterus_conquest_mission }	
+		trigger = {
+			if = {
+				limit = { exists = NOV }
+				OR = {
+					AND = {
+						NOV = { alliance_with = LIT }
+						NOV = { has_opinion = { who = LIT value = 125 } }
+					}
+					NOV = { is_subject_of = ROOT }
+				}
+			}
+			if = {
+				limit = { NOT = { exists = NOV } }
+				OR = {
+					310 = { owner = { has_opinion = { who = LIT value = 125 } } }
+					310 = { owned_by = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_prestige = 5
+		}
+	}
+	STT_destroy_moskov_mission = { # Сокрушить Москву!
+		icon = NDL_teutons_vs_pagans
+		position = 4 	
+		required_missions = { STT_loyalty_novgorod_mission }	
+		trigger = {
+			OR = {
+				LIT = { army_size = MOS }
+				MOS = { 
+					NOT = { num_of_cities = 5 }
+				}
+				MOS = { is_subject_of = ROOT }
+			}
+		}
+		effect = {
+			add_prestige = 5
+		}
+	}
+}

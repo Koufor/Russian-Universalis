@@ -1,0 +1,2 @@
+MLM = "countries/Malmedi.txt"
+ZEL = "countries/Zelandia.txt"

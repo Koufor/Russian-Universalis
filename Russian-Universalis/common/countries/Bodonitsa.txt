@@ -1,0 +1,105 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 170 255 252 }
+
+historical_idea_groups = {
+	religious_ideas
+	quality_ideas
+	defensive_ideas
+	spy_ideas
+	trade_ideas
+	offensive_ideas
+	economic_ideas
+	maritime_ideas
+	diplomatic_ideas
+	administrative_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	italian_condotta
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Гульельма #0" = 20
+	"Джеффри #0" = 10
+	"Чарльз #0" = 10
+	"Флоренс #0" = 10
+	"Филипп #0" = 10
+	"Агапий #0" = 1
+	"Акакий #0" = 1
+	"Алексндрос #0" = 1
+	"Анаргирос #0" = 1
+	"Анастасиос #0" = 1
+	"Андреас #0" = 1
+	"Ангелос #0" = 1
+	"Аникетос #0" = 1
+	"Апостолос #0" = 1
+	"Аргирос #0" = 1
+	"Афанасий #0" = 1
+	"Харалампос #0" = 1
+	"Хрисанфа #0" = 1
+	"Дмитрий #0" = 1
+	"Демосфен #0" = 1
+	"Дионисий #0" = 1
+	"Дорофей #0" = 1
+	"Элефтериос #0" = 0
+	"Эдиас #0" = 0
+	"Эммануил #0" = 0
+	"Евангелос #0" = 0
+	"Георгиос #0" = 0
+	"Григориус #0" = 0
+	"Иоанн #0" = 0
+	"Константин #0" = 0
+	"Павел #0" = 0
+	"Петр #0" = 0
+	"Филиппос #0" = 0
+	"Фотий #0" = 0
+	"Стефан #0" = 0
+	"Феофилакт #0" = 0
+	"Василий #0" = 0
+	"Власис #0" = 0
+	"Центурион #0" = 0
+	
+	"Мария #0" = -15
+	"Александра #0" = -1
+	"Антония #0" = -1
+	"Анна #0" = -1
+}	
+
+leader_names = { 
+	Ангелос Асан
+	Бранас
+	Кантакузин Комнин
+	Дукас
+	Маврос
+	Нотарас
+	Палеолог Фока
+	Рауль
+	Спагноли
+	Токко
+	Захария
+	Виллардуэн
+}
+
+ship_names = {
+	"Агиос Киприанос" Ареополи
+	Элика
+	Геронлименас Гитейо
+	Кардамили Коккала Котронас
+	Скутари
+	Ватия
+}

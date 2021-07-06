@@ -1,0 +1,87 @@
+graphical_culture = westerngfx
+
+color = { 51  102  255 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	offensive_ideas
+	spy_ideas
+	trade_ideas
+	innovativeness_ideas
+	economic_ideas
+	quantity_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	chevauchee
+	western_longbow
+	gaelic_mercenary
+	gaelic_free_shooter
+	french_caracolle
+	irish_charge
+	anglofrench_line
+	french_dragoon
+	british_redcoat
+	british_hussar
+	british_square
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Годфри #1" = 60
+	"Болдуин #5" = 60
+	"Генри #2" = 40
+	"Амальрик #2" = 30
+	"Джон #2" = 10
+	"Фулк #1" = 10
+	"Конрад #3" = 10
+	"Сибилла #1" = -5
+	"Изабелла #2" = -10
+	"Мелисандра #1" = -5
+	"Мария #1" = -5
+	"Фаддей #1" = 5
+	"Хуги #1" = 5
+}
+
+ship_names = {
+	"Святой крест"
+	"Грааль"
+	"Верный"
+	"Молот Божий"
+	"Истинно верующий"
+	"Хозяш сосущий"
+	"Очищение"
+	"Ворота Болдуина"
+	"Всохищение"
+	"Паладин"
+	"Очиститель"
+	"Крестоносец"
+	"Блюститель"
+	"Паломник"
+	"Отпущение грехов"
+	"Мститель"
+	"Поборник"
+	"Плеть"
+}
+
+leader_names = { 
+	"Брагадин"
+	"Криспо"
+	"Дория"
+	"Фадриге"
+	"Лузиньян"
+	"Меллисино"
+	"Плефон"
+	"Ренди"
+	"Сарасено"
+	"Токко"
+	"Максвелл"
+	"Дункакн"
+	"Дуглас"
+	"Селкирк"
+}

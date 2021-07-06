@@ -1,0 +1,30 @@
+song = {
+	name = "Krilya-Tamerlan"
+	
+	chance = {
+		modifier = {
+			factor = 0
+			NOT = { tag = TIM }
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ruler = "Тимур Тимурид" }
+		}
+        modifier = {
+			factor = 1.35
+			is_at_war = yes
+		}
+	}
+}
+song = {
+	name = "Adrian Von Ziegler - Из эпохи пиратов"
+	chance = {
+        modifier = {
+			factor = 1.35
+			tag = KNI
+		}
+		modifier = {
+			factor = 1
+		}
+	}
+}

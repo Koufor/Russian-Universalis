@@ -1,0 +1,21 @@
+union = {
+	first = GOR
+	second = KRI
+	start_date = 1309.1.1
+	end_date = 1343.8.15
+}
+
+union = {
+	first = GOR
+	second = KRN
+	start_date = 1309.1.1
+	end_date = 1343.8.15
+}
+
+
+vassal = {
+	first = DAN
+	second = SLG
+	start_date = 1309.1.1
+	end_date = 1386.1.1
+}

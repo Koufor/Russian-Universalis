@@ -1,0 +1,9 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = samogitian
+add_accepted_culture = lithuanian
+religion = romuva
+technology_group = eastern
+historical_friend = POL
+capital = 271

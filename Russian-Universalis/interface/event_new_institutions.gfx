@@ -1,0 +1,14 @@
+spriteTypes = { 
+	spriteType = { 
+		name = "crete_revolt_event_picture" 
+		texturefile = "gfx/event_pictures/event_institutions/crete_revolt_event_picture.dds" 
+	}
+	spriteType = { 
+		name = "rise_revolution_event_picture" 
+		texturefile = "gfx/event_pictures/event_institutions/rise_revolution_event_picture.dds" 
+	}
+	spriteType = { 
+		name = "imperialism_event_picture" 
+		texturefile = "gfx/event_pictures/event_institutions/imperialism_event_picture.dds" 
+	}
+}

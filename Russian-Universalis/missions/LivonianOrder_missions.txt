@@ -1,0 +1,1318 @@
+STT_Liv_mission_one = {
+    slot = 1
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+			tag = LIV
+	}
+	STT_liv_mission_borderlands = { #1.1 - Укрепить границу
+        icon = stt_mission_teutonic_castle #STT_mission_stronghold
+        position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3212
+				province_id = 4441
+			}
+			owned_by = ROOT
+		}
+		trigger = {
+			is_at_war = no
+			army_size_percentage = 0.8
+			OR = {
+				3212 = {
+					owned_by = ROOT
+					has_building = fort_14th 
+				}
+				4441 = {
+					owned_by = ROOT
+					has_building = fort_14th 
+				}
+			}
+			4281 = { owned_by = ROOT }
+        }
+		effect = {
+			add_country_modifier = { 
+				name = teu_borderlands 
+				duration = 1825 #5 
+			}
+			add_years_of_income = 0.25
+			add_mil_power = 25
+			3696 = { add_permanent_claim = ROOT }
+			3697 = { add_permanent_claim = ROOT }
+			4280 = { add_permanent_claim = ROOT }
+		}
+	}
+	STT_liv_mission_rigdor = { #1.2 - Епископы Риги и Дерпта
+        icon = stt_mission_livonian_bishop #mission_religious
+        position = 2
+        required_missions = { STT_liv_mission_borderlands }		
+		provinces_to_highlight = {
+			OR = {
+				area = livonia_area
+				area = east_livonia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no
+			livonia_area = {
+				owned_by = ROOT
+				religion = catholic 
+			}
+			east_livonia_area = {
+				owned_by = ROOT
+				religion = catholic 
+			}
+			NOT = { exists = RIG }
+			NOT = { exists = DOR }
+        }
+		effect = {
+			add_prestige = 10
+			add_adm_power = 75
+			add_dip_power = 150
+		}
+	}
+	STT_liv_mission_curose = { #1.3 - Епископы Эзеля и Курземе
+        icon = stt_mission_livonian_bishop #mission_religious
+        position = 3
+        required_missions = { STT_liv_mission_rigdor }		
+		provinces_to_highlight = {
+			OR = {
+				area = curonia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no
+			curonia_area = {
+				owned_by = ROOT
+				religion = catholic 
+			}
+			NOT = { exists = KUR }
+			NOT = { exists = OSE }
+        }
+		effect = {
+			add_prestige = 5
+			add_adm_power = 50
+			add_dip_power = 100
+		}
+	}
+	STT_liv_mission_tradecities = { #1.4 - Торговые города Ливонии
+        icon = stt_mission_order_citi #mission_buildings
+        position = 4
+        required_missions = { STT_liv_mission_curose }		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 36
+				province_id = 38
+				province_id = 1834
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no
+			36 = { 
+				development = 18
+				religion = catholic
+				NOT = { unrest = 1 }
+				NOT = { local_autonomy = 40 }
+			}
+			38  = { 
+				development = 22
+				religion = catholic
+				NOT = { unrest = 1 }
+				NOT = { local_autonomy = 30 }
+			}
+			1834  = { 
+				development = 16
+				religion = catholic
+				NOT = { unrest = 1 }
+				NOT = { local_autonomy = 40 }
+			}
+        }
+		effect = {
+			add_years_of_income = 3
+			add_adm_power = 75
+			36 = { add_base_production = 2 }
+			38 = { add_base_production = 2 }
+			1834 = { add_base_production = 2 }
+			add_country_modifier = {
+				name = teu_trade_2
+				duration = 3650 # 10
+			} 
+		}
+	}
+	STT_liv_mission_livorder = { #1.5 - Ливонский орден
+        icon = stt_mission_livonian_flag #mission_teutonic_knights
+        position = 5
+        required_missions = { STT_liv_mission_tradecities }		
+		provinces_to_highlight = {
+			OR = {
+				area = estonia_ingria_area
+				area = east_estonia_area
+				area = livonia_area
+				area = east_livonia_area
+				area = curonia_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			stability = 2 
+			has_country_modifier = bishop_duchy_destr
+			has_country_modifier = hansa_good_relation
+			has_country_modifier = unity_liv
+        }
+		effect = { 
+			add_prestige = 10
+			add_adm_power = 100
+			add_dip_power = 50
+			add_years_of_income = 1.5
+			remove_country_modifier = livonian_conf_3
+			remove_country_modifier = bishop_duchy_destr
+			remove_country_modifier = hansa_good_relation
+			remove_country_modifier = unity_liv
+			add_country_modifier = {
+				name = livonian_conf_4
+				duration = -1
+			}
+			clr_country_flag = livonian_confederation
+			clr_country_flag = feodal_loyalists
+			set_country_flag = order_system_1
+		}
+	}
+}
+
+STT_Liv_mission_two = {
+    slot = 2
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+			tag = LIV
+	}
+	STT_liv_mission_againstreform = { #2.5 - Пережить Реформацию
+        icon = mission_rb_weather_the_reformation
+        position = 2
+		trigger = {
+			is_at_war = no
+			is_year = 1550
+			NOT = {
+				current_age = age_of_reformation
+			}
+			religious_unity = 1
+			advisor = inquisitor
+        }
+		effect = {
+			if = {
+				limit = { stability = 3 }
+				add_devotion = 20
+			}
+			else = {
+				add_stability = 1
+			}
+			add_prestige = 25
+			add_years_of_income = 1.5
+			add_adm_power = 150
+			add_dip_power = 150
+			add_mil_power = 150
+		}
+	}
+}
+
+STT_Liv_mission_three = {
+    slot = 3
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+			tag = LIV
+	}
+	STT_liv_mission_lithagre = { #3.2 - Литовская угроза
+        icon = NDL_teutons_vs_pagans
+        position = 2
+        required_missions = { STT_liv_mission_livconf }		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 3696 
+				province_id = 3697 
+				province_id = 4280
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no 
+			3696 = {
+				OR = {
+					owned_by = ROOT 
+					owned_by = TEU 
+				}
+			}
+			3697 = {
+				OR = {
+					owned_by = ROOT 
+					owned_by = TEU 
+				}
+			}
+			4280 = {
+				OR = {
+					owned_by = ROOT 
+					owned_by = TEU 
+				}
+			}
+        }
+		effect = {
+			add_prestige = 10
+			add_years_of_income = 1.5
+			add_mil_power = 75
+			ingria_area = { add_permanent_claim = ROOT }
+			add_casus_belli = {
+				type = cb_vassalize_mission
+				months = 300
+				target = PSK
+			}
+		}
+	}
+	STT_liv_mission_pskovandingiria = { #3.3 - Псков и Ингрия
+        icon = NDL_temple_3
+        position = 3
+        required_missions = { STT_liv_mission_lithagre }		
+		provinces_to_highlight = {
+			OR = {
+				area = ingria_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no 
+			ingria_area = { 
+				type = all
+				owned_by = ROOT 
+			}
+			PSK = { is_subject_of = ROOT }
+        }
+		effect = {
+			add_prestige = 10
+			add_mil_power = 100
+			add_dip_power = 75
+			hidden_effect = {
+				ingria_area= {
+					add_province_modifier = {
+					name = "resistance_lithuanians_3"
+					duration = 5475 #15
+					} 
+				}
+			}
+			set_country_flag = liv_bishop_conf_1
+		}
+	}
+	STT_liv_mission_rainpart = { #3.5 - Подавить Рейнскую партию
+        icon = STT_mission_rebels
+        position = 5
+        required_missions = { STT_liv_mission_politicpart }		
+		provinces_to_highlight = {
+			any_owned_province = { 
+				area = curonia_area
+				has_province_modifier = reinish_rebel
+			}
+			any_owned_province = { 
+				area = livonia_area
+				has_province_modifier = reinish_rebel
+			}
+		}
+		trigger = {
+			is_at_war = no 
+			has_country_modifier = liv_westfalian_order_system
+			any_owned_province = { 
+				area = curonia_area
+				has_province_modifier = reinish_rebel
+			}
+			any_owned_province = { 
+				area = livonia_area
+				has_province_modifier = reinish_rebel
+			}
+			dip_power = 75
+			mil_power = 75
+			dip = 2
+			mil = 3
+        }
+		effect = {
+			add_prestige = 5
+			if = {
+				limit = { stability = 3 }
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			add_dip_power = -75
+			add_mil_power = -75
+			every_owned_province = {
+				limit = {
+					has_province_modifier = reinish_rebel
+				}
+				remove_province_modifier = reinish_rebel
+			}
+		}
+	}
+	STT_liv_mission_feodals = { #3.6 - Немецкие феодалы
+        icon = mission_soldiers_in_line
+        position = 6
+        required_missions = { STT_liv_mission_rainpart }		
+		trigger = {
+			is_at_war = no 
+			has_country_modifier = feodal_loyalists
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 50
+				}
+			}
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+			adm_power = 100
+			adm = 3
+        }
+		effect = {
+			add_adm_power = -100
+			add_estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 15
+			}
+		}
+	}
+	STT_liv_mission_orderunification = { #3.7 - Унификация ордена
+        icon = stt_mission_livonian_trooper #mission_alliances
+        position = 7
+        required_missions = { STT_liv_mission_feodals }		
+		trigger = {
+			is_at_war = no
+			has_country_modifier = feodal_loyalists
+			has_country_modifier = liv_westfalian_order_system
+			adm_power = 85
+			adm = 4
+			dip_power = 35
+			dip = 2
+			mil_power = 35
+			mil = 2
+        }
+		effect = {
+			add_prestige = 15
+			add_adm_power = -85
+			add_dip_power = -35
+			add_mil_power = -35
+			remove_country_modifier = feodal_loyalists
+			remove_country_modifier = liv_westfalian_order_system
+			add_country_modifier = {
+				name = unity_liv
+				duration = -1
+			}
+		}
+	}
+}	
+
+STT_Liv_mission_four = {
+    slot = 4
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIV
+	}
+	STT_liv_mission_livconf = { #4.1 - Ливонская конфедерация 
+        icon = stt_mission_livonia #mission_big_city
+        position = 1
+		trigger = {
+			is_at_war = no
+			has_country_modifier = livonian_conf_2
+			adm_power = 25
+			dip_power = 25
+			mil_power = 25
+			NOT = { stability = 2 }
+			devotion = 90
+        }
+		effect = {
+			add_prestige = 5
+			add_adm_power = -25
+			add_dip_power = -25
+			add_mil_power = -25
+			add_country_modifier = {
+				name = first_reform_of_conf
+				duration = 5475 # 15
+			}
+			set_country_flag = livonian_confederation
+			set_country_flag = liv_bishop_conf
+		}
+	}
+	STT_liv_mission_bishcitfeo = { #4.2 - Епископы, города и феодалы
+        icon = mission_deal_with_Papa 
+        position = 2
+        required_missions = { STT_liv_mission_livconf STT_liv_mission_livsubject }		
+		trigger = {
+			is_at_war = no
+			RIG = { 
+				is_subject_of = ROOT
+				liberty_desire = 30 
+			}
+			DOR = { 
+				is_subject_of = ROOT
+				liberty_desire = 30
+			}
+			OSE = { 
+				is_subject_of = ROOT
+				liberty_desire = 30
+			}
+			KUR = { 
+				is_subject_of = ROOT
+				liberty_desire = 30
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 70
+				}
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_church
+					influence = 70 
+				}
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 70
+				}
+			}
+        }
+		effect = {
+			if = {
+				limit = { stability = 3 }
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			country_event = { id = stt_liv.3 }
+		}
+	}
+	STT_liv_mission_faithinorder = { #4.3 - Борьба внутри ордена
+        icon = stt_mission_livonian_kni #NDL_dip_reform_finish
+        position = 3
+        required_missions = { STT_liv_mission_bishcitfeo }		
+		trigger = {
+			is_at_war = no 
+			has_country_modifier = liv_rein_order_system
+			has_country_modifier = liv_support_estonians
+			adm_power = 10
+			dip_power = 10
+			mil_power = 10
+        }
+		effect = {
+			add_adm_power = -10
+			add_dip_power = -10
+			add_mil_power = -10
+			custom_tooltip = liv_disaster_begin
+			set_country_flag = liv_growing_contradictions
+			#country_event = { id = stt_liv.7 } 
+		}
+	}
+	STT_liv_mission_politicpart = { #4.4 - Спор языков
+        icon = NDL_dip_reform_finish
+        position = 4
+        required_missions = { STT_liv_mission_faithinorder }		
+		trigger = {
+			is_at_war = no 
+			custom_trigger_tooltip = {
+				tooltip = liv_disaster_down_desc
+				has_country_flag = liv_disaster_down_1
+			}
+			#has_country_modifier = livonian_conf_3
+			#any_owned_province = { 
+			#	area = curonia_area
+			#	has_province_modifier = westfalian_rebel
+			#}
+			#any_owned_province = { 
+			#	area = livonia_area
+			#	has_province_modifier = westfalian_rebel
+			#}
+			adm_power = 75 
+			dip_power = 75 
+			army_size_percentage = 0.8
+        }
+		effect = {
+			add_adm_power = -75
+			add_dip_power = -75
+			remove_country_modifier = liv_rein_order_system
+			add_country_modifier = {
+				name = liv_westfalian_order_system
+				duration = -1
+			}
+			every_owned_province = {
+				limit = {
+					has_province_modifier = westfalian_rebel
+				}
+				remove_province_modifier = westfalian_rebel
+			}
+			random_owned_province = {
+				limit = { area = livonia_area }
+				add_province_modifier = {
+					name = reinish_rebel
+					duration = -1
+				}
+			}
+			random_owned_province = {
+				limit = { area = curonia_area }
+				add_province_modifier = {
+					name = reinish_rebel
+					duration = -1
+				}
+			}
+			clr_country_flag = liv_disaster_down_1
+		}
+	}
+	STT_liv_mission_notsubject = { #4.4 - Союзник, но не вассал
+        icon = stt_mission_teutonic_flag #STT_mission_friendship
+        position = 5
+        required_missions = { STT_liv_mission_politicpart }		
+		trigger = {
+			is_at_war = no 
+			alliance_with = TEU
+			NOT = { LIV = { is_subject_of = TEU } } 
+			prestige = 20
+			dip = 3
+        }
+		effect = {
+			add_prestige = 5
+			add_dip_power = 75
+			#create_advisor = statesman
+			add_country_modifier = {
+				name = liv_not_subject
+				duration = -1
+			}
+			define_advisor = {
+				type = statesman
+				skill = 2
+				discount = yes
+			}
+		}
+	}
+	STT_liv_mission_hansa = { #4.7 - Ганзейский союз
+        icon = STT_great_fleet
+        position = 7
+        required_missions = { STT_liv_mission_rigaallies }		
+		trigger = {
+			is_at_war = no 
+			advisor = trader
+			dip_power = 100
+			dip = 3
+			HSA = { has_opinion = { who = LIV value = 120 } }
+			alliance_with = HSA
+			mercantilism = 15
+        }
+		effect = {
+			add_prestige = 5
+			add_dip_power = -100
+			add_country_modifier = {
+				name = hansa_good_relation
+				duration = -1
+			}
+		}
+	}
+	STT_liv_mission_burgdorpt = { #4.8 - Бюргеры Дерпта
+        icon = stt_mission_teutonic_port #STT_byz_mission_conquer_central_italy
+        position = 8
+        required_missions = { STT_liv_mission_hansa }		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1834 }
+			owned_by = ROOT
+		}
+		trigger = {
+			is_at_war = no 
+			1834 = { owned_by = ROOT }
+			prestige = 15
+			adm_power = 75
+			adm = 3
+			dip_power = 75
+			advisor = statesman
+			NOT = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 45
+				}
+			}
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 55
+			}
+        }
+		effect = {
+			add_adm_power = -75
+			add_dip_power = -75
+			1834 = { remove_province_modifier = city_Dorpt }
+			add_prestige = 5
+			add_years_of_income = 0.75
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -5
+			}
+			hidden_effect = {
+				1834 = { 
+					spawn_rebels = {
+						type = particularist_rebels
+						size = 8				
+					}
+				}
+			}
+		}
+	}
+}
+STT_Liv_mission_five = {
+    slot = 5
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIV
+	}
+	STT_liv_mission_livsubject = { #5.1 - Сеньор ордена
+        icon = FRA_dissolve_hre
+        position = 1
+		trigger = {
+			is_at_war = no
+			emperor = { has_opinion = { who = LIV value = 100 } }
+			has_opinion = { who = emperor value = 75 }
+			PAP = { has_opinion = { who = LIV value = 100 } }
+			has_opinion = { who = PAP value = 75 }
+			papal_influence = 20
+			diplomatic_reputation = 1
+			dip_power = 50
+        }
+		effect = {
+			country_event = { id = stt_liv.4 }
+			add_dip_power = -50
+		}
+	}
+	STT_liv_mission_questriga = { #5.3 - Овладеть Ригой
+        icon = stt_mission_teutonic_port #mission_buildings
+        position = 3
+        required_missions = { STT_liv_mission_bishcitfeo }		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 38 }
+				NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no 
+			devotion = 90
+			dip_power = 100
+			mil_power = 75
+			mil = 3
+			dip = 4
+			38 = { owned_by = RIG }
+			RIG = { is_subject_of = ROOT }
+		}
+		effect = {
+			add_prestige = 5
+			country_event = { id = stt_liv.2 }
+			set_country_flag = can_vassalize_Rig
+			set_country_flag = liv_bishop_conf_2
+		}
+	}
+	STT_liv_mission_citeofriga = { #5.4 - Городской совет Риги
+        icon = mission_rb_hanseatic_east
+        position = 4
+        required_missions = { STT_liv_mission_questriga }		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 38 }
+				NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no 
+			prestige = 15
+			adm_power = 100
+			adm = 3 
+			dip_power = 100
+			advisor = statesman
+			38 = { owned_by = ROOT }
+			NOT = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 50
+				}
+			}
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+		}
+		effect = {
+			add_prestige = 5
+			add_years_of_income = 0.75
+			add_adm_power = -100
+			add_dip_power = -100
+			38 = { remove_province_modifier = city_Riga }
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -5
+			}
+			hidden_effect = {
+				38 = { 
+					spawn_rebels = {
+						type = particularist_rebels
+						size = 5
+					}
+				}
+			}
+		}
+	}
+	STT_liv_mission_movecapital = { #5.5 - Резиденция магистра 
+        icon = mission_early_modern_university
+        position = 5
+        required_missions = { STT_liv_mission_citeofriga }		
+		provinces_to_highlight = {
+				OR = {
+				province_id = 38 }
+				owned_by = ROOT
+		}
+		trigger = {
+			is_at_war = no  
+			38 = { 
+				owned_by = ROOT 
+				NOT = { has_province_modifier = city_Riga }
+			}
+			DOR = { is_subject_of = ROOT }
+			OSE = { is_subject_of = ROOT }
+			KUR = { is_subject_of = ROOT }
+			adm_power = 60
+			treasury = 25
+			advisor = philosopher
+		}
+		effect = {
+			add_adm_power = -60
+			add_treasury = -25
+			38 = {
+				move_capital_effect = yes 
+				add_base_tax = 2
+			}
+			hidden_effect = {
+				random_list = {
+					3 = { RIG = { remove_country_modifier = livonian_conf_1 } }
+					5 = { DOR = { remove_country_modifier = livonian_conf_1 } }
+					17 = { KUR = { remove_country_modifier = livonian_conf_1 } }
+					6 = { OSE = { remove_country_modifier = livonian_conf_1 } }
+				}
+			}
+			if = {
+				limit = { has_country_flag = hre_loyalist }
+				38 = { set_in_empire = yes }
+				clr_country_flag = hre_loyalist
+			}
+		}
+	}
+	STT_liv_mission_rigaallies = { #5.6 - Союзники Риги
+        icon = mission_build_up_to_force_limit
+        position = 6
+        required_missions = { STT_liv_mission_movecapital }		
+		trigger = {
+			is_at_war = no 
+			advisor = spymaster
+			DOR = { 
+				is_subject_of = ROOT 
+				NOT = { liberty_desire = 70 }
+			}
+			adm_power = 35
+			dip_power = 65
+		}
+		effect = {
+			add_adm_power = -35
+			add_dip_power = -65
+			add_prestige = 5
+			custom_tooltip = liv_coalition_2
+			hidden_effect = {
+				LIV = { remove_historical_friend = DOR }
+				DOR = { remove_historical_friend = LIV }
+				LIV = { add_historical_rival = DOR }
+				DOR = { add_historical_rival = LIV }
+			}
+			set_country_flag = can_vassalize_Dor 
+		}
+	}
+	STT_liv_mission_bishopdorpt = { #5.7 - Епископ Дерпта
+        icon = stt_mission_order_dorpt #mission_religious
+        position = 7
+        required_missions = { STT_liv_mission_rigaallies }		
+		provinces_to_highlight = {
+			area = livonia_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no 
+			NOT = { exists = DOR }
+        }
+		effect = {
+			add_prestige = 10
+			add_years_of_income = 0.25
+			add_adm_power = 25
+			add_dip_power = 25
+		}
+	}
+	STT_liv_mission_conqrevel = { #5.8 - Поход на Ревель
+        icon = stt_mission_livonian_soldiers #mission_conquer_50_development
+        position = 8
+        required_missions = { STT_liv_mission_hansa }		
+		provinces_to_highlight = {
+			OR = { province_id = 36 }
+			owned_by = ROOT
+		}
+		trigger = {
+			is_at_war = no 
+			36 = { owned_by = ROOT }
+			prestige = 15
+			mil_power = 75
+			mil = 4
+			manpower = 2.5
+			advisor = statesman
+			NOT = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 50
+				}
+			}
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+		}
+		effect = {
+			add_mil_power = -75
+			add_prestige = 5
+			36 = { remove_province_modifier = city_Reval }
+			add_years_of_income = 0.75
+			add_yearly_manpower = -2
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -5
+			}
+			hidden_effect = {
+				36 = { 
+					spawn_rebels = {
+						type = particularist_rebels
+						size = 12				
+					}
+				}
+			}
+		}
+	}
+	STT_liv_mission_livoncities = { #5.9 - Судьба ливонских городов
+        icon = stt_mission_order_citi #mission_unite_home_region
+        position = 9
+        required_missions = { STT_liv_mission_conqrevel STT_liv_mission_burgdorpt }		
+		trigger = {
+			is_at_war = no 
+			36 = { 
+				owned_by = ROOT 
+				NOT = { has_province_modifier = city_Reval } 
+			} 
+			38 = { 
+				owned_by = ROOT 
+				NOT = { has_province_modifier = city_Riga } 
+			} 
+			1834 = { 
+				owned_by = ROOT 
+				NOT = { has_province_modifier = city_Dorpt } 
+			} 
+			NOT = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 40
+				}
+			}
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 60
+			}
+        }
+		effect = {
+			if = {
+				limit = { stability = 3 }
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 5
+			}
+			add_adm_power = 75
+			add_dip_power = 75
+		}
+	}
+}
+STT_Liv_mission_six = {
+    slot = 6
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+			tag = LIV
+	}
+	STT_liv_mission_onGotland = { #6.2 - Высадка на Готланд
+        icon = stt_mission_order_gotland #STT_great_fleet
+        position = 2
+		trigger = {
+			is_at_war = no 
+			is_year = 1315
+			army_size_percentage = 0.8
+			navy_size_percentage = 0.6
+			manpower = 2.5
+			treasury = 100
+			exists = GOT
+			25 = { 
+				owned_by = GOT 
+				NOT = { owned_by = TEU }
+			}
+        }
+		effect = {
+			if = {
+				limit = { ai = no }
+				add_prestige = 5
+				25 = { add_permanent_claim = LIV }
+				LIV = { declare_war_with_cb = { who = GOT casus_belli = "cb_imperial" } }
+			}
+			else = {
+				add_prestige = 5
+				25 = {
+					add_core = LIV
+					cede_province = LIV
+				}
+			}
+		}
+	}
+	STT_liv_mission_estonians = { #6.3 - Поддержка эстонцев
+        icon = mission_noble_council
+        position = 3
+		trigger = {
+			is_at_war = no 
+			has_country_modifier = payment_for_danish
+			36 = { owned_by = ROOT }
+			1842 = { owned_by = ROOT }
+			3729 = { owned_by = ROOT }
+        }
+		effect = {
+			add_years_of_income = 0.75
+			add_adm_power = 125
+			add_dip_power = 75
+			add_country_modifier = {
+				name = feodal_loyalists
+				duration = -1
+			}
+			set_country_flag = feodal_loyalists
+		}
+	}
+	STT_liv_mission_rigbishop = { #6.4 - Архиепископ Риги
+        icon = stt_mission_order_cardinal #mission_religious
+        position = 4
+        required_missions = { STT_liv_mission_estonians STT_liv_mission_questriga }		
+		trigger = {
+			is_at_war = no 
+			38 = { 
+				owned_by = ROOT 
+			}
+			capital = 38
+			NOT = { exists = RIG }
+			NOT = {
+				estate_influence = {
+					estate = estate_church
+					influence = 50
+				}
+			}
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+        }
+		effect = {
+			add_prestige = 5
+			add_dip_power = 50
+			add_years_of_income = 0.5
+			set_country_flag = arhbishop_crash
+			set_country_flag = liv_bishop_conf_3
+		}
+	}
+	STT_liv_mission_pope = { #6.5 - Успокоить папство
+        icon = stt_mission_livonian_pope #STT_establish_europe
+        position = 5
+        required_missions = { STT_liv_mission_rigbishop }		
+		trigger = {
+			is_at_war = no 
+			devotion = 95
+			prestige = 25
+			papal_influence = 40
+			dip_power = 50
+			PAP = { has_opinion = { who = LIV value = 125 } }
+			has_opinion = { who = PAP value = 75 }
+        }
+		effect = {
+			add_dip_power = -50
+			add_papal_influence = -20
+			add_prestige = 5
+			add_country_modifier = {
+				name = papal_legate
+				duration = 7300 # 20
+			}
+		}
+	}
+	STT_liv_mission_coalition = { #6.6 - Коалиция епископов 
+        icon = STT_mission_k_whisper_in_the_dark
+        position = 6
+        required_missions = { STT_liv_mission_pope }		
+		trigger = {
+			is_at_war = no 
+			advisor = spymaster
+			advisor = inquisitor
+			OSE = { 
+				is_subject_of = ROOT
+				NOT = { liberty_desire = 60 } 
+			}
+			KUR = { 
+				is_subject_of = ROOT
+				NOT = { liberty_desire = 60 }
+			}
+			has_country_modifier = papal_legate
+			dip_power = 75
+        }
+		effect = {
+			add_prestige = 5
+			add_dip_power = -75
+			custom_tooltip = liv_coalition
+			hidden_effect = {
+				OSE = { remove_historical_friend = LIV }
+				KUR = { remove_historical_friend = LIV }
+				LIV = { remove_historical_friend = OSE }
+				LIV = { remove_historical_friend = KUR }
+				OSE = { add_historical_rival = LIV }
+				KUR = { add_historical_rival = LIV }
+				LIV = { add_historical_rival = OSE }
+				LIV = { add_historical_rival = KUR }
+			}
+			set_country_flag = can_vassalize_Kur
+			set_country_flag = can_vassalize_Ose 
+		}
+	}
+	STT_liv_mission_curonianland = { #6.7 - Епископ Курляндии
+        icon = stt_mission_order_curland #mission_religious
+        position = 7
+        required_missions = { STT_liv_mission_coalition }		
+		provinces_to_highlight = {
+			area = curonia_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no 
+			NOT = { exists = KUR }
+        }
+		effect = {
+			add_prestige = 5
+			add_years_of_income = 0.25
+			add_adm_power = 25
+		}
+	}
+	STT_liv_mission_bishopdestroy = { #6.8 - Судьба епископов
+        icon = mission_religious
+        position = 8
+        required_missions = { STT_liv_mission_curonianland STT_liv_mission_bishopdorpt STT_liv_mission_oselhapsal }		
+		trigger = {
+			is_at_war = no 
+			prestige = 20
+			adm_power = 75
+			dip_power = 75
+			papal_influence = 20
+			NOT = { exists = OSE }
+			NOT = { exists = KUR }
+			NOT = { exists = DOR }
+			NOT = { exists = RIG }
+        }
+		effect = {
+			if = {
+				limit = { stability = 3 }
+				add_adm_power = 150
+			}
+			else = {
+				add_stability = 1
+			}
+			add_adm_power = -75
+			add_dip_power = -75
+			add_papal_influence = -10
+			add_country_modifier = {
+				name = bishop_duchy_destr
+				duration = -1
+			}
+		}
+	}
+}
+STT_Liv_mission_seven = {
+    slot = 7
+    generic = no 
+    ai = yes
+    has_country_shield = yes 
+    potential = {
+		tag = LIV
+	}
+	STT_liv_mission_ostsiedlung = { #7.1 - Переселение на Восток
+		icon = mission_settlers_north_america
+        position = 1
+		trigger = {
+			is_at_war = no
+			devotion = 100
+			religious_unity = 1
+			stability = 3
+			advisor = theologian 
+			adm = 3
+			dip = 3
+			adm_power = 65
+			dip_power = 65
+		}
+		effect = {
+			add_adm_power = -65
+			add_dip_power = -65
+			kill_advisor = theologian
+			
+			custom_tooltip = liv_mission_ostsiedlung
+			
+			hidden_effect = {
+				random_owned_province = {
+					limit = { 
+						OR = { 
+							area = east_livonia_area 
+							area = livonia_area 
+							area = curonia_area 
+							area = east_estonia_area 
+							area = estonia_ingria_area
+						}
+						NOT = { culture_group = germanic } 
+					}
+					change_variable = { which = conversion_var value = 5 }
+					if = {
+						limit = { NOT = { has_province_modifier = promote_ostsiedlung_1 } NOT = { has_province_flag = province_of_ostsiedlung } }
+						add_province_modifier = {
+							name = promote_ostsiedlung_1
+							duration = -1
+						}
+						set_province_flag = province_of_ostsiedlung
+					}
+				}
+				random_owned_province = {
+					limit = { 
+						OR = { 
+							area = east_livonia_area 
+							area = livonia_area 
+							area = curonia_area 
+							area = east_estonia_area 
+							area = estonia_ingria_area
+						}
+						NOT = { culture_group = germanic } 
+					}
+					change_variable = { which = conversion_var value = 5 }
+					if = {
+						limit = { NOT = { has_province_modifier = promote_ostsiedlung_1 } NOT = { has_province_flag = province_of_ostsiedlung } }
+						add_province_modifier = {
+							name = promote_ostsiedlung_1
+							duration = -1
+						}
+						set_province_flag = province_of_ostsiedlung
+					}
+				}
+				random_owned_province = {
+					limit = { 
+						OR = { 
+							area = east_livonia_area 
+							area = livonia_area 
+							area = curonia_area 
+							area = east_estonia_area 
+							area = estonia_ingria_area
+						}
+						NOT = { culture_group = germanic } 
+					}
+					change_variable = { which = conversion_var value = 5 }
+					if = {
+						limit = { NOT = { has_province_modifier = promote_ostsiedlung_1 } NOT = { has_province_flag = province_of_ostsiedlung } }
+						add_province_modifier = {
+							name = promote_ostsiedlung_1
+							duration = -1
+						}
+						set_province_flag = province_of_ostsiedlung
+					}
+				}
+			}
+		}
+	}
+	STT_liv_mission_assimilation_latgale = { #7.2 - Ассимиляция Латгалии
+        icon = stt_mission_teutonic_village
+        position = 2
+		required_missions = { STT_liv_mission_ostsiedlung }	
+		provinces_to_highlight = {
+			OR = { area = east_livonia_area area = livonia_area }
+			owned_by = ROOT
+		}
+		trigger = {
+			is_at_war = no 
+			livonia_area = {
+				type = all 
+				culture_group = germanic 
+				religion = ROOT
+			}
+			east_livonia_area = {
+				type = all 
+				culture_group = germanic 
+				religion = ROOT
+			}
+        }
+		effect = {
+			add_prestige = 5
+		}
+	}
+	STT_liv_mission_assimilation_curonia = { #7.3 - Ассимиляция Куронии
+        icon = stt_mission_teutonic_village
+        position = 3
+		required_missions = { STT_liv_mission_assimilation_latgale }	
+		provinces_to_highlight = {
+			area = curonia_area
+			owned_by = ROOT
+		}
+		trigger = {
+			is_at_war = no 
+			curonia_area = {
+				type = all 
+				culture_group = germanic 
+				religion = ROOT
+			}
+        }
+		effect = {
+			add_prestige = 5
+		}
+	}
+	STT_liv_mission_oselhapsal = { #7.7 - Епископ Езельский
+        icon = stt_mission_order_osel #mission_religious
+        position = 7
+		required_missions = { STT_liv_mission_coalition }	
+		provinces_to_highlight = {
+			area = estonia_ingria_area
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			is_at_war = no 
+			NOT = { exists = OSE }
+        }
+		effect = {
+			add_prestige = 5
+			add_years_of_income = 0.30
+			add_dip_power = 25
+		}
+	}
+}

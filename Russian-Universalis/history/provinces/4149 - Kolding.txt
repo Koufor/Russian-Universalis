@@ -1,0 +1,22 @@
+#Eastern Jutland, incl. Vejle, Skanderborg, Kolding, and Fredericia.
+owner = PSS
+controller = PSS
+add_core = PSS
+culture = bavarian
+religion = catholic
+base_tax = 4
+base_production = 4
+trade_goods = grain
+base_manpower = 3
+capital	= "Пассау"	### STT
+is_city = yes
+hre = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1803.1.1 = { owner = BAV controller = BAV add_core = BAV }	### STT
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1871.1.18 = { owner = GER controller = GER add_core = GER remove_core = BAV }	### STT

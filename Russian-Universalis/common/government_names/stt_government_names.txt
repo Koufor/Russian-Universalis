@@ -1,0 +1,152 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
+
+timurids_monarchy_title = { 		###STT
+	rank = {
+		1 = EMIRATE
+		2 = EMIRATE
+		3 = EMIRATE
+		4 = EMPIRE
+		5 = EMPIRE
+		6 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = STT_GREAT_EMIR_TIM
+		2 = STT_GREAT_EMIR_TIM
+		3 = STT_GREAT_EMIR_TIM
+		4 = STT_GREAT_EMIR_TIM
+		5 = STT_GREAT_EMIR_TIM
+		6 = STT_GREAT_EMIR_TIM
+	}
+
+	ruler_female = {
+		1 = EMIRA
+		2 = EMIRA
+		3 = GREAT_EMIRA
+		4 = GREAT_EMIRA
+		5 = GREAT_EMIRA
+		6 = GREAT_EMIRA
+	}
+	
+	trigger = {
+		tag = TIM
+		OR = {
+			has_reform = stt_timurids_government_reform
+			has_reform = stt_timurids_monarchy_legacy
+			government = stt_timurids_government
+		}
+	}
+}
+
+enlightened_monarchy = { 			###STT
+	rank = {
+		1 = ENLIGHTENED_MONARCHY
+		2 = ENLIGHTENED_MONARCHY
+		3 = ENLIGHTENED_MONARCHY
+		4 = ENLIGHTENED_MONARCHY
+		5 = ENLIGHTENED_MONARCHY
+		6 = ENLIGHTENED_MONARCHY
+	}
+
+	trigger = {
+		has_reform = enlightened_government_reform
+		NOT = { religion_group = muslim }
+	}
+}
+
+anarchy_government_title = { 		###STT
+		
+	rank = {
+		1 = REVOLUTIONARY_PEASANT_REPUBLIC
+		2 = REVOLUTIONARY_PEASANT_REPUBLIC
+		3 = REVOLUTIONARY_PEASANT_REPUBLIC
+		4 = REVOLUTIONARY_PEASANT_REPUBLIC
+		5 = REVOLUTIONARY_PEASANT_REPUBLIC
+		6 = REVOLUTIONARY_PEASANT_REPUBLIC
+	}
+
+	ruler_male = {
+		1 = GREAT_CONSUL
+		2 = GREAT_CONSUL
+		3 = GREAT_CONSUL
+		4 = GREAT_CONSUL
+		5 = GREAT_CONSUL
+		6 = GREAT_CONSUL
+	}
+
+	ruler_female = {
+		1 = GREAT_CONSULESS
+		2 = GREAT_CONSULESS
+		3 = GREAT_CONSULESS
+		4 = GREAT_CONSULESS
+		5 = GREAT_CONSULESS
+		6 = GREAT_CONSULESS
+	}
+
+	trigger = {
+		OR = {
+			has_reform = anarhy_government_legacy
+			government = anarchy
+		}
+	}
+}
+
+stt_byzantium_empire = {
+	rank = {
+		1 = PRINCEDOM
+		2 = PRINCEDOM
+		3 = KINGDOM
+		4 = KINGDOM
+		5 = EMPIRE
+		6 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = DESPOT
+		2 = DESPOT
+		3 = AUTOKRATOR
+		4 = AUTOKRATOR
+		5 = BASILEUS
+		6 = BASILEUS
+	}
+
+	ruler_female = {
+		1 = DESPOTISSA
+		2 = DESPOTISSA
+		3 = AUTOKRATEIRA 
+		4 = AUTOKRATEIRA 
+		5 = BASILISSA
+		6 = BASILISSA
+	}
+	
+	consort_male = {
+		1 = DESPOT
+		2 = DESPOT
+		3 = AUTOKRATOR
+		4 = AUTOKRATOR
+		5 = BASILEUS
+		6 = BASILEUS
+	}
+
+	consort_female = {
+		1 = DESPOTISSA
+		2 = DESPOTISSA
+		3 = AUTOKRATEIRA 
+		4 = AUTOKRATEIRA 
+		5 = BASILISSA
+		6 = BASILISSA
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			tag = BYZ
+			tag = TRE
+			tag = EPI
+			tag = MOE
+		}
+	}
+}
