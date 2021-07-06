@@ -1,2 +1,0 @@
-PLO = "countries/Plotsk.txt"
-LT0 = "countries/Trakai.txt"

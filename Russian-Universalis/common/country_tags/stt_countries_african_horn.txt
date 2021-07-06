@@ -1,6 +1,0 @@
-DWR = "countries/Dawaro.txt"
-BBI = "countries/Arababni.txt"
-GOJ = "countries/Gojjam.txt"
-DHA = "countries/Dahlak.txt"
-IFA = "countries/Ifat.txt"
-AXU = "countries/Axum.txt"

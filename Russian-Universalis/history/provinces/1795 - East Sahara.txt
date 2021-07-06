@@ -1,2 +1,0 @@
-discovered_by = TUT
-discovered_by = sub_saharan

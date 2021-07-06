@@ -1,8 +1,0 @@
-government = monarchy
-add_government_reform = feudalism_reform
-primary_culture = agarian
-religion = orthodox
-technology_group = eastern
-capital = 3124 # Kutaisi
-
-government_rank = 1
