@@ -1,0 +1,1234 @@
+# Ивенты отношений Польшы и Тевтонского ордена, а также их соседей
+namespace = polish_teu
+
+# Генрих III - князь Глогува и король великопольский (смерть)
+country_event = {
+	id = polish_teu.1
+	title = polish_teu.1.t
+	desc = polish_teu.1.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = GNE
+		is_year = 1309
+		NOT = { is_year = 1311 }
+	}
+	mean_time_to_happen = {
+		days = 90
+	}
+	immediate = { 
+		hidden_effect = {
+			define_ruler = {
+				name = "Генрих IV Верный"
+				dynasty = "Пяст"
+				adm = 3
+				dip = 2
+				mil = 4
+				fixed = yes
+				age = 19
+				claim = 100
+				attach_leader = "Генрих IV Верный Пяст"
+			}
+			kill_heir = yes
+			set_country_flag = henry_death
+		}
+	}
+	option = { # Разделим наследство 
+		name = polish_teu.1.1
+		ai_chance = { factor = 100 }
+		add_prestige = 5
+		hidden_effect = { GLG = { country_event = { id = polish_teu.101 } } }
+		255 = {
+			cede_province = KRA
+			remove_core = GNE
+			add_claim = GNE
+		}
+		hidden_effect = {
+			random_owned_province = { add_local_autonomy = 20 }
+			random_owned_province = { add_local_autonomy = 20 }
+			set_global_flag = peacefully_inherited_henry
+		}
+	}
+	option = { # Попытаться удержать все в своих руках
+		name = polish_teu.1.2
+		ai_chance = { factor = 0 }
+		add_stability = -1
+		add_legitimacy = -20
+		2966 = { 
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 8
+				leader = "Матильда фон Вельф"
+			}
+		}
+		255 = {
+			cede_province = KRA
+			remove_core = GNE
+			add_claim = GNE
+		}
+		create_union = GLG
+		set_global_flag = not_peacefully_inherited_henry
+	}
+	option = { # Играть за Глогув
+		name = polish_teu.1.3
+		ai_chance = { factor = 0 }
+		custom_tooltip = game_for_glogau
+		hidden_effect = {
+			switch_tag = GLG
+			GLG = {	country_event = { id = polish_teu.101 }	}
+			set_global_flag = peacefully_inherited_henry
+		}
+	}
+}
+
+# Матильда фон Вельф - Глогув
+country_event = {
+	id = polish_teu.101
+	title = polish_teu.1.t
+	desc = polish_teu.1.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		tag = GLG
+		is_year = 1309
+		NOT = { is_year = 1311 }
+	}
+	
+	option = { # Интересно
+		name = polish_teu.101.1
+		if = {
+			limit = { has_global_flag = peacefully_inherited_henry }
+			define_ruler = {
+				name = "Матильда"
+				dynasty = "фон Вельф"
+				adm = 2
+				dip = 3
+				mil = 2
+				fixed = yes
+				age = 34
+				culture = hannoverian 
+				claim = 100
+				female = yes
+				attach_leader = "Матильда фон Вельф"
+			}
+			define_heir = {
+				name = "Пшемко"
+				dynasty = "Пяст"
+				adm = 2
+				dip = 4
+				mil = 3
+				age = 9
+				claim = 100
+			}
+			hidden_effect = { capital_scope = { infantry = GLG infantry = GLG cavalry = GLG } }
+		}
+		if = {
+			limit = { has_global_flag = not_peacefully_inherited_henry }
+			custom_tooltip = not_peacefully_inherited
+		}
+	}
+}
+
+# Судьба наследcтва Генриха III 
+country_event = {
+	id = polish_teu.2
+	title = polish_teu.2.t
+	desc = polish_teu.2.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		tag = GNE
+		is_year = 1312
+		NOT = { is_year = 1318 }
+		has_country_flag = henry_death
+		any_neighbor_province = {
+			OR = {
+				owned_by = KRA
+				owned_by = POL
+			}
+		}
+		OR = {
+			KRA = { num_of_cities = 15 }
+			POL = { num_of_cities = 15 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 180
+	}
+	
+	option = { #  Уступить польские земли и уйти в Силезию
+		name = polish_teu.2.1
+		ai_chance = { factor = 100 }
+		custom_tooltip = game_for_glogau_2
+		hidden_effect = {
+			switch_tag = GLG
+			GLG = {
+				define_ruler = {
+					name = "Генрих IV Верный"
+					dynasty = "Пяст"
+					adm = 3
+					dip = 2
+					mil = 4
+					fixed = yes
+					age = 22
+					claim = 80
+					attach_leader = "Генрих IV Верный Пяст"
+				}
+			}
+			set_global_flag = kra_inherited_gnezno
+			KRA = { country_event = { id = polish_teu.3 } }
+		}
+	}
+	option = { # Мы будем сражаться до конца!
+		name = polish_teu.2.2
+		ai_chance = { factor = 0 }
+		custom_tooltip = game_for_glogau_3
+		hidden_effect = {
+			KRA = { 
+				declare_war_with_cb = {
+					who = GNE
+					casus_belli = "cb_core" 
+					war_goal_province = 254
+				}		
+			}
+			3248 = { change_controller = KRA }
+			3249 = { change_controller = KRA }
+			4211 = { change_controller = KRA }
+			255 = { infantry = KRA infantry = KRA cavalry = KRA }
+			KRA = { country_event = { id = polish_teu.3 } }
+		}
+	}
+}
+
+# Судьба наследcтва Генриха III (для Кракова)
+country_event = {
+	id = polish_teu.3
+	title = polish_teu.3.t
+	desc = polish_teu.3.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes 
+	fire_only_once = yes
+	trigger = {
+		tag = KRA
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # Хорошо
+		name = polish_teu.3.1
+		custom_tooltip = game_for_krakov
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = kra_inherited_gnezno }
+				KRA = { inherit = GNE }
+				clr_global_flag = kra_inherited_gnezno
+			}
+		}
+	}
+}
+
+# Спор о Гданьском Поморье (для TEU)
+country_event = {
+	id = polish_teu.4
+	title = polish_teu.4.t
+	desc = polish_teu.4.d
+	picture = BIG_BOOK_eventPicture
+ 
+	fire_only_once = yes
+	trigger = {
+		tag = TEU
+		is_year = 1315
+		43 = { owned_by = TEU }
+		2997 = { owned_by = TEU }
+		3734 = { owned_by = TEU }
+		4213 = { owned_by = TEU }
+		NOT = { is_year = 1325 }
+	}
+	
+	mean_time_to_happen = {
+		days = 730
+	}
+	
+	option = { # Поморье наше!
+		name = polish_teu.4.1
+		ai_chance = { factor = 80 }
+		add_prestige = 5
+		add_papal_influence = -2.5
+		43 = { add_core = KRA }
+		2997 = { add_core = KRA }
+		3734 = { add_core = KRA }
+		4213 = { add_core = KRA }
+		TEU = { add_historical_rival = KRA }
+		hidden_effect = {
+			KRA = { add_historical_rival = TEU }
+			set_global_flag = war_with_polish_stage_1 # - Нужен для продолжения серии ивентов!
+			KRA = { country_event = { id = polish_teu.5 days = 3 } }
+			set_global_flag = teu_proposition_1
+		}
+	}
+	option = { # Вернуть земли 
+		name = polish_teu.4.2
+		ai_chance = { factor = 20 }
+		add_prestige = -20
+		add_papal_influence = 2.5
+		43 = { 
+			add_core = KRA
+			remove_core = TEU
+			cede_province = KRA
+		}
+		2997 = { 
+			add_core = KRA
+			remove_core = TEU
+			cede_province = KRA
+		}
+		3734 = { 
+			add_core = KRA
+			remove_core = TEU
+			cede_province = KRA
+		}
+		4213 = { 
+			add_core = KRA
+			remove_core = TEU
+			cede_province = KRA
+		}
+		hidden_effect = { 
+			KRA = { country_event = { id = polish_teu.5 days = 3 } } 
+			set_global_flag = teu_proposition_2
+		}
+	}
+}
+
+# Спор о Гданьском Поморье (для POL)
+country_event = {
+	id = polish_teu.5
+	title = polish_teu.4.t
+	desc = polish_teu.4.d
+	picture = BIG_BOOK_eventPicture
+ 
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = POL
+			tag = KRA
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # Поморье наше!
+		name = polish_teu.5.1
+		ai_chance = { factor = 100 }
+		add_prestige = 5
+		if = {
+			limit = { has_global_flag = teu_proposition_1 }
+			clr_global_flag = teu_proposition_1
+			custom_tooltip = teu_pol_mes_1
+		}
+		if = {
+			limit = { has_global_flag = teu_proposition_2 }
+			custom_tooltip = teu_pol_mes_2
+			clr_global_flag = teu_proposition_2
+		}
+	}
+	option = { # Отказаться от Поморья - чтобы рано завершить цепокчу (без войны)
+		name = polish_teu.5.2
+		trigger = { has_global_flag = teu_proposition_2 }
+		ai_chance = { factor = 0 }
+		add_prestige = -10
+		add_legitimacy = -10
+		every_province = {
+			limit = {
+				area = west_prussia_area
+				owned_by = TEU
+			}
+			remove_core = ROOT
+		}
+		if = {
+			limit = { has_global_flag = teu_proposition_1 } 
+			clr_global_flag = teu_proposition_1
+		}
+	}
+}
+
+# Иоанн Люксембургский
+country_event = {
+	id = polish_teu.6
+	title = polish_teu.6.t
+	desc = polish_teu.6.d
+	picture = BAD_WITH_MONARCH_eventPicture
+ 
+	fire_only_once = yes
+	trigger = {
+		tag = BOH
+		is_year = 1310
+		NOT = { is_year = 1315 }
+	}
+	
+	option = { # Иоанн Люксембургский - король - - продолжение цепочки
+		name = polish_teu.6.1
+		ai_chance = { factor = 100 }
+		define_ruler = {
+			name = "Иоанн"
+			dynasty = "фон Люксембург"
+			adm = 4
+			dip = 4
+			mil = 5
+			fixed = yes
+			age = 16
+			claim = 90
+			culture = hessian
+			attach_leader = "Иоанн фон Люксембург"
+		}
+		define_consort = {
+			name = "Элишка"
+			dynasty = "Пржемысловна"
+			adm = 3
+			dip = 3
+			mil = 3
+			age = 18
+			culture = czech
+			claim = 100
+		}
+		create_union = LUX 
+		if = {
+			limit = { has_heir = yes }
+			kill_heir = yes
+		}
+		add_casus_belli = {
+			type = cb_restore_personal_union
+			months = 300
+			target = KRA
+		}
+		break_union = TIR
+		set_global_flag = war_with_polish_stage_2 # - Нужен для продолжения серии ивентов!
+		LUX = { country_event = { id = polish_teu.106 } } 
+	}
+	option = { # Представитель местной династии - король
+		name = polish_teu.6.2
+		ai_chance = { factor = 0 }
+		define_ruler = {
+			age = 36
+			claim = 70
+			culture = czech
+		}
+		add_historical_rival = LUX
+		add_stability = -1
+		hidden_effect = { LUX = { add_historical_rival = BOH } }
+		break_union = TIR
+	}
+}
+
+# Иоанн Люксембургский
+country_event = {
+	id = polish_teu.106
+	title = polish_teu.106.t
+	desc = polish_teu.106.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	major = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = LUX
+	}
+	
+	option = { # Ясно
+		name = polish_teu.106.1
+		custom_tooltip = new_emperor_of_HRE
+	}
+	
+}
+
+# Коронация Владислава Локетека
+country_event = {
+	id = polish_teu.7
+	title = polish_teu.7.t
+	desc = polish_teu.7.d
+	picture = COURT_eventPicture
+ 
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = POL
+			tag = KRA
+		}
+		is_year = 1320
+		NOT = { is_year = 1325 }
+		262 = { owned_by = ROOT }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # Интересно
+		name = polish_teu.7.1
+		add_legitimacy = 10
+		add_prestige = 10
+		set_government_rank = 4
+		if = {
+			limit = { has_global_flag = war_with_polish_stage_2 }
+			add_historical_rival = BOH
+			hidden_effect = { 
+				BOH = { add_historical_rival = POL }
+				BOH = { add_historical_rival = KRA }
+				BOH = { country_event = { id = polish_teu.8 days = 5 } }
+				TEU = { country_event = { id = polish_teu.8 days = 5 } }
+			}
+		}
+	}
+}
+
+# Коронация Владислава Локетека - уведомление для BOH и TEU
+country_event = {
+	id = polish_teu.8
+	title = polish_teu.7.t
+	desc = polish_teu.7.d
+	picture = COURT_eventPicture
+ 
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			tag = BOH
+			tag = TEU
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # Нужно что-то делать
+		name = polish_teu.8.1
+		if = {
+			limit = { tag = TEU }
+			create_alliance = BOH
+			add_historical_friend = BOH
+		}
+		if = {
+			limit = { tag = BOH }
+			create_alliance = TEU
+			add_historical_friend = TEU
+		}
+	}
+}
+
+# Владислав Локетек ищет союзников
+country_event = {
+	id = polish_teu.9
+	title = polish_teu.9.t
+	desc = polish_teu.9.d
+	picture = COURT_eventPicture
+ 
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = POL
+			tag = KRA
+		}
+		is_year = 1325
+		NOT = { is_year = 1326 }
+		has_global_flag = war_with_polish_stage_1
+		has_global_flag = war_with_polish_stage_2
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # Династические союзы нас спасут!
+		name = polish_teu.9.1
+		ai_chance = { factor = 100 }
+		create_alliance = LIT
+		create_marriage = LIT
+		add_prestige = 3
+		add_papal_influence = -3
+		create_marriage = HUN
+		add_prestige = 3
+		add_war_exhaustion = 0.5
+	}
+	option = { # Сами справимся!
+		name = polish_teu.9.2
+		ai_chance = { factor = 0 }
+		add_prestige = 15
+		add_legitimacy = 10
+		add_war_exhaustion = 1.5
+	}
+	
+	after = { 
+		clr_global_flag = war_with_polish_stage_1
+		clr_global_flag = war_with_polish_stage_2
+		set_global_flag = war_with_polish_stage_3
+	}
+}
+
+# Польско-тевтонская война (для TEU)
+country_event = {
+	id = polish_teu.10
+	title = polish_teu.10.t
+	desc = polish_teu.10.d
+	picture = teutons_eventPicture
+ 
+	fire_only_once = yes
+	trigger = {
+		tag = TEU
+		is_year = 1326
+		NOT = { is_year = 1327 }
+		has_global_flag = war_with_polish_stage_3
+	}
+	
+	option = { # Война!
+		name = polish_teu.10.1
+		custom_tooltip = polish_teu_conflict_1
+		hidden_effect = {
+			TEU = { set_country_flag = go_against_pol }
+			BOH = { set_country_flag = go_against_pol }
+			every_country = { 
+				limit = { has_country_flag = go_against_pol } 
+				form_coalition_against = POL
+				clr_country_flag = go_against_pol 
+			}
+			TEU = { form_coalition_against = POL declare_war_with_cb = { who = POL casus_belli = "cb_super_badboy" } }
+			if = {
+				limit = { exists = KRA }
+				KRA = { country_event = { id = polish_teu.11 } }
+			}
+			if = {
+				limit = { exists = POL }
+				POL = { country_event = { id = polish_teu.11 } }
+			}
+			if = {
+				limit = { exists = BOH }
+				BOH = { country_event = { id = polish_teu.11 } }
+			}
+			clr_global_flag = war_with_polish_stage_3
+			set_country_flag = war_with_polish_TEU_1
+		}
+	}
+}
+
+# Польско-тевтонская война (для POL и BOH)
+country_event = {
+	id = polish_teu.11
+	title = polish_teu.10.t
+	desc = polish_teu.10.d
+	picture = teutons_eventPicture
+ 
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			tag = BOH
+			tag = POL
+			tag = KRA
+		}
+	}
+	
+	option = { # Война!
+		name = polish_teu.11.1
+		if = {
+			limit = { tag = BOH }
+			custom_tooltip = polish_teu_conflict_2
+			set_country_flag = war_with_polish_BOH_1
+		}
+		if = {
+			limit = { OR = { tag = POL tag = KRA } }
+			custom_tooltip = polish_teu_conflict_3
+		}
+	}
+}
+
+# Титул короля Польши (для POL)
+country_event = {
+	id = polish_teu.12
+	title = polish_teu.12.t
+	desc = polish_teu.12.d
+	picture = BIG_BOOK_eventPicture
+	
+	fire_only_once = yes
+	trigger = {
+		tag = POL
+		war_with = BOH
+		OR = {
+			war_score = -30 
+			war_score = 30
+		}
+		has_country_flag = war_with_polish_BOH_1
+	}
+	
+	option = { # Сделать предложение чехам
+		name = polish_teu.12.1
+		ai_chance = { factor = 100 }
+		add_prestige = -5
+		BOH = { country_event = { id = polish_teu.13 days = 4 } }
+	}
+	
+	option = { # Воюем до конца, никаких уступок!
+		name = polish_teu.12.2
+		ai_chance = { factor = 0 }
+		add_prestige = 5
+	}
+}
+
+# Титул короля Польши (для BOH)
+country_event = {
+	id = polish_teu.13
+	title = polish_teu.12.t
+	desc = polish_teu.12.d
+	picture = BIG_BOOK_eventPicture
+	major = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = BOH
+	}
+	
+	option = { # Закончить войну и отказаться от титула
+		name = polish_teu.13.1
+		ai_chance = { factor = 70 }
+		If = {
+			limit = { BOH = { war_with = POL } }
+			white_peace = POL
+		}
+		add_treasury = 500
+		add_prestige = -25
+		remove_historical_friend = TEU
+		every_province = {
+			limit = { area = silesia_area NOT = { owned_by = ROOT } } 
+			add_permanent_claim = ROOT
+		}
+		every_province = {
+			limit = { area = upper_silesia_area NOT = { owned_by = ROOT } } 
+			add_permanent_claim = ROOT
+		}
+		hidden_effect = { TEU = { remove_historical_friend = BOH } set_global_flag = silesia_can_including }
+	}
+	option = { # Продолжить войну
+		name = polish_teu.13.2
+		ai_chance = { factor = 30 }
+		add_prestige = 5
+		add_legitimacy = 5
+	}
+	
+	after = {
+		clr_country_flag = war_with_polish_BOH_1
+	}
+}
+
+# Вышеградский и Варшавский процессы (для POL)
+country_event = {
+	id = polish_teu.14
+	title = polish_teu.14.t
+	desc = polish_teu.14.d
+	picture = LIBERUM_VETO_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = POL
+		war_with = TEU
+		OR = {
+			war_score = -40
+			war_score = 40
+		}
+		has_country_flag = war_with_polish_TEU_1
+	}
+	
+	option = { # Интересно
+		name = polish_teu.14.1
+		add_treasury = -75
+		add_papal_influence = -15
+		add_prestige = 5
+		add_war_exhaustion = 2.5
+		add_country_modifier = { 
+			name = reduced_dip_reputation 
+			duration = 730 #2
+		}
+		hidden_effect = { TEU = { country_event = { id = polish_teu.15 days = 1 } } }
+	}
+}
+
+# Вышеградский и Варшавский процессы (для TEU)
+country_event = {
+	id = polish_teu.15
+	title = polish_teu.14.t
+	desc = polish_teu.14.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		tag = TEU
+	}
+	
+	option = { # Интересно
+		name = polish_teu.14.1
+		add_treasury = -75
+		add_papal_influence = -15
+		add_prestige = 5
+		add_war_exhaustion = 2.5
+		add_country_modifier = { 
+			name = reduced_dip_reputation 
+			duration = 730 #2
+		}
+	}
+		
+	after = {
+		clr_country_flag = war_with_polish_TEU_1
+		set_global_flag = end_of_polish_teu_war_1
+	}
+}
+
+# Калишский мир (конец войны - для TEU)
+country_event = {
+	id = polish_teu.16
+	title = polish_teu.16.t
+	desc = polish_teu.16.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = TEU
+		NOT = { war_with = POL }
+		has_global_flag = end_of_polish_teu_war_1
+	}
+	
+	option = { # Интересно
+		name = polish_teu.16.1
+		hidden_effect = { POL = { country_event = { id = polish_teu.17 } } }
+	}
+}
+
+# Калишский мир (конец войны - для POL)
+country_event = {
+	id = polish_teu.17
+	title = polish_teu.16.t
+	desc = polish_teu.16.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		tag = POL
+	}
+	
+	option = { # Интересно
+		name = polish_teu.16.1
+	}
+	
+	after = {
+		clr_global_flag = end_of_polish_teu_war_1
+	}
+}
+
+# Подарок императора (Эгерланд - для Богемии)
+country_event = {
+	id = polish_teu.18
+	title = polish_teu.18.t
+	desc = polish_teu.18.d
+	picture = HRE_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = BOH
+		is_year = 1320
+		NOT = { is_year = 1330 }
+		exists = HEB
+		4154 = { owned_by = HEB }
+	}
+	
+	option = { # Полностью присоединить
+		name = polish_teu.18.1
+		ai_chance = { factor = 100 }
+		custom_tooltip = full_annex_egerland_1
+		hidden_effect = { HEB = { country_event = { id = polish_teu.19 days = 2 } } }
+		set_global_flag = full_annex_egerland
+	}
+	option = { # Сделать вассалом
+		name = polish_teu.18.2
+		ai_chance = { factor = 0 }
+		custom_tooltip = vassalize_egerland_1
+		hidden_effect = { HEB = { country_event = { id = polish_teu.19 days = 2 } } }
+		set_global_flag = vassalize_egerland
+	}
+}
+
+# Подарок императора ( для Эгерланда)
+country_event = {
+	id = polish_teu.19
+	title = polish_teu.18.t
+	desc = polish_teu.18.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		tag = HEB
+	}
+	
+	option = { # Принять свою судьбу
+		name = polish_teu.19.1
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { has_global_flag = full_annex_egerland }
+			hidden_effect = {
+				4154 = {
+					add_core = BOH 
+					cede_province = BOH
+					add_local_autonomy = 75
+				}
+			}
+			custom_tooltip = full_annex_egerland_2
+		}
+		if = {
+			limit = { has_global_flag = vassalize_egerland }
+			BOH = { vassalize = BEH }
+			custom_tooltip = vassalize_egerland_2
+		}
+	}
+	option = { # Сопротивляться
+		name = polish_teu.19.2
+		ai_chance = { factor = 0 }
+		declare_war = BOH
+	}
+	
+	after = {
+		clr_global_flag = full_annex_egerland
+		clr_global_flag = vassalize_egerland
+	}
+}
+
+# Восстание в Кракове (1311 год)
+country_event = {
+	id = polish_teu.20
+	title = polish_teu.20.t
+	desc = polish_teu.20.d
+	picture = SIEGE_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		OR = { 
+			tag = KRA
+			tag = POL
+		}
+		is_year = 1311
+		NOT = { is_year = 1315 }
+		262 = { owned_by = ROOT }
+	}
+	
+	option = { # Подавить мятеж!
+		name = polish_teu.20.1
+		add_stability = -1
+		262 = { 
+			change_controller = REB
+			spawn_rebels = {
+				type = particularist_rebels
+				size = 1				
+			}
+		}
+		2960 = { change_controller = REB }
+		3245 = { change_controller = REB }
+		random_owned_province = {
+			spawn_rebels = {
+				type = particularist_rebels
+				size = 0	
+			}
+		}
+	}
+}
+
+# Северогерманская маркграфская война
+country_event = {
+	id = polish_teu.21
+	title = polish_teu.21.t
+	desc = polish_teu.21.d
+	picture = SIEGE_eventPicture
+	
+	is_triggered_only = yes
+	#fire_only_once = yes
+	trigger = {
+		is_year = 1308
+		NOT = { is_year = 1317 }
+	}
+	
+	option = { # Интересно
+		name = polish_teu.21.1
+		trigger = { NOT = { tag = DAN } }
+		ai_chance = { factor = 5 }
+		if = {
+			limit = { tag = BRA }
+			add_prestige = 5
+			custom_tooltip = warning_to_bra
+		}
+		if = {
+			limit = { tag = MKL }
+			mecklenburg_area = { 
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = MKL 
+			}
+		}
+	}
+	option = { # Открыто вмешаться
+		name = polish_teu.21.2
+		trigger = { tag = DAN }
+		ai_chance = { factor = 1 }
+		add_prestige = 5
+		BRA = {
+			declare_war_with_cb = {
+				who = DAN
+				casus_belli = "cb_super_badboy" 
+			}
+		}
+		every_province = { limit = { OR = { area = vorpommern_area area = hinter_pommern_area } } add_permanent_claim = DAN }
+		hidden_effect = {
+			if = {
+				limit = { BRA = { ai = yes } }
+				BRA = { 
+					add_country_modifier = { name = ai_powerful_1 duration = 1825 } 
+					add_treasury = 100
+					capital_scope = { infantry = BRA infantry = BRA cavalry = BRA }
+				}
+			}
+			set_country_flag = recover_to_pommern
+		}
+	}
+	option = { # Это уже не наша земля
+		name = polish_teu.21.3
+		trigger = { tag = DAN }
+		ai_chance = { factor = 10 }
+		add_prestige = -10
+	}
+}
+
+# Уведомление для Штеттина, Вольгаста и Мекленубрга о вассализации 
+country_event = {
+	id = polish_teu.22
+	title = polish_teu.22.t
+	desc = polish_teu.22.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+	}
+	
+	option = { # Плохо
+		name = polish_teu.22.1
+		add_prestige = -5
+		every_owned_province = { add_local_autonomy = 35 }
+	}
+}
+
+# Величие дома Асканиев 
+country_event = {
+	id = polish_teu.23
+	title = polish_teu.23.t
+	desc = polish_teu.23.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = BRA
+		is_year = 1308 
+		NOT = { is_year = 1320 }
+	}
+	
+	option = { # Интересно
+		name = polish_teu.23.1
+		add_prestige = 5
+		add_dip_power = 25
+		add_mil_power = 25
+		add_country_modifier = {
+			name = great_askany_family
+			duration = 5475 # 15
+		}
+		if = {
+			limit = { ai = yes }
+			add_treasury = 75
+			capital_scope = { infantry = BRA infantry = BRA }
+		}
+	}
+}
+
+# Наследник князя Рюгенского  
+country_event = {
+	id = polish_teu.24
+	title = polish_teu.24.t
+	desc = polish_teu.24.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = RUG
+		exists = RUG
+		is_year = 1310 
+		has_heir = no 
+		NOT = { is_year = 1350 }
+	}
+	
+	option = { # Назначить наследником Померанский дом
+		name = polish_teu.24.1
+		trigger = {
+			exists = WLG
+			NOT = { is_rival = WLG }
+			WLG = { NOT = { is_subject_of = DAN } }
+		}
+		ai_chance = { factor = 100 }
+		custom_tooltip = rugen_endgame
+		WLG = { country_event = { id = polish_teu.25 days = 1825 } }
+	}
+	option = { # Назначить наследником Датского короля
+		name = polish_teu.24.2
+		trigger = {
+			exists = DAN
+			is_subject_of = DAN
+		}
+		ai_chance = { factor = 0 }
+		custom_tooltip = rugen_endgame
+		DAN = { country_event = { id = polish_teu.25 days = 1825 } }
+	}
+	option = { # Назначить наследником мелкого феодала
+		name = polish_teu.24.3
+		ai_chance = { factor = 0 }
+		add_legitimacy = 10
+		define_heir = {
+			adm = 3
+			dip = 2
+			mil = 4
+			age = 36
+			claim = 60
+		}
+		random_owned_province = { 
+			limit = { NOT = { is_capital = yes } }
+			add_local_autonomy = 50 
+		}
+	}
+}
+
+# Наследник князя Рюгенского - для Вольгаста и Дании
+country_event = {
+	id = polish_teu.25
+	title = polish_teu.24.t
+	desc = polish_teu.24.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			tag = WLG
+			tag = DAN
+		}
+	}
+	
+	option = { # Хорошо
+		name = polish_teu.25.1
+		add_prestige = 5
+		custom_tooltip = inherited_dinasty_choose 
+		ROOT = { inherit = RUG }
+	}
+}
+
+# Разделение Литвы - выделение Тракайского княжества 
+country_event = {
+	id = polish_teu.26
+	title = polish_teu.26.t
+	desc = polish_teu.26.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = LIT
+		NOT = { is_subject = yes }
+		NOT = { has_ruler = "Витень" }
+		NOT = { has_ruler = "Гедимин" }
+		is_neighbor_of = TEU
+		is_neighbor_of = LIV
+		num_of_cities = 15
+		religion = romuva 
+		270 = { owned_by = ROOT }
+		is_year = 1310
+		NOT = { is_year = 1440 }
+		NOT = { exists = LT0 }
+	}
+	
+	option = { # 
+		name = polish_teu.26.1
+		add_prestige = -5
+		custom_tooltip = trakai_status_tooltip
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = covno_area
+						area = podlyhia_area
+						area = east_prussia_area
+						area = curonia_area
+					}
+				}
+				add_core = LT0
+				cede_province = LT0
+			}
+			if = {
+				limit = { 270 = { owned_by = ROOT } }
+				270 = { add_core = LT0 cede_province = LT0 }
+			}
+			if = {
+				limit = { 3229 = { owned_by = ROOT } }
+				3229 = { add_core = LT0 cede_province = LT0 }
+			}
+			if = {
+				limit = { 1937 = { owned_by = ROOT } }
+				1937 = { add_core = LT0 cede_province = LT0 }
+			}
+			if = {
+				limit = { 4270 = { owned_by = ROOT } }
+				4270 = { add_core = LT0 cede_province = LT0 }
+			}
+			LT0 = { 270 = { move_capital_effect = yes } }
+		}
+	}
+	after = { 
+		create_union = LT0 
+		#LT0 = { 270 = { move_capital_effect = yes } }
+	}
+}
+# Новгородско-шведская война
+country_event = {
+	id = polish_teu.27
+	title = polish_teu.27.t
+	desc = polish_teu.27.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+	trigger = {
+		is_year = 1308 
+		NOT = { is_year = 1324 }
+	}
+	
+	option = { # Сражаться до победы!
+		name = polish_teu.27.1
+		if = {
+			limit = { tag = NOV ai = no }
+			30 = { add_permanent_claim = NOV }
+		}
+		if = {
+			limit = { tag = NOV }
+			add_prestige = 5
+		}
+		if = {
+			limit = { tag = SWE ai = no }
+			32 = { add_permanent_claim = SWE }
+			3632 = { add_permanent_claim = SWE }
+		}
+		if = {
+			limit = { tag = SWE }
+			add_prestige = -2
+		}
+	}
+}

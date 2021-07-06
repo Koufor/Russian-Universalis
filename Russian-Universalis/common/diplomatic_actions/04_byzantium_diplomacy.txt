@@ -1,0 +1,174 @@
+########################################################################################################################################
+#####
+# Данный файл полностью (пока что) отвечает за ограничения дипломатии Византии (BYZ), ограничения снимаются определенными реформами (через миссии)
+#####
+# Ограничения связанные с реформами дипломатии: (этап 0) нельзя заключать династические браки и вассализировать другие гос-ва, а также создавать шпионскую сеть, (этап 1) нельзя вассализировать другие гос-ва, (этап 2) ---
+###
+# Ограничения связанные с реформами военного дела: (этап 0) нельзя объявлять войны, гарантировать независимость другим гос-вам, предупреждать их, отбирать провинции через угрозы, (этап 1) нельзя объявлять войны, отбирать провинции через угрозы, (этап 2) --- 
+###
+# Ограничения связанные с реформами культуры: (этап 0) нельзя делать подношения другим державам, (этап 1) ---
+###
+# Ограничения связанные с реформами экономики: (этап 0) нельзя субсудировать другие державы и выплачивать их долги, (этап 1) нельзя выплачивать чужие долги, (этап 2) ---
+#####
+########################################################################################################################################
+
+#declarewar - отдельный файл
+
+warningaction = {
+	
+	condition = { ### Ограничение возможности угрожать другим гос-вам за Византию (BYZ)
+		tooltip = BYZ_CANNOT_WARNINGACTION
+		potential = {
+			tag = BYZ 
+			has_country_modifier = byz_mission_army_crisis_one
+		}
+		allow = {
+			always = no 
+		}
+	}
+}
+
+threaten_war  = {
+	
+	condition = { ### Ограничение возможности угрозой войны, отобрать территорию, у других гос-в за Византию (BYZ)
+		tooltip = BYZ_CANNOT_REQUEST_THREATEN_WAR
+		potential = {
+			tag = BYZ 
+			OR = {
+				has_country_modifier = byz_mission_army_crisis_one
+				has_country_modifier = byz_mission_army_crisis_two
+				has_country_modifier = byz_mission_army_crisis_three
+			}
+		}
+		allow = {
+			always = no 
+		}
+	}
+}
+
+guaranteeaction = {
+	
+	condition = { ### Ограничение возможности гарантировать независимость другим гос-вам за Византию (BYZ)
+		tooltip = BYZ_CANNOT_GUARANTEEACTION
+		potential = {
+			tag = BYZ 
+			has_country_modifier = byz_mission_army_crisis_one
+		}
+		allow = {
+			always = no 
+		}
+	}
+}
+
+royal_marriage = {
+	
+	condition = { ### Стандартное условие
+		tooltip = MARWAR
+		potential = {
+		}
+		allow = {
+			NOT = { war_with = FROM }
+		}
+	}
+	
+	condition = { ### Ограничение возможности заключать династические браки за Византию (BYZ)
+		tooltip = BYZ_CANNOT_REQUEST_ROYAL_MARRIAGE
+		potential = {
+			tag = BYZ
+			OR = {
+				AND = {
+					has_country_modifier = byz_mission_diplomatic_crisis_one
+					NOT = { has_country_modifier = byz_mission_diplomatic_crisis_two }
+				}
+				AND = {
+					has_country_modifier = byz_mission_diplomatic_crisis_one
+					NOT = { has_country_modifier = stt_byz_bride }
+				}
+			}
+		}
+		allow = {
+			always = no 
+		}
+	}
+	
+}
+
+vassalaction = {
+	
+	condition = { ### Стандартное условие
+		tooltip = VASSALINVALID
+		potential = {
+		}
+		allow = {
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+			FROM = { is_at_war = no }
+		}
+	}
+	
+	condition = { ### Ограничение возможности мирной вассализации других держав за Византию (BYZ)
+		tooltip = BYZ_CANNOT_REQUEST_VASSAL_ACTION
+		potential = {
+			tag = BYZ
+			OR = {
+				has_country_modifier = byz_mission_diplomatic_crisis_one
+				has_country_modifier = byz_mission_diplomatic_crisis_two
+			}
+		}
+		allow = {
+			always = no 
+		}
+	}
+	
+}
+
+giftaction = {
+
+	condition = { ### Ограничение возможности делать подношения за Византию (BYZ)
+		tooltip = BYZ_CANNOT_GIFTACTION
+		potential = {
+			tag = BYZ
+			has_country_modifier = byz_mission_cultural_crisis_one
+		}
+		allow = {
+			always = no 
+		}
+	}
+
+}
+
+warsubsidy = {
+
+	condition = { ### Ограничение возможности выдавать субсидии другим державам за Византию (BYZ)
+		tooltip = BYZ_CANNOT_WARSUBSIDY
+		potential = {
+			tag = BYZ
+			has_country_modifier = byz_mission_economic_crisis_one
+		}
+		allow = {
+			always = no 
+		}
+	}
+
+}
+
+#counterespionage = {
+#
+#	condition = { ### Ограничение возможности создания шипонской сети в других гос-вах за Византию (BYZ)
+#		tooltip = BYZ_CANNOT_COUNTERESPIONAGE
+#		potential = {
+#			tag = BYZ
+#			has_country_modifier = byz_mission_diplomatic_crisis_one
+#		}
+#		allow = {
+#			always = no 
+#		}
+#	}
+#
+#}
+

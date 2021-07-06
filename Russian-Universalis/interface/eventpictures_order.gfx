@@ -1,0 +1,10 @@
+spriteTypes = {
+	spriteType = {
+		name = "teutons_eventPicture"
+		texturefile = "gfx/event_pictures/teutons_eventPicture.dds"
+	}
+	spriteType = {
+		name = "old_latin_empire_eventPicture"
+		texturefile = "gfx/event_pictures/event_Koufor/old_latin_empire_eventPicture.dds"
+	}
+}

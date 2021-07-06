@@ -1,0 +1,4 @@
+KRR = "countries/Kerri.txt"
+DRR = "countries/Derri.txt"
+RSM = "countries/Roscomon.txt"
+KNN = "countries/Kilkenny.txt"

@@ -1,0 +1,104 @@
+# namespace = event_marcin
+
+# country_event = {
+	# id = event_marcin.1
+	# title = "event_marcin.EVTNAME1"
+	# desc = "event_marcin.EVTDESC1"
+	# picture = DIPLOMACY_eventPicture
+	# hidden = yes
+	# trigger = {
+		# calc_true_if = {
+			# all_owned_province = {
+				# has_building = college
+			# }
+			# amount = 1
+		# }
+ 	# }
+	# mean_time_to_happen = {
+		# months = 1
+		
+		# modifier = {
+			# factor = 100
+			# is_month = 12
+		# }
+	# }
+	# immediate = {
+		# hidden_effect = {
+			# ROOT = { change_innovativeness = 4 }
+		# }
+	# }
+	# option = { name = event_marcin.1.a }
+# }
+# country_event = {
+	# id = event_marcin.4
+	# title = "event_marcin.EVTNAME1"
+	# desc = "event_marcin.EVTDESC1"
+	# picture = DIPLOMACY_eventPicture
+	# hidden = yes
+	# trigger = {
+		# calc_true_if = {
+			# all_owned_province = {
+				# has_building = college
+			# }
+			# amount = 2
+		# }
+ 	# }
+	# mean_time_to_happen = {
+		# months = 1
+		
+		# modifier = {
+			# factor = 100
+			# is_month = 12
+		# }
+	# }
+	# immediate = {
+		# hidden_effect = {
+			# ROOT = { change_innovativeness = 7 }
+		# }
+	# }
+	# option = { name = event_marcin.1.a }
+# }
+# country_event = {
+	# id = event_marcin.2
+	# title = "event_marcin.EVTNAME1"
+	# desc = "event_marcin.EVTDESC1"
+	# picture = DIPLOMACY_eventPicture
+	# hidden = yes
+	# trigger = {
+		# any_owned_province = { 
+			# has_building = university
+		# }
+		# is_month = 12
+ 	# }
+	# mean_time_to_happen = {
+		# months = 1
+	# }
+	# immediate = {
+		# hidden_effect = {
+			# ROOT = { change_innovativeness = 4 }
+		# }
+	# }
+	# option = { name = event_marcin.2.a }
+# }
+# country_event = {
+	# id = event_marcin.3
+	# title = "event_marcin.EVTNAME1"
+	# desc = "event_marcin.EVTDESC1"
+	# picture = DIPLOMACY_eventPicture
+	# hidden = yes
+	# trigger = {
+		# any_owned_province = { 
+			# has_building = university
+		# }
+		# is_month = 12
+ 	# }
+	# mean_time_to_happen = {
+		# months = 1
+	# }
+	# immediate = {
+		# hidden_effect = {
+			# ROOT = { change_innovativeness = 4 }
+		# }
+	# }
+	# option = { name = event_marcin.3.a }
+# }

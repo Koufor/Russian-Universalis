@@ -1,0 +1,39 @@
+government = monarchy
+add_government_reform = feudalism_reform
+religion = catholic
+primary_culture = catalan
+technology_group = western
+capital = 3981	# Ampurias
+
+1309.3.9 = {
+	monarch = {
+		name = "Понс VI "
+		dynasty = "Де Нарбонн"
+		birth_date = 1290.5.8
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}
+
+1322.3.9 = {
+	monarch = {
+		name = "Уг VI "
+		dynasty = "Фолк"
+		birth_date = 1300.5.8
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}
+
+1322.3.9 = {
+	monarch = {
+		name = "Пере I "
+		dynasty = "Де Барселона"
+		birth_date = 1300.5.8
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+} 

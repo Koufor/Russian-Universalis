@@ -1,0 +1,88 @@
+﻿l_english:
+ STT_update_lithborder_mission_title: "Óêðåïèòü ãðàíèöû"
+ STT_update_lithborder_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_old_lithcities_mission_title: "Ñòàðûå ãîðîäà Ëèòâû"
+ STT_old_lithcities_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_crush_teutons_mission_title: "Îòáðîñèòü êðåñòîíîñöåâ"
+ STT_crush_teutons_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_pagan_kingdom_mission_title: "ßçû÷åñêîå êîðîëåâñòâî"
+ STT_pagan_kingdom_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_whiterus_subjects_mission_title: "Êíÿæåñòâà Áåëîé Ðóñè"
+ STT_whiterus_subjects_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_blackrus_subjects_mission_title: "Êíÿæåñòâà ×åðíîé Ðóñè"
+ STT_blackrus_subjects_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_whiterus_conquest_mission_title: "Êíÿæåñòâî Âèòåáñê"
+ STT_whiterus_conquest_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_blackrus_conquest_mission_title: "Ïîä÷èíèòü ×åðíóþ Ðóñü"
+ STT_blackrus_conquest_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_volynia_conquest_mission_title: "Çàâîåâàòü Âîëûíü"
+ STT_volynia_conquest_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_subdue_halych_mission_title: "Ïîä÷èíèòü Ãàëèöêóþ Ðóñü"
+ STT_subdue_halych_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_mstislay_conquest_mission_title: "Êíÿæåñòâî Ìñòèñëàâëü"
+ STT_mstislay_conquest_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_loyalty_novgorod_mission_title: "Ëîÿëüíîñòü Íîâãîðîäà"
+ STT_loyalty_novgorod_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_conquest_smolensk_mission_title: "Ñìîëåíñêàÿ çåìëÿ"
+ STT_conquest_smolensk_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_conquest_severchina_mission_title: "Çàâîåâàòü Ñåâåðùèíó"
+ STT_conquest_severchina_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_conquest_kiev_mission_title: "Çàõâàòèòü Êèåâñêóþ Ðóñü"
+ STT_conquest_kiev_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_verhovsky_duches_mission_title: "Âåðõîâñêèå êíÿçüÿ"
+ STT_verhovsky_duches_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_east_border_mission_title: "Ïðîäâèæåíèå íà âîñòîê"
+ STT_east_border_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_destroy_moskov_mission_title: "Ñîêðóøèòü Ìîñêâó"
+ STT_destroy_moskov_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_lith_village_mission_title: "Ëèòîâñêèå äåðåâíè"
+ STT_lith_village_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_upproduction_mission_title: "Ðàçâèòèå ïðîèçâîäñòâà"
+ STT_upproduction_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_new_roads_mission_title: "Ïðîëîæèòü äîðîãè"
+ STT_new_roads_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_lithuanian_trade_mission_title: "Ëèòîâñêàÿ òîðãîâëÿ"
+ STT_lithuanian_trade_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_small_lithuinia_mission_title: "Ìàëàÿ Ëèòâà"
+ STT_small_lithuinia_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_crush_teutons_2_mission_title: "Ñîêðóøèòü Òåâòîíñêèé îðäåí"
+ STT_crush_teutons_2_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_reborn_old_cultures_mission_title: "Âîçðîäèòü ñòàðûå êóëüòóðû"
+ STT_reborn_old_cultures_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_religion_unity_and_territory_mission_title: "Åäèíñòâî âåðû è çåìëè"
+ STT_religion_unity_and_territory_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_kurland_mission_title: "Çåìëÿ êóðîâ"
+ STT_kurland_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_crush_livonian_mission_title: "Ñîêðóøèòü Ëèâîíñêèé îðäåí"
+ STT_crush_livonian_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 
+ STT_lith_allies_mission_title: "Âíåøíèå ñîþçíèêè"
+ STT_lith_allies_mission_desc: "Íåò îïèñàíèÿ (â ðàçðàáîòêå)."
+ 

@@ -1,0 +1,72 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+religion = catholic
+primary_culture = sardinian
+capital = 127	# Cagliari
+fixed_capital = 127 # Cannot move capital away from this province & no power cost to move to it
+
+1308.1.1 = {
+	monarch = { 
+		name = "Мариано III"
+		dynasty = "Арборейский"
+		dip = 3
+		mil = 3
+		adm = 3
+	}
+}
+
+1321.1.1 = {
+	monarch = { 
+		name = "Угоне II"
+		dynasty = "Арборейский"
+		dip = 3
+		mil = 3
+		adm = 3
+	}
+}
+
+
+1347.1.1 = {
+	monarch = { 
+		name = "Мариано IV"
+		dynasty = "Арборейский"
+		dip = 4
+		mil = 4
+		adm = 4
+	}
+}
+
+1387.1.1 = {
+	monarch = { 
+		name = "Мариано V"
+		dynasty = "Арборейский"
+		dip = 3
+		mil = 2
+		adm = 3
+	}
+}
+
+1387.1.1 = {
+	heir = {
+		name = "Гульельмо I"
+		monarch_name = "Гульельмо I"
+		dynasty = "Арборейский"
+		birth_date = 1387.1.1
+		death_date = 1430.1.1
+		claim = 80
+		dip = 2
+		mil = 1
+		adm = 1
+	}
+}
+
+1407.1.1 = {
+	monarch = { 
+		name = "Гульельмо I"
+		dynasty = "Арборейский"
+		dip = 2
+		mil = 1
+		adm = 1
+	}
+}

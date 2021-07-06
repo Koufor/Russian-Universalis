@@ -1,0 +1,85 @@
+declarewar = {
+	condition = { ### Балтика - Крестовый поход (Тевтоны)
+		tooltip = baltic_crusader_TEU
+		potential = {
+			tag = TEU
+			has_global_flag = baltic_crusade
+		}
+		allow = {
+			FROM = {
+				OR = {
+					tag = LIT
+					is_subject_of = LIT
+					tag = KRA
+					tag = POL
+					#tag = NOV
+					#is_subject_of = NOV
+				}
+			}
+		}
+	}
+	
+	condition = { ### Балтика - Крестовый поход (Литва)
+		tooltip = baltic_crusader_LIT
+		potential = {
+			tag = LIT
+			has_global_flag = baltic_crusade
+		}
+		allow = {
+			FROM = {
+				OR = {
+					tag = TEU
+					is_subject_of = TEU
+					tag = LIV
+					is_subject_of = LIV
+					tag = MSK
+					tag = KLL
+					tag = PIN
+					tag = VIT
+					tag = DRU
+					tag = SVI
+					tag = SLU
+					tag = PTV
+					tag = DUB
+					tag = VVL
+					tag = MST
+					tag = PLT
+				}
+			}
+		}
+	}
+	
+	condition = { ### Балтика - Крестовый поход (Ливоны)
+		tooltip = baltic_crusader_LIV
+		potential = {
+			tag = LIV
+			has_global_flag = baltic_crusade
+		}
+		allow = {
+			FROM = {
+				OR = {
+					tag = NOV
+					is_subject_of = NOV
+					tag = LIT
+					is_subject_of = LIT
+				}
+			}
+		}
+	}
+	
+	condition = { ### Ограничение возможности объявлять войны за Византию (BYZ)
+		tooltip = BYZ_CANNOT_DECLARE_WAR
+		potential = {
+			tag = BYZ 
+			OR = {
+				has_country_modifier = byz_mission_army_crisis_one
+				has_country_modifier = byz_mission_army_crisis_two
+			}
+			NOT = { has_country_modifier = byz_mission_army_crisis_three }
+		}
+		allow = {
+			always = no 
+		}
+	}
+	
+}

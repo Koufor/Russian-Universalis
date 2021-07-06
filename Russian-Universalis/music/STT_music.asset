@@ -1,0 +1,9 @@
+music = {
+	name = "Krilya-Tamerlan"
+	file = "Krilya-Tamerlan.ogg"
+}
+
+music = {
+	name = "Adrian Von Ziegler - Из эпохи пиратов"
+	file = "ageofpirates.ogg"
+}

@@ -1,0 +1,32 @@
+#4239 - Belgrade|Karystos
+
+owner = NGR
+controller = NGR
+add_core = NGR
+culture = greek
+religion = orthodox
+capital = "Каристос"
+trade_goods = fish
+hre = no
+base_tax = 1
+base_production = 2
+base_manpower = 1
+is_city = yes
+
+add_core = BYZ
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+
+1276.1.1 = { owner = BYZ controller = BYZ add_core = BYZ }
+1281.1.1 = { owner = NGR controller = NGR }
+1317.1.1 = { owner = ATH controller = ATH }
+1319.1.1 = { add_core = ATH }
+1365.1.1 = { owner = VEN controller = VEN add_core = VEN remove_core = ATH culture = arvanite }
+1479.1.25 = { owner = TUR add_core = TUR }
+1550.1.1 = { remove_core = VEN }
+1555.1.1 = { unrest = 5 }
+1556.1.1 = { unrest = 0 }
+1822.1.15 = { owner = GRE controller = GRE add_core = GRE }
+1829.9.12 = { remove_core = TUR }

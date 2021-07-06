@@ -1,0 +1,1483 @@
+THS_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+		diplomatic_reputation = 1
+	}
+	
+	bonus = {
+		global_own_trade_power = 0.20
+	}
+	
+	trigger = {
+		tag = THS
+	}
+	free = yes
+	
+	heir_of_great_dynasty = {
+		legitimacy = 1
+	}
+	thessalian_diplomacy = {
+		improve_relation_modifier = 0.30
+	}
+	second_imperial_city = {
+		prestige = 1.25
+	}
+	new_power = {
+		global_unrest = -1.5
+	}
+	trade_with_venice = {
+		merchants = 1
+	}
+	legacy_old_rule = {
+		land_morale = 0.15
+	}
+	greek_orthodox_faith = {
+		tolerance_own = 2
+	}
+}
+
+ACH_ideas = {
+	start = {
+		prestige_from_land = 0.25
+		army_tradition = 1
+	}
+	
+	bonus = {
+		diplomatic_reputation = 2
+	}
+	
+	trigger = {
+		tag = ACH
+	}
+	free = yes
+	
+	roman_rule = {
+		stability_cost_modifier = -0.1
+		administrative_efficiency = 0.05	
+	}
+	
+	heir_of_latin_empire = {
+		legitimacy = 1
+		prestige = 1
+	}
+	baron_system = {
+		global_unrest = -1
+		global_autonomy = -0.05
+	}
+	morean_story = {
+		global_institution_spread = 0.1
+		embracement_cost = -0.1
+	}
+	between_scilla_kharibda = {
+		diplomats = 1
+		spy_offence = 0.20
+	}
+	own_church_power = {
+		global_heretic_missionary_strength = 0.03
+		global_tax_modifier = 0.1
+	}
+	key_to_ellada = {
+		defensiveness = 0.25
+	}
+}
+
+EPI_ideas = {
+	start = {
+		heir_chance = 0.25
+		merc_maintenance_modifier = -0.25
+	}
+	
+	bonus = {
+		war_exhaustion = -0.05
+	}
+	
+	trigger = {
+		tag = EPI
+	}
+	free = yes
+	
+	heir_of_great_dynasty = {
+		legitimacy = 1
+	}
+	state_of_five_dynasty = {
+		prestige = 1
+	}
+	foreign_influence = {
+		num_accepted_cultures = 2
+	}
+	endless_fight = {
+		land_morale = 0.15
+	}
+	italian_communication = {
+		embracement_cost = -0.1
+		global_institution_spread = 0.1
+	}
+	epirian_embitions = {
+		core_creation = -0.1
+		ae_impact = -0.1
+	}
+	mountain_defence = {
+		defensiveness = 0.20
+	}
+}
+
+MOE_ideas = {
+	start = {
+		build_cost = -0.10
+		diplomats = 1
+	}
+	
+	bonus = {
+		vassal_income = 0.25
+	}
+	
+	trigger = {
+		tag = MOE
+	}
+	free = yes
+	
+	venice_trade = {
+		trade_efficiency = 0.15
+	}
+	heir_of_byzantium = {
+		prestige = 1
+		legitimacy = 1
+	}
+	albanian_diaspora = {
+		num_accepted_cultures = 1
+	}
+	wall_geksamilion = {
+		defensiveness = 0.30
+	}
+	orthodox_greece = {
+		global_heretic_missionary_strength = 0.035
+		tolerance_own = 1
+	}
+	morean_power = {
+		discipline = 0.05
+		shock_damage = 0.10
+	}
+	peloponnes = {
+		hostile_attrition = 2
+	}
+}
+
+NEO_ideas = {
+	start = {
+		tolerance_own = 1
+		army_tradition = 1
+	}
+	
+	bonus = {
+		land_maintenance_modifier = -0.15
+	}
+	
+	trigger = {
+		tag = NEO
+	}
+	free = yes
+	
+	ghost_catalon_war = {
+		land_morale = 0.15
+	}
+	way_of_death_cruel = {
+		movement_speed = 0.1
+		loot_amount = 0.25
+	}
+	true_foreign = {
+		mercenary_discipline = 0.05
+		merc_maintenance_modifier = -0.25
+	}
+	independence_catalon_war = {
+		free_leader_pool = 1
+		leader_land_shock = 1
+	}
+	help_aragon_home = {
+		improve_relation_modifier = 0.3
+	}
+	new_reconquista = {
+		global_heretic_missionary_strength = 0.03
+	}
+	piety_god = {
+		missionaries = 1
+		missionary_maintenance_cost = -0.2
+	}
+}
+PHI_ideas = {
+	start = {
+		defensiveness = 0.25
+		production_efficiency = 0.10
+	}
+	
+	bonus = {
+		diplomatic_reputation = 2
+	}
+	
+	trigger = {
+		tag = PHI
+	}
+	free = yes
+	
+	eagean_trade_city = {
+		trade_efficiency = 0.15
+		merchants = 1
+	}
+	imperial_city = {
+		stability_cost_modifier = -0.15
+	}
+	independence_greek_city = {
+		prestige = 1
+	}
+	surround_by_enemy = {
+		land_morale = 0.15
+		fort_maintenance_modifier = -0.15
+	}
+	connection_knights = {
+		improve_relation_modifier = 0.25
+		diplomats = 1
+	}
+	new_reign_power = {
+		republican_tradition = 0.5
+	}
+	famous_manufactory = {
+		global_tax_modifier = 0.1
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+SCH_ideas = {
+	start = {
+		naval_forcelimit_modifier = 0.15
+		capture_ship_chance = 0.1
+	}
+	
+	bonus = {
+		prestige_from_naval = 0.3
+	}
+	
+	trigger = {
+		tag = SCH
+	}
+	free = yes
+	
+	against_pirates = {
+		recover_navy_morale_speed = 0.10
+		galley_power = 0.25
+	}
+	wise_rule = {
+		global_unrest = -1
+		global_autonomy = -0.05
+	}
+	new_midas = {
+		global_tax_modifier = 0.1
+		trade_efficiency = 0.1
+	}
+	state_dzakaria = {
+		administrative_efficiency = 0.10
+		legitimacy = 0.5
+	}
+	best_friend = {
+		spy_offence = 0.2
+		improve_relation_modifier = 0.1
+	}
+	battle_of_chios = {
+		naval_morale = 0.15
+	}
+	king_asia_minor = {
+		prestige = 0.75
+		papal_influence = 0.5
+	}
+}
+NGR_ideas = {
+	start = {
+		defensiveness = 0.25
+		hostile_attrition = 1
+	}
+	
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		tag = NGR
+	}
+	free = yes
+	
+	dominus_insulae_nigropontis = {
+		prestige = 1
+		legitimacy = 0.5
+	}
+	triarkhia = {
+		administrative_efficiency = 0.10
+	}
+	lombard_city = {
+		fort_maintenance_modifier = -0.15
+		garrison_size = 0.1
+	}
+	new_life = {
+		num_accepted_cultures = 1
+		development_cost = -0.1
+	}
+	trade_bonus = {
+		trade_efficiency = 0.15
+	}
+	free_island = {
+		stability_cost_modifier = -0.15
+		global_unrest = -2
+	}
+	latin_connection = {
+		ae_impact = -0.1
+		land_morale = 0.1
+	}
+}
+
+CCZ_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		naval_morale = 0.15
+	}
+	
+	bonus = {
+		navy_tradition = 1
+	}
+	
+	trigger = {
+		tag = CCZ
+	}
+	free = yes
+	
+	home_of_pirates = {
+		loot_amount = 0.5
+	}
+	margarit_bridzini = {
+		leader_naval_fire = 1
+		leader_naval_manuever = 1
+	}
+	navy_state = {
+		global_ship_recruit_speed = -0.2
+		global_sailors_modifier = 0.10
+	}
+	dynasty_tocco = {
+		prestige = 1
+		diplomatic_reputation = 1
+	}
+	breaking_rules = {
+		province_warscore_cost = -0.1
+	}
+	little_point = {
+		land_morale = 0.1
+		siege_blockade_progress = 1
+	}	
+	chronicle_of_the_tocco = {
+		stability_cost_modifier = -0.1
+		tolerance_own = 2
+	}
+}
+
+AYD_ideas = {
+	start = {
+		galley_power = 0.2
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		unjustified_demands = -0.3
+	}
+	
+	trigger = {
+		tag = AYD
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	your_home_my_home = {
+		spy_offence = 0.20
+		rebel_support_efficiency = 0.25
+	}
+	centr_eastern_meditterian = {
+		trade_efficiency = 0.15
+	}
+	rise_foreign = {
+		advisor_cost = -0.2
+	}
+	help_science = {
+		idea_cost = -0.1
+	}
+	fighter_believe = {
+		land_morale = 0.15
+	}
+	founder_osmanogly_navy = {
+		naval_maintenance_modifier = -0.15
+		global_sailors_modifier = 0.10
+	}
+}
+
+KRS_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		diplomats = 1
+	}
+	
+	bonus = {
+		leader_siege = 2
+	}
+	
+	trigger = {
+		tag = KRS
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	system_defence = {
+		defensiveness = 0.2
+		fort_maintenance_modifier = -0.10
+	}
+	glory_general = {
+		free_leader_pool = 2
+	}
+	great_old = {
+		prestige = 1
+		legitimacy = 0.5
+	}
+	attack_destroy = {
+		shock_damage = 0.2
+	}
+	military_state = {
+		global_manpower_modifier = 0.1
+		land_forcelimit_modifier = 0.1
+	}
+	silk_product = {
+		global_tax_modifier = 0.1
+		production_efficiency = 0.05
+	}
+}
+
+SRU_ideas = {
+	start = {
+		capture_ship_chance = 0.1
+		may_perform_slave_raid = yes
+	}
+	
+	bonus = {
+		sunk_ship_morale_hit_recieved = -0.25
+	}
+	
+	trigger = {
+		tag = SRU
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	great_manisa = {
+		build_cost = -0.1
+		local_build_time = -0.1
+	}
+	saruhan_bey = {
+		leader_land_shock = 1
+		army_tradition = 1
+	}
+	found_castle = {
+		defensiveness = 0.15
+		garrison_size = 0.15
+	}
+	navy_battle = {
+		recover_navy_morale_speed = 0.2
+		recover_army_morale_speed = 0.1
+	}
+	osman_alarm = {
+		spy_offence = 0.20
+		fabricate_claims_cost = -0.25
+	}
+	emeny_allies = {
+		improve_relation_modifier = 0.20
+		diplomatic_reputation = 1
+	}
+}
+
+MEN_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		recover_navy_morale_speed = 0.2
+	}
+	
+	bonus = {
+		privateer_efficiency = 0.5
+	}
+	
+	trigger = {
+		tag = MEN
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	masud_rule = {
+		leader_land_manuever = 1
+		movement_speed = 0.2
+	}
+	heart_caria = {
+		defensiveness = 0.15
+        trade_efficiency = 0.10
+	}
+	safe_politics = {
+		tolerance_heathen = 2
+	}
+	desire_island = {
+		naval_maintenance_modifier = -0.25
+	}
+	ghazi = {
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
+	}
+	ilyas_bey = {
+		tolerance_own = 2.5
+	}
+}
+
+GRM_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+		improve_relation_modifier = 0.2
+	}
+	
+	bonus = {
+		diplomatic_reputation = 2
+	}
+	
+	trigger = {
+		tag = GRM
+	}
+	free = yes
+	
+	subashi = {
+		discipline = 0.05
+		land_morale = 0.05
+	}
+	first_settlers = {
+		development_cost = -0.1
+		culture_conversion_cost = -0.1
+	}
+	heir_of_seljuk_rules = {
+		administrative_efficiency = 0.1
+	}
+	red_germiyan_silk = {
+		production_efficiency = 0.15
+	}
+	patrons_literature = {
+		all_power_cost = -0.03
+		advisor_cost = -0.1
+	}
+	great_governor = {
+		leader_land_shock = 1
+		recover_army_morale_speed = 0.1
+	}
+	turks_leader = {
+		ae_impact = -0.1
+	}
+}
+ERE_ideas = {
+	start = {
+		cavalry_power = 0.20
+		merchants = 1
+	}
+	
+	bonus = {
+		movement_speed = 0.15
+	}
+	
+	trigger = {
+		tag = ERE
+	}
+	free = yes
+	
+	ere_uygur_origin = {
+		discipline = 0.05
+	}
+	ere_ilkhan_service = {
+		core_creation = -0.1
+	}
+	ere_gerenbuk_battle = {
+		land_morale = 0.1
+	}
+	ere_kose_peygamber = {
+		adm_tech_cost_modifier = -0.05
+		stability_cost_modifier = -0.1
+	}
+	ere_sultan_asia_minor = {
+		legitimacy = 1
+		global_unrest = -1
+	}
+	ere_keshkmedrese = {
+		development_cost = -0.05
+		build_cost = -0.10
+	}
+	ere_eretna_centre = {
+		trade_efficiency = 0.15
+	}
+}
+DUL_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+		global_spy_defence = 0.2
+	}
+	
+	bonus = {
+		diplomatic_reputation = 1
+	}
+	
+	trigger = {
+		tag = DUL	
+	}
+	free = yes
+	
+	dul_kanun_name = {
+		technology_cost = -0.05
+	}
+	dul_glory_army = {
+		land_morale = 0.1
+		cavalry_power = 0.15
+	}
+	dul_adapt_game = {
+		diplomats = 1
+		spy_offence = 0.20
+	}
+	dul_zulkadar = {
+		num_accepted_cultures = 2
+	}
+	dul_dul_architecture = {
+		build_cost = -0.1
+	}
+	tavr_defence = {
+		defensiveness = 0.2
+	}
+	royal_family = {
+		prestige = 1
+		administrative_efficiency = 0.1
+	}
+}
+SIC_ideas = {
+	start = {
+		trade_steering = 0.25
+        cavalry_power = 0.1
+	}
+	
+	bonus = {
+		naval_forcelimit_modifier = 0.2
+	}
+	
+	trigger = {
+		tag = SIC
+	}
+	free = yes
+	
+	melfician_act = {
+		global_tax_modifier = 0.1
+		global_unrest = -2
+	}
+	sicily_revolt = {
+		hostile_attrition = 2
+	}
+	legacy_viking = {
+		leader_land_shock = 1
+		land_morale = 0.1
+	}
+	centre_meditterian = {
+		trade_efficiency = 0.15
+	}
+	everyone_fate = {
+		dip_tech_cost_modifier = -0.10
+		ae_impact = -0.05
+	}
+	counquer_land = {
+		discipline = 0.05
+	}
+	navy_empire = {
+		galley_power = 0.2
+        global_ship_cost = -0.1
+	}
+}
+
+PIS_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+        merchants = 1
+	}
+	
+	bonus = {
+		advisor_cost = -0.10
+	}
+	
+	trigger = {
+		tag = PIS
+	}
+	free = yes
+	
+	trade_empire = {
+		trade_efficiency = 0.15
+	}
+	pisan_crusaders = {
+		land_morale = 0.2
+	}
+	pisan_church = {
+		papal_influence = 1
+	}
+	galileo_galiley = {
+		technology_cost = -0.05
+	}
+	navy_rule = {
+		diplomatic_reputation = 2
+	}
+	leader_fight = {
+		loot_amount = 0.25
+		naval_morale = 0.2
+	}
+	foreign_gifts = {
+		improve_relation_modifier = 0.20
+		global_foreign_trade_power = 0.1
+	}
+}
+
+AZZ_ideas = {
+	start = {
+		stability_cost_modifier = -0.15
+		interest = -0.75
+	}
+	
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+	
+	trigger = {
+		tag = AZZ
+	}
+	free = yes
+	
+	capital_etrus = {
+		prestige = 0.5
+		production_efficiency = 0.1
+	}
+	power_group = {
+		republican_tradition = 0.5
+	}
+	new_church = {
+		build_cost = -0.1
+	}
+	francesco_petrarka = {
+		idea_cost = -0.1
+	}
+	lesson_campaldino = {
+		war_exhaustion = -0.05
+	}
+	tarlati = {
+		administrative_efficiency = 0.075
+		free_adm_policy = 1
+	}
+	destroy_holy_see = {
+		land_morale = 0.1
+	}
+}
+
+SAR_ideas = {
+	start = {
+		naval_maintenance_modifier = -0.2
+        trade_steering = 0.2
+	}
+	
+	bonus = {
+		heavy_ship_power = 0.1
+	}
+	
+	trigger = {
+		tag = SAR
+	}
+	free = yes
+	
+	arborean_resistance = {
+		defensiveness = 0.2
+	}
+	sardinian_rule = {
+		legitimacy = 1
+		idea_cost = -0.10
+	}
+	roman_prestige = {
+		prestige = 1
+	}
+	king_sardinia = {
+		diplomatic_upkeep = 1
+		diplomatic_reputation = 1
+	}
+	longosardo = {
+		global_ship_recruit_speed = -0.05
+	}
+	yudicat_system = {
+		production_efficiency = 0.10
+	}
+	legacy_africa = { 
+		land_morale = 0.15
+	}
+}
+
+RNN_ideas = {
+	start = {
+		possible_mercenaries = 0.5
+        spy_offence = 0.2
+	}
+	
+	bonus = {
+		legitimacy = 1
+	}
+	
+	trigger = {
+		tag = RNN
+	}
+	free = yes
+	
+	raven_state = {
+		defensiveness = 0.2
+	}
+	influence_holy_see = {
+		global_missionary_strength = 0.2
+	}
+	eternal_home_dante = {
+		adm_tech_cost_modifier = -0.10
+	}
+	national_building = {
+		build_time = -0.1
+	}
+	free_ravenna = {
+		missionaries = 1
+		papal_influence = 1
+	}
+	ruler_home = {
+		prestige = 1
+	}
+	da_polenta = {
+		heir_chance = 0.5
+	}
+}
+
+MFA_ideas = {
+	start = {
+		global_unrest = -1
+        technology_cost = -0.05
+	}
+	
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		tag = MFA
+	}
+	free = yes
+	
+	aleramici = {
+		heir_chance = 0.5
+	}
+	crusaders = {
+		religious_unity = 0.1
+        cavalry_power = 0.1
+	}
+	byzantine_relative = {
+		unjustified_demands = -0.25
+	}
+	unity_monferrat = {
+		core_creation = -0.1
+	}
+	king_jerusalim = {
+		prestige = 1
+	}
+	santo_monto = {
+		global_missionary_strength = 0.01
+	}
+	power_paleolog = {
+		discipline = 0.05
+		land_morale = 0.15
+	}
+}
+TNA_ideas = {
+	start = {
+		republican_tradition = 0.5
+		global_tax_modifier = 0.1
+	}
+	
+	bonus = {
+		global_trade_goods_size_modifier = 0.2
+	}
+	
+	trigger = {
+		tag = TNA
+	}
+	free = yes
+	
+	tna_ahi_evren = {
+		stability_cost_modifier = -0.1
+	}
+	tna_main_rules = {
+		embracement_cost = -0.1
+		global_unrest = -1
+	}
+	tna_work_unity = {
+		production_efficiency = 0.1
+	}
+	tna_seven_rules = {
+		all_power_cost = -0.05
+	}
+	tna_homeland_of_ahi = {
+		global_missionary_strength = 0.05
+		culture_conversion_cost = -0.2
+	}
+	tna_system_ahi = {
+		advisor_cost = -0.1	
+	}
+	tna_freedom_die = {
+		land_morale = 0.1
+		discipline = 0.025
+	}
+}
+
+VRN_ideas = {
+	start = {
+		defensiveness = 0.20
+        global_tax_modifier = 0.1
+	}
+	
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		tag = VRN
+	}
+	free = yes
+	
+	power_italian = {
+		unjustified_demands = -0.10
+		land_morale = 0.15
+	}
+	architecture_skaliger = {
+		development_cost = -0.1
+	}
+	etrus_origin = {
+		core_creation = -0.1
+	}
+	lombard_legacy = {
+		infantry_power = 0.1
+	}
+	veronese_league = {
+		diplomatic_upkeep = 1
+	}
+	main_castle = {
+		hostile_attrition = 1
+	}
+	terrafirma = {
+		interest = -1
+	}
+}
+PRV_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		improve_relation_modifier = 0.20
+	}
+	
+	bonus = {
+		sailors_recovery_speed = 0.15
+	}
+	
+	trigger = {
+		tag = PRV
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	prv_title_pervane = {
+		discovered_relations_impact = -0.20
+		spy_offence = 0.20
+	}
+	prv_warrior_gentleman = {
+		recover_navy_morale_speed = 0.20
+		capture_ship_chance = 0.1
+	}
+	prv_inglourious_basterds = {
+		shock_damage = 0.10	
+		land_morale = 0.20
+	}
+	prv_pervane_medrese = {
+		all_power_cost = -0.05
+	}
+	castle_sinope = {
+		trade_efficiency = 0.10
+		defensiveness = 0.15
+	}
+	land_canik = {
+		prestige = 1
+		legitimacy = 1
+	}
+}
+
+TAC_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		global_tax_modifier = 0.10
+	}
+	
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		tag = TAC
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	tac_tacettin_bey = {
+		mil_tech_cost_modifier = -0.05
+	}
+	tac_endless_war = {
+		land_morale = 0.15
+		recover_army_morale_speed = 0.10
+	}
+	tac_other_side = {
+		improve_relation_modifier = 0.20
+	}
+	ghazi = {
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
+	}
+	castle_sinope = {
+		trade_efficiency = 0.10
+		defensiveness = 0.15
+	}
+	land_canik = {
+		prestige = 1
+		legitimacy = 1
+	}
+}
+
+BAF_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		diplomats = 1
+	}
+	
+	bonus = {
+		army_tradition = 0.2
+	}
+	
+	trigger = {
+		tag = BAF
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	seljuq_marches = {
+		global_manpower_modifier = 0.10
+	}
+	travelling_ozan= {
+		global_unrest = -1
+	}
+	anatolian_architecture = {
+		build_cost = -0.10
+	}
+	ghazi = {
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
+	}
+	castle_sinope = {
+		trade_efficiency = 0.10
+		defensiveness = 0.15
+	}
+	land_canik = {
+		prestige = 1
+		legitimacy = 1
+	}
+}
+
+HAC_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		merchants = 1
+	}
+	
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		tag = HAC
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	hac_chepni_trible = {
+		cavalry_power = 0.15
+		culture_conversion_cost = -0.05
+	}
+	hac_main_villian = {
+		land_morale = 0.15
+	}
+	hac_bayram_bey = {
+		stability_cost_modifier = -0.1	
+		adm_tech_cost_modifier = -0.05
+	}
+	ghazi = {
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
+	}
+	castle_sinope = {
+		trade_efficiency = 0.10
+		defensiveness = 0.15
+	}
+	land_canik = {
+		prestige = 1
+		legitimacy = 1
+	}
+}
+
+MJO_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		merchants = 1
+	}
+	
+	bonus = {
+		development_cost = -0.2
+	}
+	
+	trigger = {
+		tag = MJO
+	}
+	free = yes		#will be added at load.
+
+	trade_capital_1 = {
+		trade_efficiency = 0.15
+	}
+	house_of_barselona = {
+		diplomatic_reputation = 2
+	}
+	kid_of_great_haime = {
+		ae_impact = -0.1
+		land_morale = 0.1
+	}
+	universitet_languedok = {
+		free_adm_policy = 1
+		idea_cost = -0.075
+	}
+	golden_balearicks = {
+		production_efficiency = 0.1
+		local_monthly_devastation = -0.02
+    }
+	beetween_france_and_spain = {
+		num_accepted_cultures = 1
+		diplomatic_upkeep = 1
+	}
+	krepost_na_ostrove = {
+		defensiveness = 0.2
+		hostile_attrition = 1
+	}
+ }
+ 
+TKK_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		prestige = 1
+	}
+	
+	bonus = {
+		legitimacy = 1
+	}
+	
+	trigger = {
+		tag = TKK
+	}
+	free = yes
+	
+	dangerous_trade = {
+		loot_amount = 0.25
+		naval_morale = 0.15
+	}
+	tkk_young_brother = {
+		unjustified_demands = -0.15
+	}
+	tkk_against_ilkhanate = {
+		land_morale = 0.15
+	}
+	war_navy_land = {
+		improve_relation_modifier = 0.20
+		spy_offence = 0.20
+	}
+	trible_oguz = {
+		culture_conversion_cost = -0.2
+	}
+	ghazi = {
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
+	}
+	anatolian_architecture = {
+		build_cost = -0.10
+	}
+}
+
+HMD_ideas = {
+	start = {
+		land_maintenance_modifier = -0.1
+		build_cost = -0.10
+	}
+	
+	bonus = {
+		may_perform_slave_raid = yes
+	}
+	
+	trigger = {
+		tag = HMD
+	}
+	free = yes
+	
+	hmd_hamid_dynasty = {
+		prestige = 1
+		unjustified_demands = -0.25
+	}
+	hmd_great_bey = {
+		land_morale = 0.2
+		recover_army_morale_speed = 0.1
+	}
+	hmd_tashmedrese = {
+		stability_cost_modifier = -0.1
+	}
+	hmd_prod_centre = {
+		production_efficiency = 0.15
+	}
+	hmd_holy_build = {
+		missionaries = 1
+		global_missionary_strength = 0.1
+	}
+	war_navy_land = {
+		improve_relation_modifier = 0.20
+		spy_offence = 0.20
+	}
+	trible_oguz = {
+		culture_conversion_cost = -0.2
+	}
+}
+
+SAH_ideas = {
+	start = {
+		development_cost = -0.2
+		production_efficiency = 0.10
+	}
+	
+	bonus = {
+		state_maintenance_modifier = -0.15
+	}
+	
+	trigger = {
+		tag = SAH
+	}
+	free = yes
+	
+	sah_sahib_ata = {
+		merchants = 1
+		trade_efficiency = 0.15
+	}
+	sah_gok_medrese = {
+		build_cost = -0.1
+		build_time = -0.1
+	}
+	sah_khisar_devle = {
+		global_tax_modifier = 0.2
+	}
+	sah_karasihar_sahib = {
+		defensiveness = 0.25
+	}
+	sah_health_men = {
+		recover_army_morale_speed = 0.1
+		movement_speed = 0.15
+	}
+	ghazi = {
+		manpower_recovery_speed = 0.2
+		land_maintenance_modifier = -0.1
+	}
+	travelling_ozan = {
+		global_unrest = -1
+	}
+}
+
+RAM_ideas = {
+	start = {
+		global_unrest = -1
+		diplomatic_reputation = 1
+	}
+	
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		tag = RAM
+	}
+	free = yes
+	
+	ram_different_origin = {
+		legitimacy = 1
+	}
+	ram_endless_life = {
+		heir_chance = 0.5
+	}
+	ram_bufer_state = {
+		improve_relation_modifier = 0.2
+	}
+	ram_kill_cilicia = {
+		war_exhaustion = -0.05
+	}
+	ram_ramazan_hall = {
+		all_power_cost = -0.05
+	}
+	tavr_defence = {
+		defensiveness = 0.2
+	}
+	royal_family = {
+		prestige = 1
+		administrative_efficiency = 0.1
+	}
+}
+
+YOT_ideas = { #Yotvings
+	start = {
+		war_exhaustion_cost = -0.10
+		war_exhaustion = -0.10
+	}
+	
+	bonus = {
+		stability_cost_modifier = -0.10	
+	}
+	
+	trigger = {
+		tag = YOT
+	}
+	free = yes #will be added at load.
+	
+	yot_yotorigin = {
+		prestige = 0.05
+	}
+	yot_fatherdynasty = {
+		legitimacy = 0.03
+	}
+	yot_skomantas = {
+		leader_land_shock = 1
+	}
+	yot_against_world = {
+		recover_army_morale_speed = 0.05
+	}
+	yot_best_ally = {
+		diplomatic_reputation = 1
+	}
+	yot_take_care = {
+		development_cost = -0.05
+	}
+	yot_prussian_uprising = {
+		hostile_attrition = 2
+	}
+}
+
+KIL_ideas = { #Kilikia
+	start = {
+		trade_efficiency = 0.1
+		global_ship_cost = -0.1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		tag = KIL
+	}
+	free = yes #will be added at load.
+	
+	kil_rubenid = {
+		global_unrest = -1
+	}
+	kil_law_sparpet = {
+		technology_cost = -0.05
+	}
+	kil_devil_deal = {
+		spy_offence = 0.20
+		improve_relation_modifier = 0.2
+	}
+	kil_gavar = {
+		global_tax_modifier = 0.1
+	}
+	kil_smbat_sparpet = {
+		free_leader_pool = 1
+		leader_land_shock = 1
+	}
+	kil_king_armenia = {
+		prestige = 1
+		diplomatic_reputation = 1
+	}
+	tavr_defence = {
+		defensiveness = 0.2
+	}
+}
+
+DRZ_ideas = { 
+	start = {
+		heir_chance = 0.5
+		diplomatic_reputation = 1
+	}
+	
+	bonus = {
+		war_exhaustion = -0.05
+	}
+	
+	trigger = {
+		tag = DRZ
+	}
+	free = yes #will be added at load.
+	
+	drz_hand_to_hand = {
+		culture_conversion_cost = -0.15
+	}
+	drz_alarm_place = {
+		hostile_attrition = 2
+	}
+	drz_religious_place = {
+		tolerance_heretic = 2
+	}
+	drz_castle_durazzo = {
+		fort_maintenance_modifier = -0.1
+		defensiveness = 0.15
+	}
+	drz_homeland_travel = {
+		num_accepted_cultures = 2
+	}
+	drz_center_trade = {
+		trade_efficiency = 0.15
+	}
+	drz_growth_people = {
+		production_efficiency = 0.15
+	}
+}

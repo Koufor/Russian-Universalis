@@ -1,0 +1,481 @@
+defined_text = { # Вассал 1
+	name = VASSAL_OVERVIEW_1
+	random = no
+	
+	text = { # Цель - вассал 1
+		localisation_key = vassal_1_target
+	}
+
+}
+defined_text = { # Вассал 1
+	name = VASSAL_OVERVIEW_1_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_1_integration_2
+		trigger = {
+			event_target:targetvassal1 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_1_integration_1
+	}
+}
+defined_text = { # Вассал 1
+	name = VASSAL_OVERVIEW_1_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_1_integration_2
+		trigger = {
+			event_target:targetvassal1 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_1_integration_1
+	}
+}
+defined_text = { # Вассал 1
+	name = VASSAL_OVERVIEW_1_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_1_integration_2
+		trigger = {
+			event_target:targetvassal1 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_1_integration_1
+	}
+}
+
+defined_text = { # Вассал 2
+	name = VASSAL_OVERVIEW_2
+	random = no
+	
+	text = { # Цель - вассал 2
+		localisation_key = vassal_2_target
+	}
+
+}
+defined_text = { # Вассал 2
+	name = VASSAL_OVERVIEW_2_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_2_integration_2
+		trigger = {
+			event_target:targetvassal2 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_2_integration_1
+	}
+}
+defined_text = { # Вассал 2
+	name = VASSAL_OVERVIEW_2_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_2_integration_2
+		trigger = {
+			event_target:targetvassal2 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_2_integration_1
+	}
+}
+defined_text = { # Вассал 2
+	name = VASSAL_OVERVIEW_2_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_2_integration_2
+		trigger = {
+			event_target:targetvassal2 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_2_integration_1
+	}
+}
+
+defined_text = { # Вассал 3
+	name = VASSAL_OVERVIEW_3
+	random = no
+	
+	text = { # Цель - вассал 3
+		localisation_key = vassal_3_target
+	}
+}
+defined_text = { # Вассал 3
+	name = VASSAL_OVERVIEW_3_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_3_integration_2
+		trigger = {
+			event_target:targetvassal3 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_3_integration_1
+	}
+}
+defined_text = { # Вассал 3
+	name = VASSAL_OVERVIEW_3_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_3_integration_2
+		trigger = {
+			event_target:targetvassal3 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_3_integration_1
+	}
+}
+defined_text = { # Вассал 3
+	name = VASSAL_OVERVIEW_3_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_3_integration_2
+		trigger = {
+			event_target:targetvassal3 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_3_integration_1
+	}
+}
+
+defined_text = { # Вассал 4
+	name = VASSAL_OVERVIEW_4
+	random = no
+	
+	text = { # Цель - вассал 4
+		localisation_key = vassal_4_target
+	}
+}
+defined_text = { # Вассал 4
+	name = VASSAL_OVERVIEW_4_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_4_integration_2
+		trigger = {
+			event_target:targetvassal4 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_4_integration_1
+	}
+}
+defined_text = { # Вассал 4
+	name = VASSAL_OVERVIEW_4_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_4_integration_2
+		trigger = {
+			event_target:targetvassal4 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_4_integration_1
+	}
+}
+defined_text = { # Вассал 4
+	name = VASSAL_OVERVIEW_4_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_4_integration_2
+		trigger = {
+			event_target:targetvassal4 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_4_integration_1
+	}
+}
+
+defined_text = { # Вассал 5
+	name = VASSAL_OVERVIEW_5
+	random = no
+	
+	text = { # Цель - вассал 5
+		localisation_key = vassal_5_target
+	}
+}
+defined_text = { # Вассал 5
+	name = VASSAL_OVERVIEW_5_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_5_integration_2
+		trigger = {
+			event_target:targetvassal5 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_5_integration_1
+	}
+}
+defined_text = { # Вассал 5
+	name = VASSAL_OVERVIEW_5_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_5_integration_2
+		trigger = {
+			event_target:targetvassal5 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_5_integration_1
+	}
+}
+defined_text = { # Вассал 5
+	name = VASSAL_OVERVIEW_5_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_5_integration_2
+		trigger = {
+			event_target:targetvassal5 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_5_integration_1
+	}
+}
+
+defined_text = { # Вассал 6
+	name = VASSAL_OVERVIEW_6
+	random = no
+	
+	text = { # Цель - вассал 6
+		localisation_key = vassal_6_target
+	}
+}
+defined_text = { # Вассал 6
+	name = VASSAL_OVERVIEW_6_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_6_integration_2
+		trigger = {
+			event_target:targetvassal6 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_6_integration_1
+	}
+}
+defined_text = { # Вассал 6
+	name = VASSAL_OVERVIEW_6_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_6_integration_2
+		trigger = {
+			event_target:targetvassal6 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_6_integration_1
+	}
+}
+defined_text = { # Вассал 6
+	name = VASSAL_OVERVIEW_6_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_6_integration_2
+		trigger = {
+			event_target:targetvassal6 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_6_integration_1
+	}
+}
+
+defined_text = { # Вассал 7
+	name = VASSAL_OVERVIEW_7
+	random = no
+	
+	text = { # Цель - вассал 7
+		localisation_key = vassal_7_target
+	}
+}
+defined_text = { # Вассал 7
+	name = VASSAL_OVERVIEW_7_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_7_integration_2
+		trigger = {
+			event_target:targetvassal7 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_7_integration_1
+	}
+}
+defined_text = { # Вассал 7
+	name = VASSAL_OVERVIEW_7_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_7_integration_2
+		trigger = {
+			event_target:targetvassal7 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_7_integration_1
+	}
+}
+defined_text = { # Вассал 7
+	name = VASSAL_OVERVIEW_7_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_7_integration_2
+		trigger = {
+			event_target:targetvassal7 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_7_integration_1
+	}
+}
+
+defined_text = { # Вассал 8
+	name = VASSAL_OVERVIEW_8
+	random = no
+	
+	text = { # Цель - вассал 8
+		localisation_key = vassal_8_target
+	}
+}
+defined_text = { # Вассал 8
+	name = VASSAL_OVERVIEW_8_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_8_integration_2
+		trigger = {
+			event_target:targetvassal8 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_8_integration_1
+	}
+}
+defined_text = { # Вассал 8
+	name = VASSAL_OVERVIEW_8_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_8_integration_2
+		trigger = {
+			event_target:targetvassal8 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_8_integration_1
+	}
+}
+defined_text = { # Вассал 8
+	name = VASSAL_OVERVIEW_8_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_8_integration_2
+		trigger = {
+			event_target:targetvassal8 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_8_integration_1
+	}
+}
+
+defined_text = { # Вассал 9
+	name = VASSAL_OVERVIEW_9
+	random = no
+	
+	text = { # Цель - вассал 9
+		localisation_key = vassal_9_target
+	}
+}
+defined_text = { # Вассал 9
+	name = VASSAL_OVERVIEW_9_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_9_integration_2
+		trigger = {
+			event_target:targetvassal9 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_9_integration_1
+	}
+}
+defined_text = { # Вассал 9
+	name = VASSAL_OVERVIEW_9_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_9_integration_2
+		trigger = {
+			event_target:targetvassal9 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_9_integration_1
+	}
+}
+defined_text = { # Вассал 9
+	name = VASSAL_OVERVIEW_9_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_9_integration_2
+		trigger = {
+			event_target:targetvassal9 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_9_integration_1
+	}
+}
+
+defined_text = { # Вассал 10
+	name = VASSAL_OVERVIEW_10
+	random = no
+	
+	text = { # Цель - вассал 10
+		localisation_key = vassal_10_target
+	}
+}
+defined_text = { # Вассал 10
+	name = VASSAL_OVERVIEW_10_ADM
+	random = no
+	text = { # Адм - Завершено
+		localisation_key = adm_10_integration_2
+		trigger = {
+			event_target:targetvassal10 = { check_variable = { which = PreSent_integration_ADM value = 100 } }
+		}
+	}
+	text = { # Адм - в процессе
+		localisation_key = adm_10_integration_1
+	}
+}
+defined_text = { # Вассал 10
+	name = VASSAL_OVERVIEW_10_DIP
+	random = no
+	text = { # Дип - Завершено
+		localisation_key = dip_10_integration_2
+		trigger = {
+			event_target:targetvassal10 = { check_variable = { which = PreSent_integration_DIP value = 100 } }
+		}
+	}
+	text = { # Дип - в процессе
+		localisation_key = dip_10_integration_1
+	}
+}
+defined_text = { # Вассал 10
+	name = VASSAL_OVERVIEW_10_MIL
+	random = no
+	text = { # Воен - Завершено
+		localisation_key = mil_10_integration_2
+		trigger = {
+			event_target:targetvassal10 = { check_variable = { which = PreSent_integration_MIL value = 100 } }
+		}
+	}
+	text = { # Воен - в процессе
+		localisation_key = mil_10_integration_1
+	}
+}

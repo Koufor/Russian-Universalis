@@ -1,0 +1,79 @@
+### Модификаторы для системы содержания дипломатии
+dip_expences_tooltip = {
+	picture = "diplomatic_reputation_opposite"
+}
+# Allies and marries 
+dipcost_1 = {
+	global_tax_income = -0.6
+}
+dipcost_2 = {
+	global_tax_income = -1.2
+}
+dipcost_3 = {
+	global_tax_income = -1.8
+}
+dipcost_4 = {
+	global_tax_income = -3
+}
+dipcost_5 = {
+	global_tax_income = -4.2
+}
+dipcost_6 = {
+	global_tax_income = -5.4
+}
+dipcost_7 = {
+	global_tax_income = -7.2
+}
+dipcost_8 = {
+	global_tax_income = -9
+}
+dipcost_9 = {
+	global_tax_income = -10.8
+}
+dipcost_10 = {
+	global_tax_income = -13.8
+}
+dipcost_11 = {
+	global_tax_income = -16.8
+}
+dipcost_12 = {
+	global_tax_income = -19.8
+}
+dipcost_13 = {
+	global_tax_income = -22.8
+}
+dipcost_14 = {
+	global_tax_income = -25.8
+}
+dipcost_15 = {
+	global_tax_income = -28.8
+}
+# Diplomats
+dipcost_d_1 = {
+	global_tax_income = -0.6
+}
+dipcost_d_2 = {
+	global_tax_income = -1.2
+}
+dipcost_d_3 = {
+	global_tax_income = -2.1
+}
+dipcost_d_4 = {
+	global_tax_income = -3
+}
+dipcost_d_5 = {
+	global_tax_income = -3.9
+}
+dipcost_d_6 = {
+	global_tax_income = -5.1
+}
+dipcost_d_7 = {
+	global_tax_income = -6.3
+}
+dipcost_d_8 = {
+	global_tax_income = -7.5
+}
+# Inflation
+dipcost_inflation = {
+	global_tax_income = -3
+}

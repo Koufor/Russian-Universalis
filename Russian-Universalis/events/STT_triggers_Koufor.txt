@@ -1,0 +1,92 @@
+namespace = stt_triggersk
+country_event = {
+	id = stt_triggersk.1
+	title = "stt_triggersk.1.t"
+	desc = "stt_triggersk.1.d"
+	picture = BATTLE_eventPicture
+	hidden = yes
+	mean_time_to_happen = { days = 10 }
+	trigger = { 
+		has_country_modifier = stt_k_to_build_fortifications
+	}
+	immediate = { every_owned_province = { add_province_modifier = { name = stt_k_to_build_fortifications_local duration = -1 } } }
+	option = { name = stt_triggersk.1.a }
+}
+country_event = {
+	id = stt_triggersk.2
+	title = "stt_triggersk.2.t"
+	desc = "stt_triggersk.2.d"
+	picture = BATTLE_eventPicture
+	hidden = yes
+	mean_time_to_happen = { days = 10 }
+	trigger = { 
+		has_country_modifier = stt_k_to_build_forts
+	}
+	immediate = { every_owned_province = { add_province_modifier = { name = stt_k_to_build_forts_local duration = -1 } } }
+	option = { name = stt_triggersk.2.a }
+}
+country_event = {
+	id = stt_triggersk.3
+	title = "stt_triggersk.3.t"
+	desc = "stt_triggersk.3.d"
+	picture = BATTLE_eventPicture
+	hidden = yes
+	mean_time_to_happen = { days = 10 }
+	trigger = { 
+		has_country_modifier = stt_k_to_build_fortress
+	}
+	immediate = { every_owned_province = { add_province_modifier = { name = stt_k_to_build_fortress_local duration = -1 } } }
+	option = { name = stt_triggersk.3.a }
+}
+country_event = {
+	id = stt_triggersk.4
+	title = "stt_triggersk.4.t"
+	desc = "stt_triggersk.4.d"
+	picture = BATTLE_eventPicture
+	hidden = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = { 
+		has_country_modifier = BD_country_mod
+	}
+	immediate = { capital_scope = { add_province_modifier = { name = stt_k_bd_modifier duration = -1 } } }
+	option = { name = stt_triggersk.4.a }
+}
+country_event = {
+	id = stt_triggersk.5
+	title = "stt_triggersk.5.t"
+	desc = "stt_triggersk.5.d"
+	picture = BATTLE_eventPicture
+	hidden = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = { 
+		NOT = { has_country_modifier = BD_country_mod }
+	}
+	immediate = { capital_scope = { remove_province_modifier = stt_k_bd_modifier } }
+	option = { name = stt_triggersk.5.a }
+}
+country_event = {
+	id = stt_triggersk.6
+	title = "stt_triggersk.6.t"
+	desc = "stt_triggersk.6.d"
+	picture = BATTLE_eventPicture
+	hidden = yes
+	mean_time_to_happen = { days = 10 }
+	trigger = { 
+		NOT = { has_country_modifier = stt_k_to_build_fortifications }
+	}
+	immediate = { every_owned_province = { remove_province_modifier = stt_k_to_build_fortifications_local } }
+	option = { name = stt_triggersk.6.a }
+}
+country_event = {
+	id = stt_triggersk.7
+	title = "stt_triggersk.7.t"
+	desc = "stt_triggersk.7.d"
+	picture = BATTLE_eventPicture
+	hidden = yes
+	mean_time_to_happen = { days = 10 }
+	trigger = { 
+		NOT = { has_country_modifier = stt_k_to_build_forts }
+	}
+	immediate = { every_owned_province = { remove_province_modifier = stt_k_to_build_forts_local } }
+	option = { name = stt_triggersk.6.a }
+}

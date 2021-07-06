@@ -1,0 +1,48 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = lithuanian
+add_accepted_culture = samogitian
+add_accepted_culture = byelorussian
+add_accepted_culture = ruthenian
+religion = romuva
+technology_group = eastern
+historical_friend = LIT
+capital = 270 # Troki
+
+1337.1.1 = {
+	monarch = {
+		name = "Кейстут"
+		dynasty = "Гедиминович"
+		birth_date = 1297.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1382.9.12 = {
+	monarch = {
+		name = "Скиргайло"
+		dynasty = "Ольгердович"
+		birth_date = 1354.1.1
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+
+1386.1.1 = { religion = catholic }
+
+1392.1.1 = {
+	monarch = {
+		name = "Витовт"
+		dynasty = "Гедиминович"
+		birth_date = 1350.1.1
+		adm = 4
+		dip = 4
+		mil = 5
+	}
+}
+
+

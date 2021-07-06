@@ -1,0 +1,124 @@
+promote_to_ostsiedlung_effect = {
+	# Autoconverison 
+	every_province = {
+		limit = { 
+			has_province_flag = ostsiedlung 
+			NOT = { has_province_modifier = pomerellia_resist }
+			NOT = { has_province_modifier = resistance_lithuanians }
+			NOT = { has_province_modifier = resistance_lithuanians_2 }
+			NOT = { has_province_modifier = resistance_lithuanians_3 }
+		}
+		
+		set_variable = { which = conversion_var_1 value = 10 }
+		
+		# Влияние развития провинции на ассимиляцию
+		if = {
+			limit = { development = 1 }
+			trigger_switch = {
+				on_trigger = development
+				
+				25 = {
+					divide_variable = { which = conversion_var_1 value = 0.5 }
+				}
+				20 = {
+					divide_variable = { which = conversion_var_1 value = 0.7 }
+				}
+				16 = {
+					divide_variable = { which = conversion_var_1 value = 0.9 }
+				}
+				14 = {
+					divide_variable = { which = conversion_var_1 value = 1.1 }
+				}
+				10 = {
+					divide_variable = { which = conversion_var_1 value = 1.3 }
+				}
+				8 = {
+					divide_variable = { which = conversion_var_1 value = 1.5 }
+				}
+				4 = {
+					divide_variable = { which = conversion_var_1 value = 1.7 }
+				}
+				2 = {
+					divide_variable = { which = conversion_var_1 value = 1.9 }
+				}
+				1 = {
+					divide_variable = { which = conversion_var_1 value = 2 }
+				}
+			}
+		}
+		
+		# Влияние модификатора на ассимиляцию
+		if = {
+			limit = { has_province_modifier = promote_ostsiedlung_1 }
+			divide_variable = { which = conversion_var_1 value = 0.5 }
+		} 
+		if = {
+			limit = { has_province_modifier = german_settlers }
+			divide_variable = { which = conversion_var_1 value = 2 }
+		}
+		
+		# Влияние религии на ассимиляцию
+		if = {
+			limit = { NOT = { religion = owner } }
+			divide_variable = { which = conversion_var_1 value = 0.05 }
+		}
+		
+		# Влияние построек на ассимиляцию
+		if = {
+			limit = { has_building = temple }
+			divide_variable = { which = conversion_var_1 value = 1.5 }
+		}
+		if = {
+			limit = { has_building = cathedral }
+			divide_variable = { which = conversion_var_1 value = 2 }
+		}
+		
+		# Влияние культуры соседних провинций на ассимиляцию
+		if = {
+			limit = { any_neighbor_province = { culture_group = germanic } }
+			PREV = { divide_variable = { which = conversion_var_1 value = 1.5 } }
+		}
+		
+		# Решение Promote_To_Ostsiedlung
+		if = {
+			limit = { owner = { has_ruler_modifier = promoting_ostsiedlung } }
+			divide_variable = { which = conversion_var_1 value = 2 }
+		}
+		
+		# Если провинция в Ливонии
+		if = {
+			limit = {
+				OR = {
+					area = livonia_area
+					area = east_estonia_area
+					area = curonia_area
+					area = estonia_ingria_area
+					area = east_estonia_area
+					area = ingria_area
+				}
+				owner = {
+					OR = {
+						tag = LIV
+						tag = RIG
+						tag = OSE
+						tag = DOR
+						tag = KUR
+					}
+				}
+			}
+			divide_variable = { which = conversion_var_1 value = 10 }
+		}
+		
+		# Учитывание местной стоимости культуры
+		export_to_variable = {
+			which = conversion_cost_var
+			value = culture_conversion_cost
+		}
+		divide_variable = { which = conversion_cost_var value = 100 }
+		change_variable = { which = conversion_var_1 which = conversion_cost_var }
+		
+		#multiply_variable = { which = conversion_var_1 value = 10 }
+		change_variable = { which = conversion_var which = conversion_var_1 }
+		
+	}
+}

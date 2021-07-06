@@ -1,0 +1,1431 @@
+namespace = stt_liv
+normal_or_historical_nations = yes
+############### LivonianOrder #################
+#Ливонская конфедерация
+country_event = {
+	id = stt_liv.1
+	title = stt_liv.1.t
+	desc = stt_liv.1.d
+	picture = plato_book_event_picture
+	is_triggered_only = yes 
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+		is_year = 1308
+		NOT = { is_year = 1500 }
+	}
+	option = {
+		name = stt_liv.1.1
+		add_country_modifier = { 
+			name = livonian_conf_2
+			duration = -1
+		}
+		#country_event = { id = teu.31 days = 2 }
+		hidden_effect = {
+			RIG = {
+				add_country_modifier = {
+					name = livonian_conf_1
+					duration = -1
+				}
+			}
+			DOR = {
+				add_country_modifier = {
+					name = livonian_conf_1
+					duration = -1
+				}
+			}
+			KUR = {
+				add_country_modifier = {
+					name = livonian_conf_1
+					duration = -1
+				}
+			}
+			OSE = {
+				add_country_modifier = {
+					name = livonian_conf_1
+					duration = -1
+				}
+			}
+			add_years_of_income = 1.5
+		}
+		hidden_effect = {
+			If = {
+				limit = { ai = yes }
+				capital_scope = { infantry = LIV infantry = LIV infantry = LIV cavalry = LIV }
+				add_treasury = 200
+				add_country_modifier = { name = ai_powerful_1 duration = 3650 }
+			}
+		}
+	}
+}
+#Захват Риги
+country_event = {
+	id = stt_liv.2
+	title = stt_liv.2.t
+	desc = stt_liv.2.d
+	picture = SIEGE_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+	}
+	option = {
+		name = stt_liv.2.1
+		ai_chance = { factor = 20 }
+		add_mil_power = -75
+		add_yearly_manpower = -0.50
+		add_war_exhaustion = 0.75
+		add_prestige = 10
+		38 = {
+			add_core = ROOT
+			cede_province = ROOT
+		}
+		LIV = { add_historical_rival = RIG }
+		hidden_effect = { 
+			LIV = { remove_historical_friend = RIG }
+			RIG = { remove_historical_friend = LIV }
+			RIG = { add_historical_rival = LIV } 
+		}
+	}
+	option = {
+		name = stt_liv.2.2
+		ai_chance = { factor = 30 }
+		add_dip_power = -100
+		add_years_of_income = -0.75
+		add_prestige = 5
+		random_list = {
+			50 = { 38 = { add_core = ROOT cede_province = ROOT } }
+			30 = { LIV = { add_historical_rival = RIG } RIG = { add_historical_rival = LIV } }
+			20 = { }
+		}
+		hidden_effect = { 
+			LIV = { remove_historical_friend = RIG }
+			RIG = { remove_historical_friend = LIV }
+		}
+	}
+	option = {
+		name = stt_liv.2.3
+		ai_chance = { factor = 50 }
+		add_prestige = -10
+	}
+}
+
+#Поиск сторонников - поддержка эстонских феодалов
+country_event = {
+	id = stt_liv.3
+	title = stt_liv.3.t
+	desc = stt_liv.3.d
+	picture = CORRUPTION_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+	}
+	option = {
+		name = stt_liv.3.1
+		add_country_modifier = {
+			name = liv_support_estonians
+			duration = 5475 # 15
+		}
+		36 = { 
+			add_province_modifier = {
+				name = rebel_estonian_feodal 
+				duration = 18250 # 50
+			}
+		}
+		1842 = { 
+			add_province_modifier = {
+				name = rebel_estonian_feodal 
+				duration = 18250 # 50
+			}
+		}
+		3729 = { 
+			add_province_modifier = {
+				name = rebel_estonian_feodal 
+				duration = 18250 # 50
+			}
+		}
+		hidden_effect = { 
+			DAN = { 
+				country_event = { 
+					id = stt_liv.5 
+					days = 1825 
+				} 
+			} 
+		}
+	}
+}
+#Кому подчиняться?
+country_event = {
+	id = stt_liv.4
+	title = stt_liv.4.t
+	desc = stt_liv.4.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+	}
+	option = {
+		name = stt_liv.4.1
+		ai_chance = { factor = 50 }
+		add_country_modifier = {
+			name = papal_loyalist
+			duration = -1
+		}
+		add_papal_influence = 20
+	}
+	option = {
+		name = stt_liv.4.2
+		ai_chance = { factor = 50 }
+		add_country_modifier = {
+			name = german_loyalist
+			duration = -1
+		}
+		if = {
+			limit = { 38 = { is_capital_of = LIV } }
+			38 = { set_in_empire = yes }
+		}
+		else = {
+			set_country_flag = hre_loyalist
+		}
+	}
+}
+#Восстания в Эстляндии (для Дании)
+country_event = {
+	id = stt_liv.5
+	title = stt_liv.5.t
+	desc = stt_liv.5.d
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = DAN
+	}
+	mean_time_to_happen = {
+		days = 1825
+	}
+	option = {
+		name = stt_liv.5.1
+		ai_chance = { factor = 90 }
+		36 = {	
+			add_core = LIV
+			cede_province = LIV
+		}
+		1842 = {	
+			add_core = LIV
+			cede_province = LIV
+		}
+		3729 = {	
+			add_core = LIV
+			cede_province = LIV
+		}
+		add_treasury = 150
+		LIV = { country_event = { id = stt_liv.6 days = 2 } }
+		set_global_flag = peace_with_DAN
+	}
+	option = {
+		name = stt_liv.5.2
+		ai_chance = { factor = 10 }
+		36 = {	
+			add_core = LIV
+			cede_province = LIV
+		}
+		1842 = {	
+			add_core = LIV
+			cede_province = LIV
+		}
+		3729 = {	
+			add_core = LIV
+			cede_province = LIV
+		}
+		declare_war_with_cb = { who = LIV casus_belli = "cb_imperial" }
+		LIV = { country_event = { id = stt_liv.6 days = 2 } }
+		set_global_flag = war_with_DAN
+	}
+}
+#Права на датскую Эстонию
+country_event = {
+	id = stt_liv.6
+	title = stt_liv.6.t
+	desc = {
+		trigger = { has_global_flag = peace_with_DAN }
+		desc = stt_liv.6.1d
+	}
+	desc = {
+		trigger = { has_global_flag = war_with_DAN }
+		desc = stt_liv.6.2d
+	}
+	picture = BIG_BOOK_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+	}
+	
+	option = {
+		name = stt_liv.6.1
+		trigger = { has_global_flag = peace_with_DAN }
+		ai_chance = { factor = 50 }
+		hidden_effect = {
+			36 = {
+				if = {
+					limit = { has_province_modifier = rebel_estonian_feodal }
+					remove_province_modifier = rebel_estonian_feodal
+				}
+			}
+			1842  = {
+				if = {
+					limit = { has_province_modifier = rebel_estonian_feodal }
+					remove_province_modifier = rebel_estonian_feodal
+				}
+			}
+			3729  = {
+				if = {
+					limit = { has_province_modifier = rebel_estonian_feodal }
+					remove_province_modifier = rebel_estonian_feodal
+				}
+			}
+		}
+		add_country_modifier = {
+			name = payment_for_danish
+			duration = 7300 # 20
+		}
+		add_years_of_income = -0.45
+		36 = { infantry = LIV cavalry = LIV }
+		clr_global_flag = peace_with_DAN
+	}
+	option = {
+		name = stt_liv.6.2
+		trigger = { has_global_flag = war_with_DAN }
+		ai_chance = { factor = 50 }
+		add_prestige = 5
+		36 = { infantry = LIV cavalry = LIV }
+		clr_global_flag = war_with_DAN
+		if = { 
+			limit = { ai = yes }
+			capital_scope = { infantry = LIV infantry = LIV cavalry = LIV }
+			add_country_modifier = { name = ai_powerful_1 duration = 3650 }
+		}
+	}
+}
+#Нарастание противоречий 
+country_event = {
+	id = stt_liv.7
+	title = stt_liv.7.t
+	desc = stt_liv.7.d
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+	}
+	option = {
+		name = stt_liv.7.1
+		#remove_country_modifier = livonian_conf_2
+		#add_country_modifier = {
+		#	name = livonian_conf_3
+		#	duration = -1
+		#}
+		random_owned_province = {
+			limit = { area = curonia_area }
+			add_province_modifier = {
+				name = westfalian_rebel
+				duration = -1
+			}
+		}
+		random_owned_province = {
+			limit = { area = livonia_area }
+			add_province_modifier = {
+				name = westfalian_rebel
+				duration = -1
+			}
+		}
+		#set_country_flag = liv_growing_contradictions
+	}
+}
+# Сезонные пилигримы
+country_event = {
+	id = stt_liv.8
+	title = stt_liv.8.t
+	desc = stt_liv.8.d
+	picture = LAND_MILITARY_eventPicture
+
+	trigger = {
+		OR = { 
+			tag = LIV
+			tag = TEU
+		}
+		NOT = { has_country_modifier = seasons_piligrims }
+		NOT = { is_year = 1500 }
+		NOT = { army_size_percentage = 1.1 }
+	}
+	mean_time_to_happen = {
+		days = 1825
+	}
+	option = {
+		name = stt_liv.8.1
+		add_yearly_manpower = 0.25
+		add_country_modifier = {
+			name = seasons_piligrims
+			duration = 1825 # 5
+		}
+		random_list = {
+			5 = { 
+				create_general = { tradition = 45 } 
+				add_mil_power = 25
+				add_army_tradition = 10.00
+				capital_scope = { infantry = ROOT }
+			}
+			60 = { 
+				add_mil_power = 50
+				add_army_tradition = 10.00
+			}
+			15 = { 
+				create_general = { tradition = 20 } 
+				add_mil_power = 15
+				add_army_tradition = 7.50
+			}
+			20 = { 
+				create_general = { tradition = 15 } 
+				add_mil_power = 20
+				add_army_tradition = 5.00
+			}
+		}
+	}
+}
+#Переселенцы из Германии 
+country_event = {
+	id = stt_liv.9
+	title = stt_liv.9.t
+	desc = stt_liv.9.d
+	picture = COLONIZATION_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		OR = {
+			tag = TEU
+			tag = LIV
+		}
+		ingria_area = { 
+			type = all
+			owned_by = ROOT
+		}
+		OR = {
+			PSK = { is_subject_of = ROOT }
+			NOT = { exists = PSK }
+		}
+	}
+	mean_time_to_happen = {
+		days = 3650
+	}
+	option = {
+		name = stt_liv.9.1
+		add_adm_power = -75
+		every_owned_province = {
+			limit = { area = ingria_area }
+			add_province_modifier = {
+				name = german_settlers
+				duration = 18250 # 50
+			}
+			add_base_production = 1
+		}
+	}
+}
+#Появление латышей 
+country_event = {
+	id = stt_liv.10
+	title = stt_liv.10.t
+	desc = stt_liv.10.d
+	picture = CITY_VIEW_eventPicture 
+
+	fire_only_once = yes
+	trigger = {
+		is_year = 1750
+		any_province = {
+			OR = {
+				culture = latgalian
+				culture = curonian
+				culture = zemgalian
+				culture = livonian
+				culture = samogitian
+			}
+		}
+		OR = { 
+			livonia_area = { owned_by = ROOT }
+			east_livonia_area = { owned_by = ROOT }
+			curonia_area = { owned_by = ROOT }
+		}
+		NOT = { is_year = 1755 }
+	}
+	option = {
+		name = stt_liv.10.1
+		every_province = {
+			limit = { 
+				area = curonia_area 
+				culture = curonian
+			}
+			change_culture = latvian 
+		}
+		every_province = {
+			limit = { 
+				area = curonia_area 
+				culture = zemgalian 
+			}
+			change_culture = latvian 
+		}
+		every_province = {
+			limit = { 
+				area = covno_area 
+				culture = samogitian
+			}
+			change_culture = lithuanian 
+		}
+		every_province = {
+			limit = { 
+				area = livonia_area 
+				culture = latgalian
+			}
+			change_culture = latvian 
+		}
+		every_province = {
+			limit = { 
+				area = livonia_area 
+				culture = zemgalian
+			}
+			change_culture = latvian 
+		}
+		every_province = {
+			limit = { 
+				area = livonia_area 
+				culture = livonian
+			}
+			change_culture = estonian
+		}
+		every_province = {
+			limit = { 
+				area = east_livonia_area 
+				culture = latgalian
+			}
+			change_culture = latvian 
+		}
+		every_province = {
+			limit = { 
+				area = east_livonia_area 
+				culture = zemgalian
+			}
+			change_culture = latvian 
+		}
+		every_province = {
+			limit = { 
+				area = east_livonia_area 
+				culture = livonian
+			}
+			change_culture = estonian
+		}
+	}
+}
+#Крах конфедерации 
+country_event = {
+	id = stt_liv.11
+	title = stt_liv.11.t
+	desc = stt_liv.11.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		is_year = 1550
+		NOT = { is_year = 1560 }
+		NOT = { exists = LIV }			
+		OR = { 
+			livonia_area = { owned_by = ROOT } 
+			east_livonia_area = { owned_by = ROOT } 
+		}
+	}
+	option = {
+		name = stt_liv.11.1
+		#Модификаторы городов в провинциях
+		36 = { 
+			if = { 
+				limit = { has_province_modifier = city_Reval }
+				remove_province_modifier = city_Reval 
+			}
+		}
+		38 = { 
+			if = { 
+				limit = { has_province_modifier = city_Riga }
+				remove_province_modifier = city_Riga 
+			}
+		}
+		1834 = { 
+			if = { 
+				limit = { has_province_modifier = city_Dorpt }
+				remove_province_modifier = city_Dorpt
+			}
+		}
+		#Желание свободы у епископов
+		RIG = {
+			if = {
+				limit = { has_country_modifier = livonian_conf_1 }
+				remove_country_modifier = livonian_conf_1
+			}
+		}
+		DOR = {
+			if = {
+				limit = { has_country_modifier = livonian_conf_1 }
+				remove_country_modifier = livonian_conf_1
+			}
+		}
+		KUR = {
+			if = {
+				limit = { has_country_modifier = livonian_conf_1 }
+				remove_country_modifier = livonian_conf_1
+			}
+		}
+		OSE = {
+			if = {
+				limit = { has_country_modifier = livonian_conf_1 }
+				remove_country_modifier = livonian_conf_1
+			}
+		}
+	}
+}
+#Крах конфедерации (конвертирование вассалов)
+country_event = {
+	id = stt_liv.110
+	title = stt_liv.110.t
+	desc = stt_liv.110.d
+	picture = BORDER_TENSION_eventPicture
+	
+	hidden = yes
+	trigger = {
+		NOT = { tag = LIV }
+		any_subject_country = { is_subject_of_type = livonian_vassal }
+		OR = {
+			exists = RIG
+			exists = DOR
+			exists = KUR
+			exists = OSE
+		}
+	}
+	option = {
+		name = stt_liv.110.1
+		if = {
+			limit = { 
+				exists = RIG
+				RIG = {
+					is_subject_of_type = livonian_vassal
+					is_subject_of = ROOT
+				}
+			}
+			vassalize = RIG
+		}
+		if = {
+			limit = { 
+				exists = DOR
+				DOR = {
+					is_subject_of_type = livonian_vassal
+					is_subject_of = ROOT
+				}
+			}
+			vassalize = DOR
+		}
+		if = {
+			limit = { 
+				exists = OSE
+				OSE = {
+					is_subject_of_type = livonian_vassal
+					is_subject_of = ROOT
+				}
+			}
+			vassalize = OSE
+		}
+		if = {
+			limit = { 
+				exists = KUR
+				KUR = {
+					is_subject_of_type = livonian_vassal
+					is_subject_of = ROOT
+				}
+			}
+			vassalize = KUR
+		}
+	}
+}
+#Прибыл папский легат
+country_event = {
+	id = stt_liv.12
+	title = stt_liv.12.t
+	desc = stt_liv.12.d
+	picture = POPE_PREACHING_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+		is_at_war = no
+		has_country_modifier = papal_loyalist
+		manpower_percentage = 0.50
+	}
+	mean_time_to_happen = {
+		days = 1825
+	}
+	option = {
+		name = stt_liv.12.1
+		trigger = { exists = NOV }
+		add_prestige = 5
+		add_papal_influence = 15
+		declare_war_with_cb = { who = NOV casus_belli = "cb_crusade" }
+		add_country_modifier = {
+			name = improved_dip_reputation
+			duration = 3650 # 10
+		}
+	}
+	option = {
+		name = stt_liv.12.2
+		trigger = { exists = LIT } 
+		add_prestige = 5
+		add_papal_influence = 10
+		declare_war_with_cb = { who = LIT casus_belli = "cb_crusade" }
+	}
+	option = {
+		name = stt_liv.12.3
+		add_mil_power = -75
+		add_papal_influence = -5
+		add_yearly_manpower = -1.00
+		add_war_exhaustion = 1.00
+	}
+	option = {
+		name = stt_liv.12.4
+		add_prestige = -25
+		add_papal_influence = -50
+		add_devotion = -20
+		remove_country_modifier = papal_loyalist
+		add_country_modifier = {
+			name = reduced_dip_reputation
+			duration = 3650 # 10
+		}
+	}
+}
+#Прибыл имперский эмиссар
+country_event = {
+	id = stt_liv.13
+	title = stt_liv.13.t
+	desc = stt_liv.13.d
+	picture = HRE_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+		is_at_war = no
+		has_country_modifier = german_loyalist
+		manpower_percentage = 0.50
+	}
+	mean_time_to_happen = {
+		days = 1825
+	}
+	option = { ### Подтвердить действие законов империи
+		name = stt_liv.13.1
+		add_adm_power = -75
+		add_years_of_income = -0.5
+		add_prestige = 10
+		add_country_modifier = {
+			name = imperial_law_liv
+			duration = 3650 # 10
+		}
+		add_country_modifier = {
+			name = improved_dip_reputation
+			duration = 3650 # 10
+		}
+	}
+	option = { ### Отправить воинов на помощь Императору
+		name = stt_liv.13.2
+		add_prestige = 5
+		add_army_tradition = 10.00
+		add_mil_power = -75
+		add_yearly_manpower = -1
+		add_years_of_income = -0.5
+	}
+	option = { ### Попытаться заинтересовать императора в нашем регионе
+		name = stt_liv.13.3
+		custom_tooltip = liv_imperial_attempt
+		add_dip_power = -100
+		add_years_of_income = -0.5
+		random_list = {
+			40 = {
+				add_prestige = 15
+				add_yearly_manpower = 0.35
+				add_adm_power = 50
+				custom_tooltip = liv_imperial_attempt_1
+				hidden_effect = {
+					every_owned_province = {
+						limit = { 
+							area = livonia_area 
+							area = east_livonia_area
+							area = curonia_area
+						}
+						add_province_modifier = {
+							name = german_settlers
+							duration = 3650 
+						}
+					}
+				}
+			}
+			60 = {
+				add_prestige = -15
+				add_years_of_income = -0.5
+				add_country_modifier = {
+					name = reduced_dip_reputation
+					duration = 3650 # 10
+				}
+				add_country_modifier = {
+					name = imperial_law_liv
+					duration = 3650 # 10
+				}
+			}
+		}
+	}
+	option = { ### Отказаться от поддержки Империи
+		name = stt_liv.13.4
+		add_prestige = -20
+		add_devotion = -10
+		remove_country_modifier = german_loyalist
+		If = {
+			limit = { 38 = { is_part_of_hre = yes } }
+			38 = { set_in_empire = no }
+		}
+		add_country_modifier = {
+			name = reduced_dip_reputation
+			duration = 3650 # 10
+		}
+	}
+}
+#		trigger = { any_neighbor_country = { religion = orthodox } }
+#		declare_war_with_cb = { 
+#			who = { random_neighbor_country = { religion = orthodox  } } 
+#			casus_belli = "cb_crusade" 
+#		}
+
+# Ливонская конфедерация (взаимодействие)
+country_event = {
+	id = stt_liv.14
+	title = stt_liv.14.t
+	desc = stt_liv.14.d
+	picture = CITY_VIEW_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = LIV
+	}
+	
+	option = { ### Рига
+		name = stt_liv.14.1
+		trigger = { 
+			exists = RIG 
+			RIG = { is_subject_of = LIV }
+		}
+		hidden_effect = { country_event = { id = stt_liv.15 } }
+	}
+	option = { ### Дерпт
+		name = stt_liv.14.2
+		trigger = { 
+			exists = DOR 
+			DOR = { is_subject_of = LIV }
+		}
+		hidden_effect = { country_event = { id = stt_liv.16 } }
+	}
+	option = { ### Курземе
+		name = stt_liv.14.3
+		trigger = { 
+			exists = KUR 
+			KUR = { is_subject_of = LIV }
+		}
+		hidden_effect = { country_event = { id = stt_liv.17 } }
+	}
+	option = { ### Эзель-Виек
+		name = stt_liv.14.4
+		trigger = { 
+			exists = OSE 
+			OSE = { is_subject_of = LIV }
+		}
+		hidden_effect = { country_event = { id = stt_liv.18 } }
+	}
+	option = { ### Выход
+		name = stt_liv.14.5
+	}
+}
+# Рига (взаимодействие)
+country_event = {
+	id = stt_liv.15
+	title = stt_liv.15.t
+	desc = stt_liv.15.d
+	picture = DIPLOMACY_eventPicture
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = LIV
+	}
+	
+	option = { ### Решить территориальные споры
+		name = stt_liv.15.1
+		trigger = { 
+			has_country_flag = liv_bishop_conf 
+			NOT = { has_country_flag = rig_part_1 }
+		}
+		custom_tooltip = conf_issue_1
+		add_adm_power = -35
+		add_dip_power = -35
+		add_years_of_income = 2.5
+		273 = { remove_core = LIV }
+		4437 = { remove_core = LIV }
+		4282 = { remove_core = LIV }
+		set_country_flag = rig_part_1
+	}
+	option = { ### Потребовать подчинения
+		name = stt_liv.15.2
+		trigger = { 
+			38 = { owned_by = LIV }
+			has_country_flag = rig_part_1
+			NOT = { has_country_flag = rig_part_2 }
+		}
+		custom_tooltip = conf_issue_2
+		add_prestige = 7.5
+		add_adm_power = -75
+		add_dip_power = -100
+		add_mil_power = -35
+		RIG = {
+			add_country_modifier = {
+				name = liv_fail_subdue
+				duration = 3650
+			}
+		}
+		set_country_flag = rig_part_2
+	}
+	option = { ### Подкупить епископа
+		name = stt_liv.15.3
+		trigger = { 
+			NOT = { has_country_flag = pay_to_bishop }
+		}
+		custom_tooltip = conf_issue_5
+		add_years_of_income = -1.5
+		add_adm_power = -25
+		add_dip_power = -35
+		RIG = {
+			add_country_modifier = {
+				name = liv_pay_bishop
+				duration = 3650
+			}
+		}
+		set_country_flag = pay_to_bishop
+	}
+	option = { ### Подорвать власть епископа (саботаж)
+		name = stt_liv.15.4
+		trigger = { 
+			has_country_flag = feodal_loyalists 
+			has_country_flag = rig_part_2
+			NOT = { has_country_flag = rig_part_3 }
+		}
+		custom_tooltip = conf_issue_3
+		add_treasury = -75
+		add_adm_power = -65
+		add_mil_power = -35
+		RIG = { 
+			add_stability = -1
+			add_devotion = -40
+			capital_scope = { add_province_modifier = { name = rebel_sentiment duration = 3650 } } ### rebel_refugees
+		}
+		set_country_flag = rig_part_3
+	}
+	option = { ### Отнять епископские земли
+		name = stt_liv.15.5
+		trigger = { 
+			has_country_flag = can_vassalize_Rig 
+			has_country_flag = rig_part_3
+		}
+		custom_tooltip = conf_issue_4
+		clr_country_flag = can_vassalize_Rig
+		RIG = { set_country_flag = liv_bishop_can_integrate }
+	}
+	option = { ### Назад
+		name = stt_liv.15.6
+		hidden_effect = { country_event = { id = stt_liv.14 } }
+	}
+} 
+# Дерпт (взаимодействие)
+country_event = {
+	id = stt_liv.16
+	title = stt_liv.16.t
+	desc = stt_liv.15.d
+	picture = DIPLOMACY_eventPicture 
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = LIV
+	}
+	
+	option = { ### Решить территориальные споры
+		name = stt_liv.15.1
+		trigger = { 
+			has_country_flag = liv_bishop_conf_1
+			NOT = { has_country_flag = dor_part_1 }
+		}
+		custom_tooltip = conf_issue_1
+		add_adm_power = -30
+		add_dip_power = -45
+		add_years_of_income = 1.5
+		1834 = { remove_core = LIV }
+		4284 = { remove_core = LIV }
+		set_country_flag = dor_part_1
+	}
+	option = { ### Потребовать подчинения
+		name = stt_liv.15.2
+		trigger = { 
+			38 = { owned_by = LIV }
+			has_country_flag = dor_part_1
+			NOT = { has_country_flag = dor_part_2 }
+		}
+		custom_tooltip = conf_issue_2
+		add_prestige = 5
+		add_adm_power = -50
+		add_dip_power = -75
+		add_mil_power = -25
+		DOR = {
+			add_country_modifier = {
+				name = liv_fail_subdue
+				duration = 3650
+			}
+		}
+		set_country_flag = dor_part_2
+	}
+	option = { ### Подкупить епископа
+		name = stt_liv.15.3
+		trigger = { 
+			NOT = { has_country_flag = pay_to_bishop }
+		}
+		custom_tooltip = conf_issue_5
+		add_years_of_income = -1.5
+		add_adm_power = -25
+		add_dip_power = -25
+		DOR = {
+			add_country_modifier = {
+				name = liv_pay_bishop
+				duration = 3650
+			}
+		}
+		set_country_flag = pay_to_bishop
+	}
+	option = { ### Подорвать власть епископа (саботаж)
+		name = stt_liv.15.4
+		trigger = { 
+			has_country_flag = feodal_loyalists 
+			has_country_flag = dor_part_2
+			NOT = { has_country_flag = dor_part_3 }
+		}
+		custom_tooltip = conf_issue_3
+		add_treasury = -45
+		add_adm_power = -65
+		add_mil_power = -30
+		DOR = { 
+			add_stability = -1
+			add_devotion = -40
+			capital_scope = { add_province_modifier = { name = rebel_sentiment duration = 3650 } } ### rebel_refugees
+		}
+		set_country_flag = dor_part_3
+	}
+	option = { ### Отнять епископские земли
+		name = stt_liv.15.5
+		trigger = { 
+			has_country_flag = can_vassalize_Dor 
+			has_country_flag = dor_part_3
+		}
+		custom_tooltip = conf_issue_4
+		clr_country_flag = can_vassalize_Dor
+		DOR = { set_country_flag = liv_bishop_can_integrate }
+	}
+	option = { ### Назад
+		name = stt_liv.15.6
+		hidden_effect = { country_event = { id = stt_liv.14 } }
+	}
+}
+# Курония (взаимодействие)
+country_event = {
+	id = stt_liv.17
+	title = stt_liv.17.t
+	desc = stt_liv.15.d
+	picture = DIPLOMACY_eventPicture 
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = LIV
+	}
+	
+	option = { ### Решить территориальные споры
+		name = stt_liv.15.1
+		trigger = { 
+			has_country_flag = liv_bishop_conf_3
+			NOT = { has_country_flag = cur_part_1 }
+		}
+		custom_tooltip = conf_issue_1
+		add_adm_power = -25
+		add_dip_power = -25
+		add_years_of_income = 1
+		39 = { remove_core = LIV }
+		4440 = { remove_core = KUR cede_province = LIV }
+		set_country_flag = cur_part_1
+	}
+	option = { ### Потребовать подчинения
+		name = stt_liv.15.2
+		trigger = { 
+			has_country_flag = arhbishop_crash
+			has_country_flag = cur_part_1
+			NOT = { has_country_flag = cur_part_2 }
+		}
+		custom_tooltip = conf_issue_2
+		add_prestige = 2.5
+		add_adm_power = -50
+		add_dip_power = -75
+		add_mil_power = -15
+		KUR = {
+			add_country_modifier = {
+				name = liv_fail_subdue
+				duration = 3650
+			}
+		}
+		set_country_flag = cur_part_2
+		clr_country_flag = arhbishop_crash
+	}
+	option = { ### Подкупить епископа
+		name = stt_liv.15.3
+		trigger = { 
+			NOT = { has_country_flag = pay_to_bishop }
+		}
+		custom_tooltip = conf_issue_5
+		add_years_of_income = -1
+		add_adm_power = -25
+		add_dip_power = -25
+		KUR = {
+			add_country_modifier = {
+				name = liv_pay_bishop
+				duration = 3650
+			}
+		}
+		set_country_flag = pay_to_bishop
+	}
+	option = { ### Подорвать власть епископа (саботаж)
+		name = stt_liv.15.4
+		trigger = { 
+			has_country_flag = feodal_loyalists 
+			has_country_flag = cur_part_2
+			NOT = { has_country_flag = cur_part_3 }
+		}
+		custom_tooltip = conf_issue_3
+		add_treasury = -30
+		add_adm_power = -35
+		add_mil_power = -25
+		KUR = { 
+			add_stability = -1
+			add_devotion = -40
+			capital_scope = { add_province_modifier = { name = rebel_sentiment duration = 3650 } } ### rebel_refugees
+		}
+		set_country_flag = cur_part_3
+	}
+	option = { ### Отнять епископские земли
+		name = stt_liv.15.5
+		trigger = { 
+			has_country_flag = can_vassalize_Kur 
+			has_country_flag = cur_part_3
+		}
+		custom_tooltip = conf_issue_4
+		clr_country_flag = can_vassalize_Kur
+		KUR = { set_country_flag = liv_bishop_can_integrate }
+	}
+	option = { ### Назад
+		name = stt_liv.15.6
+		hidden_effect = { country_event = { id = stt_liv.14 } }
+	}
+}
+# Эзель (взаимодействие)
+country_event = {
+	id = stt_liv.18
+	title = stt_liv.18.t
+	desc = stt_liv.15.d
+	picture = DIPLOMACY_eventPicture 
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = LIV
+	}
+	
+	option = { ### Решить территориальные споры
+		name = stt_liv.15.1
+		trigger = { 
+			has_country_flag = liv_bishop_conf_3
+			NOT = { has_country_flag = ose_part_1 }
+		}
+		custom_tooltip = conf_issue_1
+		add_adm_power = -40
+		add_dip_power = -50
+		add_years_of_income = 2
+		3210 = { remove_core = LIV }
+		35 = { remove_core = LIV }
+		3728 = { 
+			cede_province = LIV 
+			remove_core = OSE
+		}
+		3210 = { 
+			cede_province = LIV 
+			remove_core = OSE
+		}
+		set_country_flag = ose_part_1
+	}
+	option = { ### Потребовать подчинения
+		name = stt_liv.15.2
+		trigger = { 
+			has_country_flag = arhbishop_crash
+			has_country_flag = ose_part_1
+			NOT = { has_country_flag = ose_part_2 }
+		}
+		custom_tooltip = conf_issue_2
+		add_prestige = 7.5
+		add_adm_power = -75
+		add_dip_power = -125
+		add_mil_power = -25
+		OSE = {
+			add_country_modifier = {
+				name = liv_fail_subdue
+				duration = 3650
+			}
+		}
+		set_country_flag = ose_part_2
+		clr_country_flag = arhbishop_crash
+	}
+	option = { ### Подкупить епископа
+		name = stt_liv.15.3
+		trigger = { 
+			NOT = { has_country_flag = pay_to_bishop }
+		}
+		custom_tooltip = conf_issue_5
+		add_years_of_income = -2
+		add_adm_power = -25
+		add_dip_power = -25
+		OSE = {
+			add_country_modifier = {
+				name = liv_pay_bishop
+				duration = 3650
+			}
+		}
+		set_country_flag = pay_to_bishop
+	}
+	option = { ### Подорвать власть епископа (саботаж)
+		name = stt_liv.15.4
+		trigger = { 
+			has_country_flag = feodal_loyalists 
+			has_country_flag = ose_part_2
+			NOT = { has_country_flag = ose_part_3 }
+		}
+		custom_tooltip = conf_issue_3
+		add_treasury = -50
+		add_adm_power = -75
+		add_mil_power = -25
+		OSE = { 
+			add_stability = -1
+			add_devotion = -40
+			capital_scope = { add_province_modifier = { name = rebel_sentiment duration = 3650 } } ### rebel_refugees
+		}
+		set_country_flag = ose_part_3
+	}
+	option = { ### Отнять епископские земли
+		name = stt_liv.15.5
+		trigger = { 
+			has_country_flag = can_vassalize_Ose 
+			has_country_flag = ose_part_3
+		}
+		custom_tooltip = conf_issue_4
+		clr_country_flag = can_vassalize_Ose
+		OSE = { set_country_flag = liv_bishop_can_integrate }
+	}
+	option = { ### Назад
+		name = stt_liv.15.6
+		hidden_effect = { country_event = { id = stt_liv.14 } }
+	}
+}
+
+# Чистка флага "pay_to_bishop"
+country_event = {
+	id = stt_liv.19
+	title = stt_liv.19.t
+	desc = stt_liv.19.d
+	picture = DIPLOMACY_eventPicture 
+	hidden = yes
+	trigger = {
+		tag = LIV
+		has_country_flag = pay_to_bishop
+	}
+	mean_time_to_happen = {
+		days = 3650
+	}
+	immediate = { clr_country_flag = pay_to_bishop }
+	option = { name = stt_liv.19.1 }
+}
+
+# Вестфальцы провоцируют восстания
+country_event = { 
+	id = stt_liv.20
+	title = stt_liv.20.t
+	desc = stt_liv.20.d
+	picture = ANGRY_MOB_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = LIV
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = { 
+		name = stt_liv.20.1 
+		random_owned_province = {
+			spawn_rebels = { type = particularist_rebels size = 4 }
+		}
+		random_owned_province = {
+			spawn_rebels = { type = particularist_rebels size = 2 }
+		}
+		set_country_flag = liv_disaster_riseup_1
+	}
+}
+# Рейнская партия теряет власть
+country_event = { 
+	id = stt_liv.21
+	title = stt_liv.21.t
+	desc = stt_liv.21.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = LIV
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = { 
+		name = stt_liv.21.1 
+		add_devotion = -2
+		add_adm_power = -8
+		add_dip_power = -6
+		add_mil_power = -7
+		random_list = {
+			5 = { add_stability = -1 }
+			95 = { }
+		}
+		random_owned_province = { add_local_autonomy = 2.5 }
+		random_owned_province = { add_local_autonomy = 2.5 }
+		set_country_flag = liv_disaster_riseup_2
+	}
+}
+# Вестфальцы получают поддержку 
+country_event = { 
+	id = stt_liv.22
+	title = stt_liv.22.t
+	desc = stt_liv.22.d
+	picture = REFORM_eventPicture
+	is_triggered_only = yes
+	trigger = {
+		tag = LIV
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { 
+		name = stt_liv.22.1 
+		add_years_of_income = -0.05
+		add_prestige = -2.5
+		add_adm_power = -4
+		add_dip_power = -3
+		set_country_flag = liv_disaster_riseup_3
+	}
+}
+# Ситуация ухудшается 
+country_event = { 
+	id = stt_liv.23
+	title = stt_liv.23.t
+	desc = stt_liv.23.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+		has_country_flag = liv_disaster_riseup_1
+		has_country_flag = liv_disaster_riseup_2
+		has_country_flag = liv_disaster_riseup_3
+	}
+	mean_time_to_happen = {
+		days = 1825
+	}
+	option = { 
+		name = stt_liv.23.1 
+		remove_country_modifier = livonian_conf_2
+		add_country_modifier = {
+			name = livonian_conf_3
+			duration = -1
+		}
+		clr_country_flag = liv_disaster_riseup_1
+		clr_country_flag = liv_disaster_riseup_2
+		clr_country_flag = liv_disaster_riseup_3
+	}
+}
+# Рейнская партия в меньшинстве 
+country_event = { 
+	id = stt_liv.24
+	title = stt_liv.24.t
+	desc = stt_liv.24.d
+	picture = CIVIL_WAR_eventPicture
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = LIV
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { 
+		name = stt_liv.24.1 
+		clr_country_flag = liv_growing_contradictions
+		add_devotion = -5
+		add_prestige = -3
+		add_stability = -1
+		set_country_flag = liv_disaster_down_1
+	}
+}
+
+# Мемель перешел под власть Тевтонов (уведомление) 
+country_event = { 
+	id = stt_liv.25
+	title = stt_liv.25.t
+	desc = stt_liv.25.d
+	picture = FORT_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		tag = LIV
+	}
+	
+	option = { 
+		name = stt_liv.25.1 	
+	}
+}
+
+# Динабург перешел под власть Ливонов (уведомление - для LIT) 
+country_event = { 
+	id = stt_liv.26
+	title = stt_liv.26.t
+	desc = stt_liv.26.d
+	picture = FORT_eventPicture
+	is_triggered_only = yes
+
+	trigger = {
+		tag = LIT
+	}
+	
+	option = { 
+		name = stt_liv.26.1 
+	}
+}

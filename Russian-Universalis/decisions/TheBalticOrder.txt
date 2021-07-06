@@ -1,0 +1,468 @@
+country_decisions = {
+
+	liv_conf_interact = { ### Ливонская конфедерация (взаимодействие)
+		major = yes
+		potential = {
+			tag = LIV
+			LIV = { has_country_flag = livonian_confederation }
+			OR = {
+				RIG = { is_subject_of = ROOT }
+				DOR = { is_subject_of = ROOT }
+				OSE = { is_subject_of = ROOT }
+				KUR = { is_subject_of = ROOT }
+			}
+		}
+		
+		allow = {
+			is_at_war = no
+			OR = {
+				RIG = { is_subject_of = ROOT }
+				DOR = { is_subject_of = ROOT }
+				OSE = { is_subject_of = ROOT }
+				KUR = { is_subject_of = ROOT }
+			}
+		}
+		effect = {
+			hidden_effect = { country_event = { id = stt_liv.14 } }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	order_system_renew = { ### Реформирование орденской системы
+		major = yes
+		potential = {
+			OR = {
+				tag = TEU
+				tag = LIV
+			}
+			has_country_flag = order_system_2
+			is_year = 1500
+		}
+		
+		allow = {
+			is_at_war = no
+			adm = 4
+			dip = 2
+			mil = 4
+			adm_power = 150
+			dip_power = 75
+			mil_power = 125
+			advisor = philosopher
+		}
+		effect = {
+			add_adm_power = -150
+			add_dip_power = -75
+			add_mil_power = -125
+			add_devotion = -20
+			remove_country_modifier = OrderSystem_2
+			add_country_modifier = {
+				name = OrderSystem_3
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	prussian_bishops_destruct = { ### Ликвидировать прусское епископство
+		major = yes
+		potential = {
+			any_owned_province = {
+				OR = {
+					has_province_modifier = bishop_of_Varmia
+					has_province_modifier = bishop_of_Kulm
+					has_province_modifier = bishop_of_Sambia
+				}
+			}
+		}
+		
+		allow = {
+			is_at_war = no
+			adm = 3
+			dip = 3
+			adm_power = 250
+			dip_power = 250
+			any_owned_province = {
+				OR = {
+					has_province_modifier = bishop_of_Varmia
+					has_province_modifier = bishop_of_Kulm
+					has_province_modifier = bishop_of_Sambia
+				}
+			}
+			if = {
+				limit = { religion = catholic }
+				papal_influence = 15
+			}
+		}
+		effect = {
+			If = {
+				limit = { 
+					ai = no  
+					42 = { owned_by = ROOT } 
+				}
+				42 = { remove_province_modifier = bishop_of_Varmia}
+				add_adm_power = -125
+				add_dip_power = -75
+				add_papal_influence = -6
+				add_yearly_manpower = -0.4
+			}
+			If = {
+				limit = { 
+					ai = no
+					1859 = { owned_by = ROOT } 
+				}
+				1859 = { remove_province_modifier = bishop_of_Kulm}
+				add_adm_power = -75
+				add_dip_power = -50
+				add_papal_influence = -4
+				add_yearly_manpower = -0.15
+			}
+			If = {
+				limit = { 
+					ai = no
+					3231 = { owned_by = ROOT } 
+				}
+				3231 = { remove_province_modifier = bishop_of_Sambia}
+				add_adm_power = -100
+				add_dip_power = -75
+				add_papal_influence = -4
+				add_yearly_manpower = -0.25
+			}
+			If = {
+				limit = { 
+					ai = yes  
+					42 = { owned_by = ROOT } 
+				}
+				42 = { remove_province_modifier = bishop_of_Varmia}
+				add_adm_power = -15
+				add_dip_power = -15
+			}
+			If = {
+				limit = { 
+					ai = yes
+					1859 = { owned_by = ROOT } 
+				}
+				1859 = { remove_province_modifier = bishop_of_Kulm}
+				add_adm_power = -15
+				add_dip_power = -15
+			}
+			If = {
+				limit = { 
+					ai = yes
+					3231 = { owned_by = ROOT } 
+				}
+				3231 = { remove_province_modifier = bishop_of_Sambia}
+				add_adm_power = -15
+				add_dip_power = -15
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	order_lith_unrest_down_samogit = { ### Карательный поход (Жмудь)
+		potential = {
+			OR = {
+				tag = TEU
+				tag = LIV
+			}
+			has_country_flag = lith_unrest_down_1
+			any_owned_province = {
+				area = covno_area
+				has_province_modifier = resistance_lithuanians
+				NOT = { has_province_modifier = covno_expedition }
+				owned_by = ROOT
+			}
+			ai = no 
+		}
+		
+		allow = {
+			is_at_war = no
+			adm_power = 75
+			mil_power = 75
+			manpower = 1.5  
+		}
+		effect = {
+			add_adm_power = -75
+			add_mil_power = -75
+			add_yearly_manpower = -1
+			add_devotion = 5
+			every_owned_province = {
+				limit = { area = covno_area owned_by = ROOT }
+				add_province_modifier = {
+					name = covno_expedition
+					duration = 1825 # 5
+				}
+				add_devastation = 20.00
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	order_lith_unrest_down_aucshtat = { ### Карательный поход (Аукштайтия)
+		potential = {
+			OR = {
+				tag = TEU
+				tag = LIV
+			}
+			has_country_flag = lith_unrest_down_2
+			any_owned_province = {
+				area = lithuania_area
+				has_province_modifier = resistance_lithuanians_2
+				NOT = { has_province_modifier = lithuania_expedition }
+				owned_by = ROOT
+			}
+			ai = no 
+		}
+		
+		allow = {
+			is_at_war = no
+			adm_power = 95
+			mil_power = 95
+			manpower = 2.5  
+		}
+		effect = {
+			add_adm_power = -95
+			add_mil_power = -95
+			add_yearly_manpower = -2
+			add_devotion = 5
+			every_owned_province = {
+				limit = { area = lithuania_area owned_by = ROOT }
+				add_province_modifier = {
+					name = lithuania_expedition
+					duration = 1825 # 5
+				}
+				add_devastation = 20.00
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	take_memel_to_teutons = { ### Получить контроль над крепостью Мемель
+		potential = {
+			tag = TEU
+			40 = {
+				owned_by = LIV
+				NOT = { owned_by = TEU }
+				NOT = { has_province_flag = teu_control_memel }
+			}
+			NOT = { is_year = 1330 }
+		}
+		allow = {
+			alliance_with = LIV
+			adm_power = 25
+			dip_power = 25
+			manpower_percentage = 0.1
+			if = {
+				limit = { ai = no }
+				OR = {
+					diplomatic_reputation = 1
+					TEU = { army_size = LIV }
+				}
+			}
+		}
+		effect = {
+			40 = { cede_province = TEU }
+			hidden_effect = {
+				40 = {
+					add_core = TEU
+					remove_core = LIV
+					random_list = {
+						25 = { add_base_tax = 1 add_base_production = 1 change_religion = catholic }
+						15 = { add_base_tax = 3 add_base_production = 2 change_religion = catholic }
+						60 = { add_base_tax = 2 add_base_production = 2 }
+					}
+					set_province_flag = teu_control_memel
+				}
+				LIV = { country_event = { id = stt_liv.25 } }
+			}
+			add_yearly_manpower = -0.1
+			add_adm_power = -25
+			add_dip_power = -25
+			add_prestige = 2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	take_dinaburg_for_livonian = { ### Основать замок Динабург
+		potential = {
+			tag = LIV
+			4281 = {
+				owned_by = LIT
+				NOT = { owned_by = LIV }
+				NOT = { has_province_flag = liv_control_dinaburg }
+			}
+			NOT = { is_year = 1320 }
+		}
+		allow = {
+			dip_power = 15
+			mil_power = 15
+			years_of_income = 0.1
+			manpower_percentage = 0.1 
+		}
+		effect = {
+			4281 = { cede_province = LIV }
+			hidden_effect = {
+				4281 = {
+					add_core = LIV
+					remove_core = LIT
+					add_permanent_claim = LIT
+					random_list = {
+						25 = { add_base_production = 1 add_base_manpower = 1 change_religion = catholic }
+						15 = { add_base_tax = 1 add_base_production = 3 change_religion = catholic }
+						60 = { add_base_tax = 1 add_base_production = 1 add_base_manpower = 1 }
+					}
+					set_province_flag = liv_control_dinaburg
+					change_culture = latgalian
+				}
+				LIT = { country_event = { id = stt_liv.26 } }
+			}
+			add_yearly_manpower = -0.1
+			add_years_of_income = -0.1
+			add_dip_power = -15
+			add_mil_power = -15
+			add_prestige = 2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	recover_pommern_to_danish = { ### Вернуть контроль над Померанией
+		potential = {
+			tag = DAN
+			war_with = BRA
+			has_country_flag = recover_to_pommern
+			NOT = { is_year = 1317 }
+		}
+		allow = {
+			war_with = BRA
+			war_score = 60
+			dip_power = 250
+			DAN = { army_size = BRA }
+			vorpommern_area = {
+				type = all
+				NOT = { controlled_by = BRA }
+			}
+			hinter_pommern_area = {
+				type = all
+				NOT = { controlled_by = BRA }
+			}
+		}
+		effect = {
+			add_dip_power = -250
+			custom_tooltip = vassalize_pommern_dukes
+			hidden_effect {
+				if = {
+					limit = {
+						exists = STT
+						STT = {
+							NOT = { is_subject = yes }
+							NOT = { army_size = ROOT } 
+							NOT = { navy_size = ROOT }
+							has_opinion = { who = ROOT value = 150 }
+							num_of_cities = 3
+						}
+						OR = {
+							alliance_with = STT
+							STT = { guaranteed_by = ROOT }
+						}
+						diplomatic_reputation = 1.00
+					}
+					vassalize = STT
+					STT = { country_event = { id = polish_teu.22 } }
+				}
+				if = {
+					limit = {
+						exists = WLG
+						WLG = {
+							NOT = { is_subject = yes }
+							NOT = { army_size = ROOT } 
+							NOT = { navy_size = ROOT }
+							has_opinion = { who = ROOT value = 150 }
+							num_of_cities = 3
+						}
+						OR = {
+							alliance_with = WLG
+							WLG = { guaranteed_by = ROOT }
+						}
+						diplomatic_reputation = 1.00
+					}
+					vassalize = WLG
+					WLG = { country_event = { id = polish_teu.22 } }
+				}
+				if = {
+					limit = {
+						exists = MKL
+						MKL = {
+							NOT = { is_subject = yes }
+							NOT = { army_size = ROOT } 
+							NOT = { navy_size = ROOT }
+							has_opinion = { who = ROOT value = 150 }
+							num_of_cities = 3
+						}
+						OR = {
+							alliance_with = MKL
+							MKL = { guaranteed_by = ROOT }
+						}
+						diplomatic_reputation = 1.00
+					}
+					vassalize = MKL
+					MKL = { country_event = { id = polish_teu.22 } }
+				}
+				if = {
+					limit = {
+						exists = RUG
+						RUG = { 
+							vassal_of = ROOT 
+							has_opinion = { who = ROOT value = 150 }
+							num_of_cities = 3
+						}
+						diplomatic_reputation = 1.00
+					}
+					ROOT = { inherit = RUG }
+				}
+			}
+			clr_country_flag = recover_to_pommern
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	remove_city_rights_teutons = { ### Отозвать права городов
+		potential = {
+			any_owned_province = { has_province_modifier = city_in_helmno_rule }
+		}
+		allow = {
+			stability = 2
+			adm = 3
+			mil = 3
+			adm_power = 175
+			mil_power = 100
+		}
+		effect = {
+			hidden_effect = { random_owned_province = { limit = { development = 20 } spawn_rebels = { type = particularist_rebels size = 5 } } }
+			every_owned_province = {
+				limit = { has_province_modifier = city_in_helmno_rule }
+				add_adm_power = -20
+				add_mil_power = -10
+				add_unrest = 2
+				remove_province_modifier = city_in_helmno_rule
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

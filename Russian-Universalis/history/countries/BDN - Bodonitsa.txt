@@ -1,0 +1,101 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = lombard
+add_accepted_culture = greek
+religion = catholic
+technology_group = western
+capital = 4240
+
+1204.5.16 = {
+	monarch = {
+		name = "Гвидо I"
+		dynasty = "Паллавичини"
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}
+1237.1.1 = {
+	monarch = {
+		name = "Убертино I"
+		dynasty = "Паллавичини"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1278.1.1 = {
+	monarch = {
+		name = "Изабелла"
+		dynasty = "Паллавичини"
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1300.1.1 = {
+	monarch = {
+		name = "Альберто I"
+		dynasty = "Паллавичини"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1311.1.1 = {
+	monarch = {
+		name = "Гульельма"
+		dynasty = "Паллавичини"
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1335.1.1 = {
+	monarch = {
+		name = "Николай I"
+		dynasty = "Джорджи"
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+}
+1345.1.1 = {
+	monarch = {
+		name = "Франциско I"
+		dynasty = "Джорджи"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1388.1.1 = {
+	monarch = {
+		name = "Якоб I"
+		dynasty = "Джорджи"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1410.1.1 = {
+	monarch = {
+		name = "Николай II"
+		dynasty = "Джорджи"
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+1411.1.1 = {
+	monarch = {
+		name = "Николай III"
+		dynasty = "Джорджи"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}

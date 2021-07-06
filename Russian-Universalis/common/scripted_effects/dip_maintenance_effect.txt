@@ -1,0 +1,228 @@
+calc_dip_variable_effect = {
+	# Установка переменных
+	set_variable = { which = allies_var value = 0 }
+	set_variable = { which = marries_var value = 0 }
+	set_variable = { which = diplomat_var value = 0 }
+	
+	# Подсчет кол-ва союзов
+	if = {
+		limit = { any_country = { alliance_with = ROOT } }
+		
+		if = {
+			limit = { num_of_allies = 1 }
+			set_variable = { which = allies_var value = 1 }
+		}
+		if = {
+			limit = { num_of_allies = 2 }
+			set_variable = { which = allies_var value = 2 }
+		}
+		if = {
+			limit = { num_of_allies = 3 }
+			set_variable = { which = allies_var value = 3 }
+		}
+		if = {
+			limit = { num_of_allies = 4 }
+			set_variable = { which = allies_var value = 4 }
+		}
+		if = {
+			limit = { num_of_allies = 5 }
+			set_variable = { which = allies_var value = 5 }
+		}
+		if = {
+			limit = { num_of_allies = 6 }
+			set_variable = { which = allies_var value = 6 }
+		}
+		if = {
+			limit = { num_of_allies = 7 }
+			set_variable = { which = allies_var value = 7 }
+		}
+		if = {
+			limit = { num_of_allies = 8 }
+			set_variable = { which = allies_var value = 8 }
+		}
+		if = {
+			limit = { num_of_allies = 9 }
+			set_variable = { which = allies_var value = 9 }
+		}
+		if = {
+			limit = { num_of_allies = 10 }
+			set_variable = { which = allies_var value = 10 }
+		}
+		
+		# Сохранение кол-ва союзов в кэш
+		set_variable = { which = cache_var_1 value = 0 }
+		change_variable = {
+			which = cache_var_1
+			which = allies_var
+		}
+	}
+	
+	# Подсчет кол-ва династических браков
+	if = {
+		limit = { any_country = { marriage_with = ROOT } }
+		
+		if = {
+			limit = { num_of_royal_marriages = 1 }
+			set_variable = { which = allies_var value = 1 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 2 }
+			set_variable = { which = allies_var value = 2 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 3 }
+			set_variable = { which = allies_var value = 3 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 4 }
+			set_variable = { which = allies_var value = 4 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 5 }
+			set_variable = { which = allies_var value = 5 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 6 }
+			set_variable = { which = allies_var value = 6 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 7 }
+			set_variable = { which = allies_var value = 7 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 8 }
+			set_variable = { which = allies_var value = 8 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 9 }
+			set_variable = { which = allies_var value = 9 }
+		}
+		if = {
+			limit = { num_of_royal_marriages = 10 }
+			set_variable = { which = allies_var value = 10 }
+		}
+		
+		# Сохранение кол-ва династических браков в кэш
+		set_variable = { which = cache_var_2 value = 0 }
+		change_variable = {
+			which = cache_var_2
+			which = marries_var
+		}
+	}
+	
+	# Суммирование кэша полученного от кол-ва союзов и браков
+	if = {
+		limit = { 
+			OR = {
+				check_variable = { which = cache_var_1 value = 0.1 }
+				check_variable = { which = cache_var_2 value = 0.1 }
+			}
+		}
+		set_variable = { which = cache_var_3 value = 0 }
+		
+		if = {
+			limit = { check_variable = { which = cache_var_1 value = 0.1 } }
+			change_variable = { 
+				which = cache_var_3
+				which = cache_var_1
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_2 value = 0.1 } }
+			change_variable = { 
+				which = cache_var_3
+				which = cache_var_2
+			}
+		}
+	}
+	
+	# Подсчет кол-ва дипломатов
+	if = {
+		limit = { always = yes }
+		
+		if = {
+			limit = { num_of_diplomats = 1 }
+			set_variable = { which = diplomat_var value = 1 }
+		}
+		if = {
+			limit = { num_of_diplomats = 2 }
+			set_variable = { which = diplomat_var value = 2 }
+		}
+		if = {
+			limit = { num_of_diplomats = 3 }
+			set_variable = { which = diplomat_var value = 3 }
+		}
+		if = {
+			limit = { num_of_diplomats = 4 }
+			set_variable = { which = diplomat_var value = 4 }
+		}
+		if = {
+			limit = { num_of_diplomats = 5 }
+			set_variable = { which = diplomat_var value = 5 }
+		}
+		if = {
+			limit = { num_of_diplomats = 6 }
+			set_variable = { which = diplomat_var value = 6 }
+		}
+		if = {
+			limit = { num_of_diplomats = 7 }
+			set_variable = { which = diplomat_var value = 7 }
+		}
+		if = {
+			limit = { num_of_diplomats = 8 }
+			set_variable = { which = diplomat_var value = 8 }
+		}
+		
+		# Сохранение кол-ва дипломатов в кэш
+		set_variable = { which = cache_var_4 value = 0 }
+		change_variable = {
+			which = cache_var_4
+			which = diplomat_var
+		}
+	}
+	
+	# Общее суммирование кэша (in progress)
+	if = {
+		limit = { 
+			OR = {
+				check_variable = { which = cache_var_3 value = 0.1 }
+				check_variable = { which = cache_var_4 value = 0.1 }
+			}
+		}
+		set_variable = { which = cache_var_5 value = 0 }
+		
+		if = {
+			limit = { check_variable = { which = cache_var_3 value = 0.1 } }
+			change_variable = { 
+				which = cache_var_5
+				which = cache_var_3
+			}
+		}
+		if = {
+			limit = { check_variable = { which = cache_var_4 value = 0.1 } }
+			change_variable = { 
+				which = cache_var_5
+				which = cache_var_4
+			}
+		}
+	}
+	
+	
+}
+
+calc_dipexpense_effect = {
+	# Установка переменных
+	set_variable = { which = expense_var value = 0 }
+	
+	# Вычисление выплат за союзы и браки
+	if = {
+		limit = { check_variable = { which = cache_var_3 value = 1 } }
+		change_variable = { which = expense_var value = 0.6 }
+	}
+	
+	# Вычисление выплат за дипломатов
+	if = {
+		limit = { check_variable = { which = cache_var_4 value = 1 } }
+		change_variable = { which = expense_var value = 0.6 }
+	}
+}
