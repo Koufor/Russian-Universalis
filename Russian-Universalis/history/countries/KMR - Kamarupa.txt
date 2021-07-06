@@ -1,7 +1,0 @@
-government_rank = 3
-government = monarchy
-add_government_reform = autocracy_reform
-primary_culture = assamese
-religion = hinduism
-technology_group = indian
-capital = 571	# Darrang

@@ -1,4 +1,0 @@
- 
-
-
-1784.1.1 = { discovered_by = RUS } # Vitus Bering

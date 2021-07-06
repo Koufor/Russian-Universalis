@@ -1,6 +1,0 @@
-government = tribal
-add_government_reform = tribal_federation
-primary_culture = hassaniyan
-religion = sunni
-technology_group = muslim
-capital = 3318
